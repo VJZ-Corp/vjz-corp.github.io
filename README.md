@@ -15,6 +15,10 @@ Syntax highlighted code block
 ## Header 2
 ### Header 3
 
+$$
+E = mc^2
+$$
+
 - Bulleted
 - List
 
