@@ -4,6 +4,10 @@ You can use the [editor on GitHub](https://github.com/VJZ-Corp/vjz-corp.github.i
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
+$$
+E = mc^2
+$$
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -14,10 +18,6 @@ Syntax highlighted code block
 # Header 1
 ## Header 2
 ### Header 3
-
-$$
-E = mc^2
-$$
 
 - Bulleted
 - List
