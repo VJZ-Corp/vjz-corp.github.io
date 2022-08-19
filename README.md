@@ -4,7 +4,14 @@ Welcome to VJZ Corporation, where imagination meets reality. Here you will disco
 # Immune System Fighting Simulator
 ![](/assets/images/immune_system_fighting_sim.png)
 
-Immune System Fighting Simulator is a game developed by VJZ Corporation that aims to simulate the inner-workings of a human body realistically. It uses proper scientific research and data to induce an authentic experience for players. An immersive game that you can't put down, Immune System Fighting Simulator will make learning biology fun and exhilarating. Play free now at: [https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator](https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator).
+Immune System Fighting Simulator is a game developed by VJZ Corporation that aims to simulate the inner-workings of a human body realistically. It uses proper scientific research and data to induce an authentic experience for players. An immersive game that you can't put down, Immune System Fighting Simulator will make learning biology fun and exhilarating. Players can choose to be a pathogen or immune system cell:
+
+- *Lymphocyte*: small immune system cells that can easily fit thorugh cracks and can shoot out antibody bullets (gamepass).
+- *Macrophage*: big immune system cells that can stomp out any foriegn particle in its way (can kill multiple at once).
+- *Bacteria*: a pathogen whose goal is to infiltrate the body and eat nutrients to clone itself (the clones follow you).
+- *Virus*: similar to bacteria, they also need to consume nutrients to replicate, however they are not intelligent enough to follow the player.
+
+Play free now at: [https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator](https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator).
 
 # Toolboxal
 ![](/assets/images/toolboxal.png)
