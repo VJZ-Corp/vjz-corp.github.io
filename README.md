@@ -1,3 +1,10 @@
+---
+title: "Homepage"
+output:
+  html_document:
+    css: assets/css/button.css
+---
+
 ![](/assets/images/VJZlogo_official.png)
 
 # Navigation
