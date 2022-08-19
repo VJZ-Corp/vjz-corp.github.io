@@ -33,9 +33,25 @@ Following the release, our group membership skyrocketed. Many players had a newf
 
 - **February 7, 2021** - Toolboxal was officialy released as an open-source project on Github.
 
-Throughout these years, we have adapted the open-source model in many of our projects. Not only can we enable full transparency in our code, but we can also allow the community to input and help us develop our tools, such as Toolboxal. This way, we can work together to help each other, thus continuously improving each other's lives through digital technology.
+Throughout these years, we have adapted the open-source model in many of our projects. Not only can we enable full transparency in our code, but we can also allow the community to input and help us develop our tools, such as Toolboxal. This way, we can work together to help each other, thus continuously improving everybody's lives through digital technology.
 
 # YouTube
 [![](/assets/images/youtube.svg)](https://www.youtube.com/channel/UC8ElcGm7bLnwc7f44wzDpqA)
 
-Our YouTube channel single-handedly revolutionized VJZ Corporation forever. Without it, we would have never realized the need for us to contribute to computing, resulting in a completely different VJZ Corporation. While our earlier videos were focused on gaming, videos we upload now deliver the most direct, up-to-date computing technology content that we can produce. Visit our channel by clicking the YouTube logo banner.
+Our YouTube channel single-handedly revolutionized VJZ Corporation forever. Without it, we would have never realized the need for us to contribute to computing, resulting in a completely different VJZ Corporation. While our earlier videos were focused on gaming, videos we upload now deliver the most direct, up-to-date computing technology content we can produce. Visit our channel by clicking on the YouTube logo banner.
+
+# Roblox
+[![](/assets/images/roblox.png)](https://www.roblox.com/groups/5474151/V-J-Z-Corporation)
+
+Our involvement on Roblox allowed us to create engaging and interactive experiences. Through the Roblox player community, we can build fun and educational games for players to enjoy. When combining Roblox and YouTube, we try to cater towards the Roblox developer community helping them make their game go from an idea to reality.
+Join our Roblox group by clicking the Roblox logo banner.
+
+# Github
+[![](/assets/images/github.png)](https://github.com/VJZ-Corp)
+
+Github has enpowered us to connect and collaborate with the most skilled and professional developers. Through the open-source initative, we can build high-quality, free, and transparent software for everybody to use. Visit our Github organization by clicking the Github logo banner.
+
+# Discord
+[![](/assets/images/discord.png)](https://discord.gg/avgawKw)
+
+Besides our involvement professionally in all the organizations listed above, we want to let you know that there is a thriving culture at VJZ Corporation. Using Discord, we can connect with our customers, clients, players, and audience better. Our Discord server is a place for you to hang out and chat with us. You can receive our latest updates and news and even suggest ideas and projects for us because we believe that having zero-pressure, honest customer feedback is what is we value the most. Engage with us so we that we can foster a prosperous community here at VJZ Corporation. You can join our Discord server by clicking the Discord logo banner.
