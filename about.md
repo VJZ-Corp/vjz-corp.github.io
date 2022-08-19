@@ -34,3 +34,8 @@ Following the release, our group membership skyrocketed. Many players had a newf
 - **February 7, 2021** - Toolboxal was officialy released as an open-source project on Github.
 
 Throughout these years, we have adapted the open-source model in many of our projects. Not only can we enable full transparency in our code, but we can also allow the community to input and help us develop our tools, such as Toolboxal. This way, we can work together to help each other, thus continuously improving each other's lives through digital technology.
+
+# YouTube
+[![](/assets/images/youtube.svg)](https://www.youtube.com/channel/UC8ElcGm7bLnwc7f44wzDpqA)
+
+Our YouTube channel single-handedly revolutionized VJZ Corporation forever. Without it, we would have never realized the need for us to contribute to computing, resulting in a completely different VJZ Corporation. While our earlier videos were focused on gaming, videos we upload now deliver the most direct, up-to-date computing technology content that we can produce. Visit our channel by clicking the YouTube logo banner.
