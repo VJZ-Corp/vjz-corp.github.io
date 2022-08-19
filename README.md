@@ -2,7 +2,7 @@
 
 ***
 
-<button onclick="location.href=/about.md" class="button-84" role="button">About</button>
+<a href="/about.md" class="button-84">About</a>
 - ## [About](/about.md)
 - ## [Apply](/apply.md)
 - ## [Contacts](/contacts.md)
