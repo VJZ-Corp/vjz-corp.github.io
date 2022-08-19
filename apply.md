@@ -1,6 +1,6 @@
 ---
 title: Apply to VJZ Corporation
-layout: template
+layout: default
 filename: apply.md
 --- 
 
