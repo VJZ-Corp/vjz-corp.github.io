@@ -3,10 +3,9 @@
 ***
 
 <a href="/about.md" class="button-84">About</a>
-- ## [About](/about.md)
-- ## [Apply](/apply.md)
-- ## [Contacts](/contacts.md)
-- ## [Login](https://gooogle.com)
+<a href="/apply.md" class="button-84">Apply</a>
+<a href="/contacts.md" class="button-84">Contacts</a>
+<a href="/login.md" class="button-84">Login</a>
 
 # Reimagining the Future
 Welcome to VJZ Corporation, where imagination meets reality. Here, you will discover how we have been contributing to the field of digital technology and how you can get involved as well. From games teaching biology to tools for developers, we think that no issue should be overlooked. We are committed to harness the power of computing to solve a variety of problems ranging from basic task automation to groundbreaking scientific discoveries. Join us as we reshape the future!
