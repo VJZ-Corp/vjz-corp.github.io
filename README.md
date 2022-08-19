@@ -1,5 +1,9 @@
-# Reimagining the Future
-Welcome to VJZ Corporation, where imagination meets reality. Here you will discover how we have been contributing to the field of digital technology and how you can get involved as well. From games teaching biology to tools for developers, we think that no issue should be overlooked. We are committed to harness the power of computing to solve a variety of problems ranging from basic task automation to groundbreaking scientific discoveries. Join us as we reshape and revolutionize the future of computing and digital technology!
+# Explore VJZ Corporation
+Welcome to VJZ Corporation, where imagination meets reality. Here you will discover how we have been contributing to the field of digital technology and how you can get involved as well. From games teaching biology to tools for developers, we think that no issue should be overlooked. We are committed to harness the power of computing to solve a variety of problems ranging from basic task automation to groundbreaking scientific discoveries. Join us as we reshape, reimagine, and revolutionize the future of computing and digital technology!
+
+- In the *About* section, you can learn about VJZ Corporation's rich history as well as connect with our communities and platforms.
+- In the *Apply" section, you can submit an application so that you can directly work for us!
+- In the *Resources* section, you will find many resources, such as articles, blogs, videos, and tutorials.
 
 # Immune System Fighting Simulator
 ![](/assets/images/immune_system_fighting_sim.png)
