@@ -4,7 +4,8 @@
 
 ___
 
-[Click me](http://www.google.com){: .btn}
+<button name="button">Click me</button>
+
 - ## [About](/about.md)
 - ## [Apply](/apply.md)
 - ## [Login](https://gooogle.com)
