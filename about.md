@@ -38,18 +38,18 @@ Throughout these years, we have adapted the open-source model in many of our pro
 # YouTube
 [![](/assets/images/youtube.svg)](https://www.youtube.com/channel/UC8ElcGm7bLnwc7f44wzDpqA)
 
-Our YouTube channel single-handedly revolutionized VJZ Corporation forever. Without it, we would have never realized the need for us to contribute to computing, resulting in a completely different VJZ Corporation. While our earlier videos were focused on gaming, videos we upload now deliver the most direct, up-to-date computing technology content we can produce. Visit our channel by clicking on the YouTube logo banner.
+Our YouTube channel single-handedly brought VJZ Corporation to where it is today. Without it, we would have never realized the need for us to contribute to computing, resulting in a completely different focus. While our earlier videos were focused on gaming, videos we upload now deliver the most direct, up-to-date computing technology content we can produce. Visit our channel by clicking on the YouTube logo banner.
 
 # Roblox
 [![](/assets/images/roblox.png)](https://www.roblox.com/groups/5474151/V-J-Z-Corporation)
 
-Our involvement on Roblox allowed us to create engaging and interactive experiences. Through the Roblox player community, we can build fun and educational games for players to enjoy. When combining Roblox and YouTube, we try to cater towards the Roblox developer community helping them make their game go from an idea to reality.
+Our involvement on Roblox allowed us to create engaging and interactive experiences. Through the Roblox player community, we can build fun and educational games for players to enjoy. When combining Roblox and YouTube, we try to cater towards the Roblox developer community by helping them make their game go from an idea to reality.
 Join our Roblox group by clicking the Roblox logo banner.
 
 # Github
 [![](/assets/images/github.png)](https://github.com/VJZ-Corp)
 
-Github has enpowered us to connect and collaborate with the most skilled and professional developers. Through the open-source initative, we can build high-quality, free, and transparent software for everybody to use. Visit our Github organization by clicking the Github logo banner.
+The Github platform has empowered us to connect and collaborate with the most skilled and professional developers. Through the open-source initative, we can build high-quality, free, and transparent software for everybody to use, including this very website! Visit our Github organization by clicking the Github logo banner.
 
 # Discord
 [![](/assets/images/discord.png)](https://discord.gg/avgawKw)
