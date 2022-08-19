@@ -1,1 +1,1 @@
-![](/assets/logo.png)
+![](/assets/VJZlogo_official.png)
