@@ -1,5 +1,3 @@
-![](/assets/images/VJZlogo_official.png)
-
 # Navigation
 
 ***
