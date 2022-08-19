@@ -7,10 +7,18 @@
   max-width: 50%;
 }
 
+#project_title {
+  margin: 0;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 1000;
+  text-shadow: #111 0px 0px 10px;
+}
+
 #project_tagline {
   color: #fff;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 40px;
+  font-weight: 700;
   background: none;
   text-shadow: #111 0px 0px 10px;
 }
