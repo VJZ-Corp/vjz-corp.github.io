@@ -11,7 +11,7 @@ This webpage is our favorite, as we think it is the most important. While our we
 
 - [Time Complexity](/resources/tutorials/big-o)
 - [How to Debug Memory in Visual Studio 2019](/resources/tutorials/vs2019-debug)
-- [Different Ways to Integreate the Bell Curve](/resources/tutorials/bell-curve-integration)
+- [Integrating the Bell Curve](/resources/tutorials/bell-curve-integration)
 
 # Videos
 
