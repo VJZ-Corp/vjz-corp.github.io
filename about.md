@@ -23,7 +23,7 @@ After releasing a few more tutorials in regards to programming and scripting wit
 
 To celebrate the turn of the new decade, we decided to launch our Roblox group and Github organization a week into 2020. Initially, membership was low, but 2 months after the group was created, the COVID-19 pandemic caused many to stay at home and interest in VJZ Corporation in the Roblox community was increasing.
 
-- **April 15, 2020** - Work on Immune System Fighting Simulator officialy began.
+- **April 15, 2020** - Work on Immune System Fighting Simulator officially began.
 
 We realized that, with an influx of new players on Roblox combined with events relating to the pandemic, we could create a fun game about how the immune system works in hopes of helping the predominantly young players of Roblox to be interested and not irrationally scared of the pandemic.
 
@@ -34,6 +34,10 @@ Following the release, our group membership skyrocketed. Many players had a newf
 - **February 7, 2021** - Toolboxal was officialy released as an open-source project on Github.
 
 Throughout these years, we have adapted the open-source model in many of our projects. Not only can we enable full transparency in our code, but we can also allow the community to input and help us develop our tools, such as Toolboxal. This way, we can work together to help each other, thus continuously improving everybody's lives through digital technology.
+
+# Mission Statement
+
+> *VJZ Corporation aims to be the industry leader in digital computing. By fostering healthy relationships with our community and communicating with other professionals in the field, we can work toghether to solve the most pressing issues faced by consumers and developers in the digital era.*
 
 # YouTube
 [![](/assets/images/youtube.svg)](https://www.youtube.com/channel/UC8ElcGm7bLnwc7f44wzDpqA)
@@ -54,4 +58,4 @@ The Github platform has empowered us to connect and collaborate with the most sk
 # Discord
 [![](/assets/images/discord.png)](https://discord.gg/avgawKw)
 
-Besides our involvement professionally in all the organizations listed above, we want to let you know that there is a thriving culture at VJZ Corporation. Using Discord, we can connect with our customers, clients, players, and audience better. Our Discord server is a place for you to hang out and chat with us. You can receive our latest updates and news and even suggest ideas and projects for us because we believe that having zero-pressure, honest customer feedback is what is we value the most. Engage with us so we that we can foster a prosperous community here at VJZ Corporation. You can join our Discord server by clicking the Discord logo banner.
+Besides our involvement professionally in all the organizations listed above, we want to let you know that there is a thriving culture at VJZ Corporation. Using Discord, we can connect with our customers, clients, players, and audience better. Our Discord server is a place for you to hang out and chat with us. You can receive our latest updates and news and even suggest ideas and projects for us because having zero-pressure, honest customer feedback is what is we value the most. Engage with us so we that we can foster a prosperous community here at VJZ Corporation. You can join our Discord server by clicking the Discord logo banner.
