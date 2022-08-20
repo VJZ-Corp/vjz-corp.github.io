@@ -127,4 +127,4 @@ Complexity factors that come from some common algorithms and data structures are
 - 
 Here are conservative upper bounds on the value of $n$ for each time complexity. You might get away with more than this, but this should allow you to quickly check whether an algorithm is viable:
 
-![](1.png)
+![image](https://user-images.githubusercontent.com/73851560/185765139-292eecdd-36c5-4fce-8570-d3e0eff16226.png)
