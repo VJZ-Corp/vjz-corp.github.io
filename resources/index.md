@@ -15,4 +15,4 @@ This webpage is our favorite, as we think it is the most important. While our we
 
 # Videos
 
-<iframe width="50%" height="30%" src="https://www.youtube.com/embed/videoseries?list=PLS9wf5aMSL7pfjukp13Z9pATrpCKpppYW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="50%" height="400" src="https://www.youtube.com/embed/videoseries?list=PLS9wf5aMSL7pfjukp13Z9pATrpCKpppYW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
