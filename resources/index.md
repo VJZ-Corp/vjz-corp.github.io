@@ -9,6 +9,10 @@ This webpage is our favorite, as we think it is the most important. While our we
 
 # Tutorials/Lessons
 
-- [Time Complexity](/tutorials/time-complexity)
-- [How to Debug Memory in Visual Studio 2019](/tutorials/vs2019-debug)
-- [Different Ways to Integreate the Bell Curve](/tutorials/bell-curve-integration)
+- [Time Complexity](/resources/tutorials/time-complexity)
+- [How to Debug Memory in Visual Studio 2019](/resources/tutorials/vs2019-debug)
+- [Different Ways to Integreate the Bell Curve](/resources/tutorials/bell-curve-integration)
+
+# Videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLS9wf5aMSL7pfjukp13Z9pATrpCKpppYW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
