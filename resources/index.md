@@ -1,7 +1,7 @@
 ---
 title: Additional Resources
 layout: default
-filename:
+filename: index.md
 ---
 
 # Aditional Resources
