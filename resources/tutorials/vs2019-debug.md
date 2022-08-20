@@ -64,7 +64,7 @@ We are now very close to viewing our program’s memory. After you have selected
 
 ![image](https://user-images.githubusercontent.com/73851560/185766018-e87efb2f-ab1a-42a1-903c-e96aa6ae78f9.png)
 
-These values are stored in hexadecimal (base 16) which means that $23_{16} = 35_{10}$ in base 10 (decimal).
+These values are stored in hexadecimal (base 16) which means that $0x23 = 35$ in base 10 (decimal).
 
 ![image](https://user-images.githubusercontent.com/73851560/185766037-b748e025-ee3a-4132-a60b-c66cdb99f621.png)
 
