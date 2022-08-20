@@ -1,7 +1,7 @@
 ---
 title: Time Complexity
 layout: default
-filename: big-o.md
+filename: big-o
 ---
 
 # Time Complexity
