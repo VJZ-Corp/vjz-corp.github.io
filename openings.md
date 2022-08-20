@@ -1,7 +1,7 @@
 ---
-title: Job Statuses
+title: Job Openings
 layout: default
-filename: jobs.md
+filename: openings.md
 ---
 
 # Roblox-Division Job Positions Status Page
