@@ -121,7 +121,7 @@ Complexity factors that come from some common algorithms and data structures are
 - Ordered set/map or priority queue: $O(\log n)$ per operation.
 - Prime factorization of an integer, or checking primality or compositeness of an integer naively: $O(\sqrt n)$.
 - Reading in $n$ items of input: $O(n)$.
-- Iterating through all subsets of size $n$ of the input elements: $O(x^n$.
+- Iterating through all subsets of size $n$ of the input elements: $O(x^n)$.
 - Iterating through all subsets: $O(2^n)$.
 - Iterating through all permutations: $O(n!)$.
 - 
