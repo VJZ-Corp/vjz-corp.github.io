@@ -15,7 +15,7 @@ Immune System Fighting Simulator is a game developed by VJZ Corporation that aim
 - *Bacteria*: a pathogen whose goal is to infiltrate the body and eat nutrients to clone itself (the clones follow you).
 - *Virus*: similar to bacteria, they also need to consume nutrients to replicate, however they are not intelligent enough to follow the player.
 
-The Immune System and Pathogen teams go head to head to see who can conquer the body. Will the immune system be able to defend its home? Play free with friends now at: [https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator](https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator).
+The Immune System and Pathogen teams go head-to-head to see who can conquer the body. Will the immune system be able to defend its home? Play free with friends now at: [https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator](https://www.roblox.com/games/4904260018/Immune-System-Fighting-Simulator).
 
 # Toolboxal
 ![](/assets/images/toolboxal.png)
