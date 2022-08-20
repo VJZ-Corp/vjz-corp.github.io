@@ -47,8 +47,6 @@ return 0;
 Now that you know how this C++ program works, it is time to debug the program. First, add a breakpoint on line 6. Then, make sure that you are building this solution in *Debug Mode and NOT Release Mode*. This is a critical step as building your solution in Release Mode will omit many debugging tools that comes with Debug Mode. Now run the program by pressing **Ctrl + F5**. You should see a bunch of things pop up. Depending on how you setup your IDE, the diagnostic tools should be on the right hand side, your watches and call stack should be on the bottom left and your output should be on the bottom right.
 
 ![image](https://user-images.githubusercontent.com/73851560/185765984-dc477813-6264-440a-8ea5-2c40d9c75afc.png)
-|:--:| 
-| *(Bottom Left) Local Watch and Call Stack, (Bottom Right) Output and Error List* |
 
 Once you see this window, go to Debug → Windows → Memory → Memory 1, to open the memory view for this process.
 
