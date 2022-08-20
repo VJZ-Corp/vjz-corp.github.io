@@ -3,7 +3,7 @@ Welcome to VJZ Corporation, where imagination meets reality. Here you will disco
 
 - In the *About* section, you can learn about VJZ Corporation's rich history and connect with our communities and platforms.
 - In the *Apply* section, you can submit an application so that you can directly work for us!
-- In the *Resources* section, you will find many resources, such as articles, blogs, videos, and tutorials.
+- In the *Resources* section, you will find many resources, such as articles, guides, videos, lessons, tutorials, and more.
 
 # Immune System Fighting Simulator
 ![](/assets/images/immune_system_fighting_sim.png)
