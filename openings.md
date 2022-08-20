@@ -4,7 +4,7 @@ layout: default
 filename: openings.md
 ---
 
-# Roblox-Division Job Positions Status Page
+# Roblox Division Job Positions Status Page
 Please check here to ensure the job slot you are applying for is open. Positions which are closed will be marked red and positions that are open will be marked green. Please do not apply to a closed job position. We will automatically ignore those applications.
 
 ## Scripting / Programming
