@@ -134,7 +134,7 @@ $$
 Finding the antiderivative of the PDF was pretty rough. Luckily computing the definite integral of the PDF will be relatively easier, as we have already done 90% of the work. Recall the Fundamental Theorem of Calculus, and apply that to our indefinite form, then integrate that expression from $a$ to $b$:
 
 $$
- \Large \displaystyle \Left. \frac{1}{2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \right\vert_{a}^{b} = \Large \frac{1}{2} \bigg[\text{erf}\big(\frac{b-\mu}{\sigma\sqrt2}\big) - \text{erf}\big(\frac{a-\mu}{\sigma\sqrt2}\big) \bigg]
+ \Large \displaystyle \left. \frac{1}{2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \right\vert_{a}^{b} = \Large \frac{1}{2} \bigg[\text{erf}\big(\frac{b-\mu}{\sigma\sqrt2}\big) - \text{erf}\big(\frac{a-\mu}{\sigma\sqrt2}\big) \bigg]
 $$
 
 Unfortunately, the error function is a integral itself (see above), which is not very useful in computing a meaningful value. I will finish with the series expansion for the error function in one final gigantic monstrous equation for finding the definite integral of the bell curve (just plug in the constants and it should work):
