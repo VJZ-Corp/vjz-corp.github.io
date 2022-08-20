@@ -37,7 +37,7 @@ Throughout these years, we have adapted the open-source model in many of our pro
 
 # Mission Statement
 
-> *VJZ Corporation aims to be the industry leader in digital computing. By fostering healthy relationships with our community and communicating with other professionals in the field, we can work toghether to solve the most pressing issues faced by consumers and developers in the digital era.*
+> VJZ Corporation aims to be the industry leader in digital computing. By fostering healthy relationships with our community and communicating with other professionals in the field, we can work toghether to solve the most pressing issues faced by consumers and developers in the digital era.
 
 # YouTube
 [![](/assets/images/youtube.svg)](https://www.youtube.com/channel/UC8ElcGm7bLnwc7f44wzDpqA)
