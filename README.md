@@ -25,6 +25,7 @@ Toolboxal is a user-friendly application with its audience targeted mainly towar
 - *Radix Converter*: when you need to convert a number from binary to hexadecimal, decimal to octal, etc.
 * *Data Magnitudes*: when you need to convert data units (kibibyte to exabit).
 - *Bitwise Operations*: when you need to quickly calculate bitwise operations (AND, OR, NOR, bitwise shifting).
+
 - *Search Tool*: when you need to search for a solution online (google search).
 
 You can get Toolboxal for free at [https://github.com/VJZ-Corp/Toolboxal](https://github.com/VJZ-Corp/Toolboxal).
