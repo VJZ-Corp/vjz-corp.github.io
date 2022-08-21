@@ -32,4 +32,4 @@ If you like to learn by watching videos, this section is for you. Below are play
 ## Java, A Comprehensive Guide (Playlist)
 This playlist serves as a comprehensive walkthrough guide for the Java programming language. This tutorial series will only cover language features and OOP mechanics. It will not cover how to setup IDEs, environments, or meta-language features.
 
-<iframe width="500" height="400" src="https://www.youtube.com/embed/videoseries?list=PLS9wf5aMSL7pfjukp13Z9pATrpCKpppYW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/videoseries?list=PLS9wf5aMSL7pfjukp13Z9pATrpCKpppYW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
