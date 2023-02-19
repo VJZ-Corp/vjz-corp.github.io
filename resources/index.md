@@ -16,23 +16,16 @@ This webpage is our favorite, as we think it is the most important. While our we
 
 Here you will find curated tutorials and lessons in the field of Science, Technology, Engineering, and Mathematics. Many of the lessons/tutorials listed below do require prerequisite knowledge and is not aimed for the general reader.
 
-## Computing
 - [Time Complexity](/resources/tutorials/big-o)
 - [How to Debug Memory in Visual Studio 2019](/resources/tutorials/vs2019-debug)
-
-## Mathematics
 - [Integrating the Bell Curve](/resources/tutorials/bell-curve-integration)
 
-# Media
+# Videos
 
 ***
 
 If you like to learn by watching videos, this section is for you. Below are playlists/videos that are meant to walk you through step by step. Playlists should be watched in order and individual videos can be watched in any random order.
 
-## Java, A Comprehensive Guide (Playlist)
-This playlist serves as a comprehensive walkthrough guide for the Java programming language. This tutorial series will only cover language features and OOP mechanics. It will not cover how to setup IDEs, environments, or meta-language features.
-
 <iframe width="640" height="360" src="https://www.youtube.com/embed/videoseries?list=PLS9wf5aMSL7pfjukp13Z9pATrpCKpppYW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Roblox Scripting: Procedural Terrain Generation
 <iframe width="640" height="360" src="https://www.youtube.com/embed/Wm_RRUHZXKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
