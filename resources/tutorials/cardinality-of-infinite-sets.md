@@ -13,3 +13,5 @@ The idea of infinity has been around for quite some time, and has consisently pr
 The most widely accepted axiom of infinity is denoted as the following:
 
 ![image](https://user-images.githubusercontent.com/77761814/227989819-15f50282-1f02-4604-add5-6bfc11f788d3.png)
+
+which essientally defines an infinite set for the natural numbers.
