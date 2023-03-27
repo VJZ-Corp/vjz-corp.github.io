@@ -5,7 +5,7 @@ filename: openings.md
 ---
 
 # Roblox Division Job Positions Status Page
-PPlease check here to ensure the job slot you are applying for is open. Closed positions will be marked red, and open positions will be marked green. Please do not apply to a closed job position. We will automatically ignore such applications.
+Please check here to ensure the job slot you are applying for is open. Closed positions will be marked red, and open positions will be marked green. Please do not apply to a closed job position. We will automatically ignore such applications.
 
 ## Scripting / Programming
 🔴 Chief Scripting Engineer
