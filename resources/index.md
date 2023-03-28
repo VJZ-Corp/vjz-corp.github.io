@@ -14,7 +14,7 @@ This webpage is our favorite, as we think it is the most important. While our we
 
 ***
 
-Here you will find curated tutorials and lessons in the field of Science, Technology, Engineering, and Mathematics. Many of the lessons/tutorials listed below do require prerequisite knowledge and is not aimed for the general reader.
+You will find curated tutorials and lessons in Science, Technology, Engineering, and Mathematics here. Many lessons/tutorials listed below require prerequisite knowledge and are not aimed at the general reader.
 
 - [Time Complexity](/resources/tutorials/big-o)
 - [How to Debug Memory in Visual Studio 2019](/resources/tutorials/vs2019-debug)
