@@ -19,6 +19,7 @@ You will find curated tutorials and lessons in Science, Technology, Engineering,
 - [Time Complexity](/resources/tutorials/big-o)
 - [How to Debug Memory in Visual Studio 2019](/resources/tutorials/vs2019-debug)
 - [Integrating the Bell Curve](/resources/tutorials/bell-curve-integration)
+- [Understanding the Cardinality of Infinite Sets](/resources/tutorials/cardinality-of-infinite-sets)
 
 # Videos
 
