@@ -17,6 +17,7 @@ It seems very difficult for a human to find the area of an irregular polygon lik
 
 ```c
 #include <stdio.h>
+#include <math.h>
 
 struct Vertex
 {
@@ -30,13 +31,14 @@ float det(float a, float b, float c, float d)
 
 float area(struct Vertex* vertices, int n)
 {
-    unsigned long result = 0;
+    float result = 0; 
     for (int i = 1; i < n; i++)
-        result += det(vertices[i - 1].x, vertices[i - 1].y, vertices[i].x, vertices[i].y);
-    return result + det(vertices[n - 1].x, vertices[n - 1].y, vertices[0].x, vertices[0].y);
+        result += det(vertices[i - 1].x, vertices[i - 1].y, vertices[i].x, vertices[i].y);                   
+    result += det(vertices[n - 1].x, vertices[n - 1].y, vertices[0].x, vertices[0].y);
+    return fabs(result) / 2;
 }
 
-int main() 
+int main(void) 
 {
     // edit the array with your own vertices in cartesian coordinates
     struct Vertex vertices[] = { 
@@ -48,6 +50,6 @@ int main()
     };
     
     float result = area(vertices, sizeof(vertices) / sizeof(vertices[0]));
-    printf("The area of your polygon is %f.", result);
+    printf("The area of your polygon is %f", result);
 }
 ```
