@@ -9,11 +9,11 @@ A polygon is defined as a two-dimensional figure made up of line segments connec
 
 ![image](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/85f50e29-8d4a-47b4-9228-40a1c6c66a7b)
 
-As you could imagine, calculating the area of a regular polygon is very easy. However, how can we find the area of these irregular polygons shown below?
+As you could imagine, calculating the area of a regular polygon is very easy. However, how can we find the area of these irregular polygons?
 
 ![image](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/15fdc522-ddd4-4143-bbbd-ee84cf78fdbf)
 
-It seems very difficult for a human to find the area of an irregular polygon like the ones shown above. Therefore, we need a program to help us compute the area of irregular polygons. In fact, this problem often appears in topics related to computer graphics. After all, a visual game is composed of polygons and computer scientists need to find a fast and efficient way of getting the area of shapes so players do not lag when playing intensive games. The C program below demonstrates how we can compute the area of any polygon (regular or irregular) if we know its vertices.
+It is very difficult for a human to find the area of an irregular polygon like the ones shown above. Therefore, we need a program to help us compute the area of irregular polygons. In fact, this problem often appears in topics related to computer graphics. After all, a visual game is composed of polygons and computer scientists need to find a fast and efficient way of getting the area of shapes so players do not lag when playing intensive games. The C program below demonstrates how we can compute the area of any polygon (regular or irregular) if we know its vertices.
 
 ```c
 #include <stdio.h>
