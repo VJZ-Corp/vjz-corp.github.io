@@ -13,7 +13,7 @@ As you could imagine, calculating the area of a regular polygon is very easy. Ho
 
 ![image](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/15fdc522-ddd4-4143-bbbd-ee84cf78fdbf)
 
-It is very difficult for a human to find the area of an irregular polygon like the ones shown above. Therefore, we need a program to help us compute the area of irregular polygons. In fact, this problem often appears in topics related to computer graphics. After all, a visual game is composed of polygons and computer scientists need to find a fast and efficient way of getting the area of shapes so players do not lag when playing intensive games. The C program below demonstrates how we can compute the area of any polygon (regular or irregular) if we know its vertices.
+It is very difficult for a human to find the area of irregular polygons like the ones shown above. Therefore, we need a program to help us compute the area of irregular polygons. In fact, this problem often appears in topics related to computer graphics. After all, a visual game is composed of polygons and computer scientists need to find a fast and efficient way of getting the area of shapes so players do not lag when playing intensive games. The C program below demonstrates how we can compute the area of any polygon (regular or irregular) if we know its vertices.
 
 ```c
 #include <stdio.h>
@@ -53,3 +53,18 @@ int main(void)
     printf("The area of your polygon is %f", result);
 }
 ```
+
+## How It Works
+Essentially, the C code provided is computing the area using the following formula:
+
+$$
+A = \frac{1}{2} \bigg(\begin{vmatrix}
+x_{n-1} & y_{n-1} \\ 
+x_0 & y_0 
+\end{vmatrix} + \sum_{i = 1}^{n-1} \begin{vmatrix}
+x_{i-1} & y_{i-1} \\ 
+x_i & y_i 
+\end{vmatrix} \bigg).
+$$
+
+In the equation above, $A$ is the area, $(x_i, y_i)$ is the coordinate of the $i$-th vertex, and $n$ is the number of vertices. *We start indexing at 0 to stay consistent with computer science conventions.*
