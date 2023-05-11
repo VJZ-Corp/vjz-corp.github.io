@@ -72,4 +72,11 @@ In the equation above, $A$ is the area of the polygon, $(x_i, y_i)$ is the carte
 #### **At this point, you should have some understanding of vector calculus before proceeding.** 
 
 Let us start by looking at the most simple polygon: a triangle. Consider the arbitrarily defined triangle below:
-![Untitled drawing](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/95845c35-79e7-49f2-a632-983003b3796d)
+
+![Untitled drawing (2)](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/983dab30-9642-45b0-8da9-57981b27240b)
+
+We can represent two of its three sides as vectors like so:
+
+![Untitled drawing (1) (1)](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/1e8ecaaa-9676-4620-8ba4-d1e5c65bbf4f)
+
+With vectors $\vec{a}$ and $\vec{b}$, we have managed to reach all vertices of the triangle.
