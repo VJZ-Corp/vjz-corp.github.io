@@ -67,6 +67,9 @@ x_i & y_i
 \end{vmatrix} \bigg).
 $$
 
-In the equation above, $A$ is the area of the polygon, $(x_i, y_i)$ is the cartesian coordinate of the $i$-th vertex, and $n$ is the number of vertices. *The formula starts indexing at 0 to stay consistent with computer science conventions.*  In the next section, we will show you why this formula works for any polygon, regular or irregular.
+In the equation above, $A$ is the area of the polygon, $(x_i, y_i)$ is the cartesian coordinate of the $i$-th vertex, and $n$ is the number of vertices. *The formula starts indexing at 0 to stay consistent with computer science conventions.*  In the next section, we will show you why this formula works for any regular or irregular polygon.
 
-####**At this point, you should have some understanding of vector calculus before proceeding.** 
+#### **At this point, you should have some understanding of vector calculus before proceeding.** 
+
+Let us start by looking at the most simple polygon: a triangle. Consider the arbitrarily defined triangle below:
+![Untitled drawing](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/95845c35-79e7-49f2-a632-983003b3796d)
