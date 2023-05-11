@@ -67,4 +67,6 @@ x_i & y_i
 \end{vmatrix} \bigg).
 $$
 
-In the equation above, $A$ is the area, $(x_i, y_i)$ is the coordinate of the $i$-th vertex, and $n$ is the number of vertices. *We start indexing at 0 to stay consistent with computer science conventions.*
+In the equation above, $A$ is the area of the polygon, $(x_i, y_i)$ is the cartesian coordinate of the $i$-th vertex, and $n$ is the number of vertices. *We start indexing at 0 to stay consistent with computer science conventions.* We will show you how this formula came to be below.
+
+#### **At this point, you should have some understanding of vector calculus before proceeding.** 
