@@ -79,4 +79,18 @@ We can represent two of its three sides as vectors like so:
 
 ![Untitled drawing (1) (1)](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/1e8ecaaa-9676-4620-8ba4-d1e5c65bbf4f)
 
-With vectors $\vec{a}$ and $\vec{b}$, we have managed to reach all vertices of the triangle.
+With vectors $\vec{a}$ and $\vec{b}$, we have managed to reach all vertices of the triangle:
+
+$$
+\vec{a} = \begin{bmatrix}
+           x_1 - x_0 \\
+           y_1 - y_0 \\
+         \end{bmatrix}
+$$
+
+$$
+\vec{b} = \begin{bmatrix}
+           x_2 - x_0 \\
+           y_2 - y_0 \\
+         \end{bmatrix}
+$$
