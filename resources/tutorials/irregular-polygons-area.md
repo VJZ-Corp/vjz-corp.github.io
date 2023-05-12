@@ -102,7 +102,7 @@ $$
 \end{align*}
 $$
 
-The notation $\partial T$ denotes the boundary of region $T$. In this case, $T$ is a triangle so the boundary of $T$ is made of three connected line segments:
+The notation $\partial T$ denotes the boundary of region $T$. In this case, $T$ is a triangle, so the boundary of $T$ is made of three connected line segments:
 
 $$
 \oint_{\partial T} (x \,dy - y \, dx) = \sum_{i=0}^2 \int_{C_i} (x \,dy - y \, dx).
@@ -128,7 +128,7 @@ $$
 C_2 : x = t(x_0 - x_2) + x_2, \, y = t(y_0-y_2) + y_2
 $$
 
-Now we take these parameterizations and subsitute them back into the line integrals:
+Now we take these parameterizations and substitute them back into the line integrals:
 
 $$
 \begin{align*}
