@@ -40,4 +40,4 @@ Memory Debug Visualizer (*memdbgvis*) is a powerful read-only Java debugger that
 - The Static Fields tab shows debuggee's relevant static fields. This tab helps the programmer understand the current state of the class-level variables.
 - The Heap Inspector is an advanced, cutting-edge tool designed to provide a more comprehensive view of an object's contents by extracting data from the heap directly. This tool is extremely useful if a hashcode is generated instead of a .toString() visualization as mentioned above.
 
-Get *memdbgvis* for free here: https://github.com/VJZ-Corp/memdbgvis.
+Get *memdbgvis* for free here: [https://github.com/VJZ-Corp/memdbgvis](https://github.com/VJZ-Corp/memdbgvis).
