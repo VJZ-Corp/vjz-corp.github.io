@@ -134,9 +134,15 @@ Now we take these parameterizations and subsitute them back into the line integr
 $$
 \begin{align*}
 \int_{C_0} (x \,dy - y \, dx) &= \int_0^1 x \frac{dy}{dt} \, dt - \int_0^1 y \frac{dx}{dt} \, dt \\
-&= \int_0^1 (t(x_1 - x_0) + x_0)(x_1 - x_0) \, dt - \int_0^1 (t(y_1-y_0) + y_0)(y_1-y_0) \, dt \\
-&= \int_0^1 (t(x_1 - x_0) + x_0)(x_1 - x_0) - (t(y_1-y_0) + y_0)(y_1-y_0) \, dt \\
-&= \int_0^1 (x_1t - x_0t + x_0)(x_1 - x_0) - (y_1t - y_0t + y_0)(y_1-y_0) \, dt \\
-&= \int_0^1 (t x_0^2 - 2 t x_1 x_0 + t x_1^2 - t y_0^2 - t y_1^2 + 2 t y_0 y_1 - x_0^2 + x_1 x_0 + y_0^2 - y_0 y_1) \, dt
+&= \int_0^1 (t(x_1 - x_0) + x_0)(y_1 - y_0) \, dt - \int_0^1 (t(y_1-y_0) + y_0)(x_1-x_0) \, dt \\
+&= \int_0^1 (t(x_1 - x_0) + x_0)(y_1 - y_0) - (t(y_1-y_0) + y_0)(x_1-x_0) \, dt \\
+&= \int_0^1 (-y_0 t(x_1 - x_0) + y_1 t(x_1 - x_0) + x_0 t(y_1 - y_0) - x_1 t(y_1 - y_0) - x_1 y_0 + x_0 y_1) \, dt \\
+&= \int_0^1 (-y_0 t(x_1 - x_0) + y_1 t(x_1 - x_0) + x_0 t(y_1 - y_0) - x_1 t(y_1 - y_0) - x_1 y_0 + x_0 y_1) \, dt \\
+&= \int_0^1 (x_0y_1 - x_1y_0) \,dt \\
+&= x_0y_1 - x_1y_0 \\
+&= \begin{vmatrix}
+x_0 & y_0\\ 
+x_1 & y_1 
+\end{vmatrix}.
 \end{align*}
 $$
