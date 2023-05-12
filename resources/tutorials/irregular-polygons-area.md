@@ -71,26 +71,72 @@ In the equation above, $A$ is the area of the polygon, $(x_i, y_i)$ is the carte
 
 #### **At this point, you should have some understanding of vector calculus before proceeding.** 
 
-Let us start by looking at the most simple polygon: a triangle. Consider the arbitrarily defined triangle below:
+Let us start by looking at the most simple polygon: a triangle. Consider an arbitrarily defined triangle below:
 
-![Untitled drawing (2)](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/983dab30-9642-45b0-8da9-57981b27240b)
+![Untitled drawing (3)](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/845c0d40-2bc4-4c11-ac2b-98a96c9b8c14)
 
-We can represent two of its three sides as vectors like so:
-
-![Untitled drawing (1) (1)](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/1e8ecaaa-9676-4620-8ba4-d1e5c65bbf4f)
-
-With vectors $\vec{a}$ and $\vec{b}$, we have managed to reach all vertices of the triangle:
+We can use a double integral to find the area of triangle $T$:
 
 $$
-\vec{a} = \begin{bmatrix}
-           x_1 - x_0 \\
-           y_1 - y_0 \\
-         \end{bmatrix}
+A = \iint\limits_{T} dA.
+$$
+
+Since polygons (including this triangle) are made of line segments, we can relate a double integral to a line integral by using Green's theorem. The double integral now becomes:
+
+$$
+A = \iint\limits_{T} 1\\, dA = \iint\limits_{T} \bigg(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\bigg) \\, dA.
+$$
+
+Let us define the vector field $\vec{F} = \langle -y, x \rangle$. Then, $\displaystyle \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 2$. However, if you look at the equation for Green's theorem above, you will see that the integrand should be 1 and not 2. This is not a problem, since we can just rearrange some terms to get our desired result (note the one-half being present):
+
+$$
+A = \iint\limits_{T} 1\\, dA = \frac{1}{2} \oint_{\partial T} \vec{F} \cdot d\vec{r}.
+$$
+
+In the equation above, we define $\vec{r} = \langle x, y \rangle$. Therefore, the closed integral becomes:
+
+$$
+\begin{align*}
+\oint_{\partial T} \vec{F} \cdot d\vec{r} &= \oint_{\partial T} \langle -y, x \rangle \cdot d\langle x,y \rangle \\
+&= \oint_{\partial T} \langle -y, x \rangle \cdot \langle dx,dy \rangle \\ 
+&= \oint_{\partial T} (x \\,dy - y \\, dx).
+\end{align*}
+$$
+
+The notation $\partial T$ denotes the boundary of region $T$. In this case, $T$ is a triangle so the boundary of $T$ is made of three connected line segments:
+
+$$
+\oint_{\partial T} (x \\,dy - y \\, dx) = \sum_{i=0}^2 \int_{C_i} (x \\,dy - y \\, dx).
+$$
+
+Notice how I introduced the summation notation. This is important because it is setting us up for the general formula of a polygon with $n$ vertices, which will have $n$ connected line segments. Since computers start indexing at zero, the summation goes up to $n-1$. Keep that in mind as we continue. For now, let us go back to the triangle example:
+
+$$
+\sum_{i=0}^2 \int_{C_i} (x \\,dy - y \\, dx) = \int_{C_0} (x \\,dy - y \\, dx) + \int_{C_1} (x \\,dy - y \\, dx) + \int_{C_2} (x \\,dy - y \\, dx).
+$$
+
+We need to now parameterize the curves $C_0, C_1$, and $C_2$ for $0 \leq t \leq 1$:
+
+$$
+C_0 : x = t(x_1 - x_0) + x_0, \\, y = t(y_1-y_0) + y_0 
 $$
 
 $$
-\vec{b} = \begin{bmatrix}
-           x_2 - x_0 \\
-           y_2 - y_0 \\
-         \end{bmatrix}
+C_1 : x = t(x_2 - x_1) + x_1, \\, y = t(y_2-y_1) + y_1 
+$$
+
+$$
+C_2 : x = t(x_0 - x_2) + x_2, \\, y = t(y_0-y_2) + y_2
+$$
+
+Now we take these parameterizations and subsitute them back into the line integrals (we only have to do one line integral to get the point across):
+
+$$
+\begin{align*}
+\int_{C_0} (x \\,dy - y \\, dx) &= \int_0^1 x \frac{dy}{dt} \\, dt - \int_0^1 y \frac{dx}{dt} \\, dt \\
+&= \int_0^1 (t(x_1 - x_0) + x_0)(x_1 - x_0) \\, dt - \int_0^1 (t(y_1-y_0) + y_0)(y_1-y_0) \\, dt \\
+&= \int_0^1 (t(x_1 - x_0) + x_0)(x_1 - x_0) - (t(y_1-y_0) + y_0)(y_1-y_0) \\, dt \\
+&= \int_0^1 (x_1t - x_0t + x_0)(x_1 - x_0) - (y_1t - y_0t + y_0)(y_1-y_0) \\, dt \\
+&= \int_0^1 (x_1^2t - 2x_0x_1t + x_0x_1 + x_0^2t +x_0^2) - (y_1^2t - 2y_0y_1t + y_0y_1 - y_0^2t + y_0^2) \\, dt
+\end{align*}
 $$
