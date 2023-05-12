@@ -145,3 +145,17 @@ x_1 & y_1
 \end{vmatrix}.
 \end{align*}
 $$
+
+$$
+\begin{align*}
+\int_{C_1} (x \,dy - y \, dx) &= \int_0^1 (t(x_2 - x_1) + x_1)(y_2 - y_1) \, dt - \int_0^1 (t(y_2-y_1) + y_1)(x_2-x_1) \, dt \\
+&= \int_0^1 (t(x_2 - x_1) + x_1)(y_2 - y_1) - (t(y_2-y_1) + y_1)(x_2-x_1) \, dt \\
+&= \int_0^1 (-y_1 t(x_2 - x_1) + y_2 t(x_2 - x_1) + x_1 t(y_2 - y_1) - x_2 t(y_2 - y_1) - x_2 y_1 + x_1 y_2) \, dt \\
+&= \int_0^1 (x_1y_2 - x_2y_1) \,dt \\
+&= x_1y_2 - x_2y_1 \\
+&= \begin{vmatrix}
+x_1 & y_1\\ 
+x_2 & y_2
+\end{vmatrix}.
+\end{align*}
+$$
