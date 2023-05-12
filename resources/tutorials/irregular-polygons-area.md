@@ -183,7 +183,7 @@ x_0 & y_0
 \end{vmatrix}\bigg)
 $$
 
-This looks very similar to the formula that the C code was implementing. The only difference is the last determinant "wraps" around back to $(x_0, y_0)$. This is what makes a polygon a closed chain of line segments. We have just found the area of any triangle but we are not done yet as we have to generalize it to all polygons now. Do not worry, the generalization step is usually the quickest since we already have a pattern to work with. Let us go back to the original Green's theorem equation for area:
+This looks very similar to the formula that the C code was implementing. Keep in mind that the last determinant "wraps" back around to $(x_0, y_0)$. This is what makes a polygon a closed chain of line segments. We have just found the area of any triangle but we are not done yet as we have to generalize it to all polygons now. Do not worry, the generalization step is usually the quickest since we already have a pattern to work with. Let us go back to the original Green's theorem equation for area:
 
 $$
 A = \iint\limits_T dA = \frac{1}{2} \oint_{\partial T} (x \,dy - y \, dx).
@@ -210,5 +210,5 @@ x_0 & y_0
 \end{vmatrix} + \sum_{i = 1}^{n-1} \begin{vmatrix}
 x_{i-1} & y_{i-1} \\ 
 x_i & y_i 
-\end{vmatrix} \bigg).\, \square
+\end{vmatrix} \bigg).\,\, \square
 $$
