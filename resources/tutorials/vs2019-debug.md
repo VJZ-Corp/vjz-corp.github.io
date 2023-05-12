@@ -68,7 +68,7 @@ These values are stored in hexadecimal (base 16) which means that `0x23` = 35 in
 
 ![image](https://user-images.githubusercontent.com/73851560/185766037-b748e025-ee3a-4132-a60b-c66cdb99f621.png)
 
-[5] confirms that the change in memory has been made (noting the red highlight) and you can see that in the “Locals” section, the value has been sucessfully changed to 35 (`0x23`).
+[5] confirms that the change in memory has been made (noting the red highlighting) and you can see that in the “Locals” section, the value has been sucessfully changed to 35 (`0x23`).
 
 ![image](https://user-images.githubusercontent.com/73851560/185766041-558dba9b-ad49-446b-8c33-f5da65d83ac6.png)
 
