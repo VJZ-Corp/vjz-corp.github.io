@@ -60,15 +60,15 @@ We are now very close to viewing our program’s memory. After you have selected
 
 ![image](https://user-images.githubusercontent.com/73851560/185766009-2cb6f100-3a18-4ccc-b892-314c9da7587a.png)
 
-[3] shows the physical location of variable num once you input the address of num (stored in pointer at [4]). This demonstrates the use of pointers and allows us to see what is going on behind the scenes. You can see at [3], the memory address and the “Locals” tab have the same value, and is also stored in num at line 5, which is 4. That is wonderful! We now can read memory but how about writing to memory? Can we modify the memory? Of course! Right click on the byte of data (the 2 hex digits) and you can change it to whatever you want, I am going to change mine to 0x23.
+[3] shows the physical location of variable num once you input the address of num (stored in pointer at [4]). This demonstrates the use of pointers and allows us to see what is going on behind the scenes. You can see at [3], the memory address and the “Locals” tab have the same value, and is also stored in num at line 5, which is 4. That is wonderful! We now can read memory but how about writing to memory? Can we modify the memory? Of course! Right click on the byte of data (the 2 hex digits) and you can change it to whatever you want, I am going to change mine to `0x23`.
 
 ![image](https://user-images.githubusercontent.com/73851560/185766018-e87efb2f-ab1a-42a1-903c-e96aa6ae78f9.png)
 
-These values are stored in hexadecimal (base 16) which means that $0x23 = 35$ in base 10 (decimal).
+These values are stored in hexadecimal (base 16) which means that `0x23` = 35 in base 10 (decimal).
 
 ![image](https://user-images.githubusercontent.com/73851560/185766037-b748e025-ee3a-4132-a60b-c66cdb99f621.png)
 
-[5] confirms that the change in memory has been made (noting the red highlight) and you can see that in the “Locals” section, the value has been sucessfully changed to 35 (0x23).
+[5] confirms that the change in memory has been made (noting the red highlight) and you can see that in the “Locals” section, the value has been sucessfully changed to 35 (`0x23`).
 
 ![image](https://user-images.githubusercontent.com/73851560/185766041-558dba9b-ad49-446b-8c33-f5da65d83ac6.png)
 
