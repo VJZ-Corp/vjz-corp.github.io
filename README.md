@@ -28,3 +28,16 @@ Toolboxal is a user-friendly application with its audience targeted mainly towar
 - *Search Tool*: when you need to search for a solution online (google search).
 
 You can get Toolboxal for free at [https://github.com/VJZ-Corp/Toolboxal](https://github.com/VJZ-Corp/Toolboxal).
+
+# *memdbgvis*
+Memory Debug Visualizer (*memdbgvis*) is a powerful read-only Java debugger that enables programmers to visualize the state of their program's memory at runtime. With Memory Debug Visualizer, programmers can fine tune the placement of breakpoints in order to closely examine memory contents. Whether you are a novice or experienced programmer, Memory Debug Visualizer empowers you to efficiently identify and address memory-related issues in Java. It has the following features:
+
+- The Line Number of Invocation indicates the line number to which the visualization corresponds, reflecting the placement of the associated breakpoint.
+- The Call Stack view displays the complete call stack of the current thread along with every method pertaining to the call stack.
+- The Current Thread of Invocation presents the current thread and priority from which *memdbgvis* was invoked.
+- The Runtime Memory Metrics display provides runtime metrics of your program, enabling you to diagnose the performance of the JVM.
+- The Local Variables tab displays variables in the current method, capturing the stack frame's state for the programmer's reference. Additionally, the reference this is highlighted in blue to indicate whether the stack frame is for an instance or static method.
+- The Static Fields tab shows debuggee's relevant static fields. This tab helps the programmer understand the current state of the class-level variables.
+- The Heap Inspector is an advanced, cutting-edge tool designed to provide a more comprehensive view of an object's contents by extracting data from the heap directly. This tool is extremely useful if a hashcode is generated instead of a .toString() visualization as mentioned above.
+
+Get *memdbgvis* for free here: https://github.com/VJZ-Corp/memdbgvis.
