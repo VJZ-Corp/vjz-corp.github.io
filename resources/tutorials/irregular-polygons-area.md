@@ -93,7 +93,7 @@ $$
 A = \iint\limits_{T} 1\, dA = \frac{1}{2} \oint_{\partial T} \vec{F} \cdot d\vec{r}.
 $$
 
-In the equation above, we define $d\vec{r} = \langle x, dy \rangle$. Therefore, the closed integral becomes:
+In the equation above, we define $d\vec{r} = \langle dx, dy \rangle$. Therefore, the closed integral becomes:
 
 $$
 \begin{align*}
