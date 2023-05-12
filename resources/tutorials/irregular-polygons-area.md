@@ -129,19 +129,18 @@ $$
 C_2 : x = t(x_0 - x_2) + x_2, \, y = t(y_0-y_2) + y_2
 $$
 
-Now we take these parameterizations and subsitute them back into the line integrals (we only have to do one line integral to get the point across):
+Now we take these parameterizations and subsitute them back into the line integrals:
 
 $$
 \begin{align*}
 \int_{C_0} (x \,dy - y \, dx) &= \int_0^1 x \frac{dy}{dt} \, dt - \int_0^1 y \frac{dx}{dt} \, dt \\
 &= \int_0^1 (t(x_1 - x_0) + x_0)(y_1 - y_0) \, dt - \int_0^1 (t(y_1-y_0) + y_0)(x_1-x_0) \, dt \\
 &= \int_0^1 (-y_0 t(x_1 - x_0) + y_1 t(x_1 - x_0) + x_0 t(y_1 - y_0) - x_1 t(y_1 - y_0) - x_1 y_0 + x_0 y_1) \, dt \\
-&= \int_0^1 (x_0y_1 - x_1y_0) \,dt \\
 &= x_0y_1 - x_1y_0 \\
 &= \begin{vmatrix}
 x_0 & y_0\\ 
 x_1 & y_1 
-\end{vmatrix}.
+\end{vmatrix}
 \end{align*}
 $$
 
@@ -149,11 +148,67 @@ $$
 \begin{align*}
 \int_{C_1} (x \,dy - y \, dx) &= \int_0^1 (t(x_2 - x_1) + x_1)(y_2 - y_1) \, dt - \int_0^1 (t(y_2-y_1) + y_1)(x_2-x_1) \, dt \\
 &= \int_0^1 (-y_1 t(x_2 - x_1) + y_2 t(x_2 - x_1) + x_1 t(y_2 - y_1) - x_2 t(y_2 - y_1) - x_2 y_1 + x_1 y_2) \, dt \\
-&= \int_0^1 (x_1y_2 - x_2y_1) \,dt \\
 &= x_1y_2 - x_2y_1 \\
 &= \begin{vmatrix}
 x_1 & y_1\\ 
 x_2 & y_2
-\end{vmatrix}.
+\end{vmatrix}
 \end{align*}
+$$
+
+$$
+\begin{align*}
+\int_{C_1} (x \,dy - y \, dx) &= \int_0^1 (t(x_0 - x_2) + x_2)(y_0 - y_2) \, dt - \int_0^1 (t(y_0-y_2) + y_2)(x_0-x_2) \, dt \\
+&= \int_0^1 (y_0 t(x_0 - x_2) - y_2 t(x_0 - x_2) - x_0 t(y_0 - y_2) + x_2 t(y_0 - y_2) + x_2 y_0 - x_0 y_2) \, dt \\
+&= x_2y_0 - x_0y_2 \\
+&= \begin{vmatrix}
+x_2 & y_2\\ 
+x_0 & y_0
+\end{vmatrix}
+\end{align*}
+$$
+
+When we derived the integrals above, a pattern emerges. This is where the determinant comes into play.
+
+$$
+\frac{1}{2} \sum_{i=0}^2 \int_{C_i} (x \,dy - y \, dx) = \frac{1}{2} \bigg(\begin{vmatrix}
+x_0 & y_0\\ 
+x_1 & y_1 
+\end{vmatrix} + \begin{vmatrix}
+x_1 & y_1\\ 
+x_2 & y_2
+\end{vmatrix} + \begin{vmatrix}
+x_2 & y_2\\ 
+x_0 & y_0
+\end{vmatrix}\bigg)
+$$
+
+This looks very similar to the formula that the C code was implementing. The only difference is the last determinant "wraps" around back to $(x_0, y_0)$. This is what makes a polygon a closed chain of line segments. We have just found the area of any triangle but we are not done yet as we have to generalize it to all polygons now. Do not worry, the generalization step is usually the quickest since we already have a pattern to work with. Let us go back to the original Green's theorem equation for area:
+
+$$
+A = \iint\limits_T dA = \frac{1}{2} \oint_{\partial T} (x \,dy - y \, dx).
+$$
+
+The closed line integral $\displaystyle \oint_{\partial T} (x \,dy - y \, dx) = \sum_{i=0}^{n-1} \int_{C_i} (x \,dy - y \, dx)$. From the triangle example above, we found that 
+
+$$
+\sum_{i=0}^{n-1} \int_{C_i} (x \,dy - y \, dx) = \begin{vmatrix}
+x_{n-1} & y_{n-1} \\ 
+x_0 & y_0 
+\end{vmatrix} + \sum_{i = 1}^{n-1} \begin{vmatrix}
+x_{i-1} & y_{i-1} \\ 
+x_i & y_i 
+\end{vmatrix},
+$$
+
+which means 
+
+$$
+A = \frac{1}{2} \bigg(\begin{vmatrix}
+x_{n-1} & y_{n-1} \\ 
+x_0 & y_0 
+\end{vmatrix} + \sum_{i = 1}^{n-1} \begin{vmatrix}
+x_{i-1} & y_{i-1} \\ 
+x_i & y_i 
+\end{vmatrix} \bigg).\, \square
 $$
