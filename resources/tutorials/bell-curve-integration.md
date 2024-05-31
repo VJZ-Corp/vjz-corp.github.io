@@ -22,13 +22,13 @@ The probability density function (PDF) is our function of interest as it is the 
 Now, we need to find the antiderivative of the PDF. First, we need to know what even is the PDF. Well here it is:
 
 $$
-\Large \displaystyle \Large f(x) = \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}}
+\displaystyle f(x) = \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}}
 $$
 
 When plotted out, this function will take the shape of a bell (see figure above). At first, it may seem impossible to integrate this, but remember: $\sigma$ and $\mu$ are constants, as the standard deviation and mean of any dataset are just numbers. This makes it possible to integrate now:
 
 $$
-\Large \displaystyle \Large \int \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}} \text{ }dx
+\displaystyle \int \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}} \text{ }dx
 $$
 
 ## Part I: Finding the Antiderivative
@@ -36,63 +36,63 @@ Before we start to integrate the PDF, we need to modify a few things about the i
 
 $$
 \begin{aligned}
-& \displaystyle \Large \int \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}} \text{ }dx \\
-\Large &= \Large \frac{1}{\sigma \sqrt{2\pi}} \int e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2} \text{ }dx \\
-\Large &= \displaystyle \Large \frac{1}{\sigma \sqrt{2\pi}} \int e^{-\frac{(x - \mu)^2}{2 \sigma^2}} \text{ }dx
+& \displaystyle \int \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}} \text{ }dx \\
+&= \frac{1}{\sigma \sqrt{2\pi}} \int e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2} \text{ }dx \\
+&= \displaystyle \frac{1}{\sigma \sqrt{2\pi}} \int e^{-\frac{(x - \mu)^2}{2 \sigma^2}} \text{ }dx
 \end{aligned}
 $$
 
 Notice how I multiplied out the exponent of the integrand for the sake of convenience. Those who are experienced with different types of integrals may already see it, but for everyone else, choosing a distinct value for u-substitution is the most crucial step in solving this problem:
 
 $$
-\Large \displaystyle \Large u = \frac{x - \mu}{\sigma \sqrt 2}
+\displaystyle u = \frac{x - \mu}{\sigma \sqrt 2}
 $$
 
 Why this value? Because if we square this u-value, we get our original exponent:
 
 $$
-\Large \displaystyle \Large u^2 = \big(\frac{x - \mu}{\sigma \sqrt 2}\big)^2 = \frac{(x - \mu)^2}{2 \sigma^2}
+\displaystyle u^2 = \big(\frac{x - \mu}{\sigma \sqrt 2}\big)^2 = \frac{(x - \mu)^2}{2 \sigma^2}
 $$
 
 So following through with finding a suitable $dx$ in terms of $du$ (remember that $𝜇$ is constant when taking the derivative):
 
 $$
-\displaystyle \Large u = \frac{x - \mu}{\sigma \sqrt 2}
+\displaystyle u = \frac{x - \mu}{\sigma \sqrt 2}
 $$
 
 $$
-\implies \displaystyle \Large \frac{du}{dx} = \frac{1}{\sigma \sqrt 2}
+\implies \displaystyle \frac{du}{dx} = \frac{1}{\sigma \sqrt 2}
 $$
 
 $$
-\implies \displaystyle \Large dx = \sigma \sqrt 2 \text{ }du
+\implies \displaystyle dx = \sigma \sqrt 2 \text{ }du
 $$
 
 We get the following new integral with $u$ substituted in:
 
 $$
-\displaystyle \Large \int e^{-u^2} \sigma \sqrt 2 \text{ } du
+\displaystyle \int e^{-u^2} \sigma \sqrt 2 \text{ } du
 $$
 
 Follow closely, as this is a seemingly arbitrary but important step many fail to see:
 
 $$
-\displaystyle \Large \int e^{-u^2} \sigma \sqrt 2 \text{ } du = \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du
+\displaystyle \int e^{-u^2} \sigma \sqrt 2 \text{ } du = \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du
 $$
 
 First, remember that multiplying 1 to the integrand does nothing to it. But, why do we even multiply 1 in the first place? And why is 1 represented as the square root of $\pi$ divided by itself? To answer those questions, let me present you the Gaussian error function:
 
 $$
-\displaystyle \Large \text{erf}(z) = \frac{2}{\sqrt\pi} \int_0^z e^{-t^2} \text{ } dt
+\displaystyle \text{erf}(z) = \frac{2}{\sqrt\pi} \int_0^z e^{-t^2} \text{ } dt
 $$
 
 The error function is non-elementary, meaning it cannot be represented with a finite amount of logarithms, exponents, polynomials, or trigonomic functions. While that is a bummer, we can use a specialized $\text{erf}(x)$ notation to represent the error function. With that out of the way, is the pattern apparent? We are trying to get our integral in the form of the error function! Continuing with our integration, we are going to pull out the constants once again except for the denominator of the integrand and $\sqrt 2$:
 
 $$
 \begin{aligned}
-& \displaystyle \Large \int e^{-u^2} \sigma \sqrt 2 \text{ } du \\
-\Large &= \Large \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du \\
-\Large &= \Large \sigma\sqrt \pi \int \frac{e^{-u^2} \sqrt2}{\sqrt \pi} \text{ } du
+& \displaystyle \int e^{-u^2} \sigma \sqrt 2 \text{ } du \\
+&= \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du \\
+&= \sigma\sqrt \pi \int \frac{e^{-u^2} \sqrt2}{\sqrt \pi} \text{ } du
 \end{aligned}
 $$
 
@@ -100,10 +100,10 @@ Now, we need to irrationalize the denominator in order to fit it into the form o
 
 $$
 \begin{aligned}
-\Large & \displaystyle \Large \int e^{-u^2} \sigma \sqrt 2 \text{ } du \\
-\Large &= \Large \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du \\
-\Large &= \Large \sigma\sqrt \pi \int \frac{e^{-u^2} \sqrt2}{\sqrt \pi} \text{ } du \\
-\Large &= \Large \frac{\sigma \sqrt \pi}{\sqrt2} \int \frac{2e^{-u^2}}{\sqrt \pi} \text{ } du
+& \displaystyle \int e^{-u^2} \sigma \sqrt 2 \text{ } du \\
+&= \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du \\
+&= \sigma\sqrt \pi \int \frac{e^{-u^2} \sqrt2}{\sqrt \pi} \text{ } du \\
+&= \frac{\sigma \sqrt \pi}{\sqrt2} \int \frac{2e^{-u^2}}{\sqrt \pi} \text{ } du
 \end{aligned}
 $$
 
@@ -111,12 +111,12 @@ Now, we extract the constants from the integrand once again:
 
 $$
 \begin{aligned}
-& \displaystyle \Large \int e^{-u^2} \sigma \sqrt 2 \text{ } du \\
-\Large &= \Large \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du \\
-\Large &= \Large \sigma\sqrt \pi \int \frac{e^{-u^2} \sqrt2}{\sqrt \pi} \text{ } du \\
-\Large &= \Large \frac{\sigma \sqrt \pi}{\sqrt2} \int \frac{2e^{-u^2}}{\sqrt \pi} \text{ } du \\
-\Large &= \Large \frac{\sigma \sqrt \pi}{\sqrt2} \big( \frac{2}{\sqrt \pi} \int e^{-u^2} \text{ } du \big) \\
-\Large &= \Large \frac{\sigma \sqrt \pi}{\sqrt2} \text{erf}(u)
+& \displaystyle \int e^{-u^2} \sigma \sqrt 2 \text{ } du \\
+&= \int \frac{\sqrt \pi}{\sqrt \pi} e^{-u^2} \sigma \sqrt 2 \text{ } du \\
+&= \sigma\sqrt \pi \int \frac{e^{-u^2} \sqrt2}{\sqrt \pi} \text{ } du \\
+&= \frac{\sigma \sqrt \pi}{\sqrt2} \int \frac{2e^{-u^2}}{\sqrt \pi} \text{ } du \\
+&= \frac{\sigma \sqrt \pi}{\sqrt2} \big( \frac{2}{\sqrt \pi} \int e^{-u^2} \text{ } du \big) \\
+&= \frac{\sigma \sqrt \pi}{\sqrt2} \text{erf}(u)
 \end{aligned}
 $$
 
@@ -124,9 +124,9 @@ The term inside the parenthesis is the error function we talked about earlier. F
 
 $$
 \begin{aligned}
-& \displaystyle \Large \frac{1}{\sigma \sqrt2 \sqrt\pi} \frac{\sigma\sqrt\pi}{\sqrt2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \\
-\Large &= \Large \frac{1}{\sqrt2\sqrt2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \\
-\Large &= \Large \frac{1}{2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) + C
+& \displaystyle \frac{1}{\sigma \sqrt2 \sqrt\pi} \frac{\sigma\sqrt\pi}{\sqrt2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \\
+&= \frac{1}{\sqrt2\sqrt2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \\
+&= \frac{1}{2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) + C
 \end{aligned}
 $$
 
@@ -134,11 +134,11 @@ $$
 Finding the antiderivative of the PDF was pretty rough. Luckily computing the definite integral of the PDF will be relatively easier, as we have already done 90% of the work. Recall the Fundamental Theorem of Calculus, and apply that to our indefinite form, then integrate that expression from $a$ to $b$:
 
 $$
- \Large \displaystyle \left. \frac{1}{2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \right\vert_{a}^{b} = \Large \frac{1}{2} \bigg[\text{erf}\big(\frac{b-\mu}{\sigma\sqrt2}\big) - \text{erf}\big(\frac{a-\mu}{\sigma\sqrt2}\big) \bigg]
+ \displaystyle \left. \frac{1}{2} \text{erf}\big(\frac{x-\mu}{\sigma\sqrt2}\big) \right\vert_{a}^{b} = \frac{1}{2} \bigg[\text{erf}\big(\frac{b-\mu}{\sigma\sqrt2}\big) - \text{erf}\big(\frac{a-\mu}{\sigma\sqrt2}\big) \bigg]
 $$
 
 Unfortunately, the error function is a integral itself (see above), which is not very useful in computing a meaningful value. I will finish with the series expansion for the error function in one final gigantic monstrous equation for finding the definite integral of the bell curve (just plug in the constants and it should work):
 
 $$
-\displaystyle \Large \int_a^b \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}} \text{ }dx = \frac{1}{\sqrt\pi} \bigg[ \sum_{n=0}^\infty \bigg(\frac{\frac{b-\mu}{\sigma\sqrt2}}{2n+1} \prod_{k=1}^n \frac{-\big(\frac{b-\mu}{\sigma\sqrt2}\big)^2}{k}\bigg) - \sum_{n=0}^\infty \bigg(\frac{\frac{a-\mu}{\sigma\sqrt2}}{2n+1} \prod_{k=1}^n \frac{-\big(\frac{a-\mu}{\sigma\sqrt2}\big)^2}{k}\bigg) \bigg]
+\displaystyle \int_a^b \frac{e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^2}}{\sigma \sqrt{2\pi}} \text{ }dx = \frac{1}{\sqrt\pi} \bigg[ \sum_{n=0}^\infty \bigg(\frac{\frac{b-\mu}{\sigma\sqrt2}}{2n+1} \prod_{k=1}^n \frac{-\big(\frac{b-\mu}{\sigma\sqrt2}\big)^2}{k}\bigg) - \sum_{n=0}^\infty \bigg(\frac{\frac{a-\mu}{\sigma\sqrt2}}{2n+1} \prod_{k=1}^n \frac{-\big(\frac{a-\mu}{\sigma\sqrt2}\big)^2}{k}\bigg) \bigg]
 $$
