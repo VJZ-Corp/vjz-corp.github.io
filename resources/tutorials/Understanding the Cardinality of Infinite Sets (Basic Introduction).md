@@ -44,12 +44,12 @@ $$
 x + 1 = x \cup \\{ x \\}
 $$
 
-The Von Neumann Construction defines all natural numbers, $\mathbb N$, and the Axiom of Infinity states that $\exists \textbf{I}$ which is the set of all natural numbers. It follows that $|\textbf{I}|$ (the cardinality of $\textbf{I}$) is infinite. We define this infinity to be $\aleph_{0}$.
+The Von Neumann Construction defines all natural numbers, $\mathbb N$, and the Axiom of Infinity states that $\exists \textbf{I}$ which is the set of all natural numbers. It follows that $\|\textbf{I}\|$ (the cardinality of $\textbf{I}$) is infinite. We define this infinity to be $\aleph_{0}$.
 
 ---
 
 ## Cardinals vs. Ordinals
 
-There are two notions of infinity within set theory, being cardinals and ordinals. Cardinals denote the amount of objects within a set. For example, $|\\{ 1, 5, 7 \\}| = 3$. Ordinals define the order/enumeration of a set. To apply this to finite sets, we can assign each element of a set to the least natural number that has not been used yet. This definition can be extended to infinite sets. There are many cases where the cardinality and the ordinal of a set are the same. There are also some cases where they are not.
+There are two notions of infinity within set theory, being cardinals and ordinals. Cardinals denote the amount of objects within a set. For example, $\|\\{ 1, 5, 7 \\}\| = 3$. Ordinals define the order/enumeration of a set. To apply this to finite sets, we can assign each element of a set to the least natural number that has not been used yet. This definition can be extended to infinite sets. There are many cases where the cardinality and the ordinal of a set are the same. There are also some cases where they are not.
 
-Recall that $|\mathbb N| = \aleph_{0}$. The ordinal for $\mathbb N$ is $\omega$. There is a
+Recall that $\|\mathbb N\| = \aleph_{0}$. The ordinal for $\mathbb N$ is $\omega$. There is a
