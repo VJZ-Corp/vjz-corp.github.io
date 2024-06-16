@@ -52,4 +52,4 @@ The Von Neumann Construction defines all natural numbers, $\mathbb N$, and the A
 
 There are two notions of infinity within set theory, being cardinals and ordinals. Cardinals denote the amount of objects within a set. For example, $|\\{ 1, 5, 7 \\}| = 3$. Ordinals define the order/enumeration of a set. To apply this to finite sets, we can assign each element of a set to the least natural number that has not been used yet. This definition can be extended to infinite sets. There are many cases where the cardinality and the ordinal of a set are the same. There are also some cases where they are not.
 
-Recall
+Recall that $|\mathbb N| = \aleph_{0}$. The ordinal for $\mathbb N$ is $\omega$. There is a
