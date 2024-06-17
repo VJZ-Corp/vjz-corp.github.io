@@ -52,4 +52,12 @@ The Von Neumann Construction defines all natural numbers, $\mathbb N$, and the A
 
 There are two notions of infinity within set theory, being cardinals and ordinals. Cardinals denote the amount of objects within a set. For example, $\|\\{ 1, 5, 7 \\}\| = 3$. Ordinals define the order/enumeration of a set. To apply this to finite sets, we can assign each element of a set to the least natural number that has not been used yet. This definition can be extended to infinite sets. There are many cases where the cardinality and the ordinal of a set are the same. There are also some cases where they are not.
 
-Recall that $\|\mathbb N\| = \aleph_{0}$. The ordinal for $\mathbb N$ is $\omega$. There is a
+Recall that $\|\mathbb N\| = \aleph_{0}$. The ordinal for $\mathbb N$ is $\omega$. It is important to note that $\aleph_{0}=\aleph_{0}+1$, but $\omega\neq\omega+1$.
+
+---
+
+## Continuum Hypothesis
+
+We can show a bijection $\mathbb Q \rightarrow \mathbb N$, which entails that they have the same cardinality. On the other hand, there is no bijection between $\mathbb R$ and $\mathbb N$. It follows that $\|\mathbb R\|>\aleph_{0}$. Let $\|\mathbb R\|=\mathfrak{c}$. Does $\mathfrak{c}=\aleph_{1}$, the next biggest infinity after $\aleph_{0}$, or is $\mathfrak{c}>\aleph_{1}$?
+
+The continuum hypothesis states that: $\mathfrak{c}=\aleph_{1}$.
