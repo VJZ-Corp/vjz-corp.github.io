@@ -190,7 +190,7 @@ plt.show()
 
 
     
-![png](Intro_to_Machine_Learning_files/Intro_to_Machine_Learning_9_0.png)
+![Intro_to_Machine_Learning_9_0](https://github.com/user-attachments/assets/c554a1c5-826e-4747-8b5b-b95e3d3777b1)
     
 
 
@@ -267,7 +267,7 @@ plt.show()
 
 
     
-![png](Intro_to_Machine_Learning_files/Intro_to_Machine_Learning_13_1.png)
+![Intro_to_Machine_Learning_13_1](https://github.com/user-attachments/assets/fe5e7ba9-566b-4c4c-a90a-d80b08199cb8)
     
 
 
@@ -285,7 +285,7 @@ plt.show()
 
 
     
-![png](Intro_to_Machine_Learning_files/Intro_to_Machine_Learning_15_0.png)
+![Intro_to_Machine_Learning_15_0](https://github.com/user-attachments/assets/d00adf0d-a68f-429c-9b3f-55ef086e2086)
     
 
 
@@ -366,7 +366,7 @@ for iterations in range(1, 1000):
 
 
     
-![png](Intro_to_Machine_Learning_files/Intro_to_Machine_Learning_21_1.png)
+![Intro_to_Machine_Learning_21_1](https://github.com/user-attachments/assets/2efc4e83-4f4d-4476-8c42-7c3a076305bb)
     
 
 
