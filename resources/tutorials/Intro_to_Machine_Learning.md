@@ -1,4 +1,11 @@
-![image](https://github.com/user-attachments/assets/088603bf-321f-4a9c-8d16-fdf360d437f5)
+---
+title: Intro to ML
+layout: default
+filename: Intro_to_Machine_Learning.md
+---
+
+This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience.
+{: .warn }
 
 # **SECTION I - ML History & Learning Categories**
 
