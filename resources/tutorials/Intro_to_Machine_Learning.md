@@ -7,12 +7,12 @@ filename: Intro_to_Machine_Learning.md
 # Introduction to Machine Learning
 
 This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience.
-{ : .warn }
+
+This interactive notebook aims to provide an introductory understanding of machine learning for those who have knowledge in statistics, linear algebra, and calculus. **NOTE: As deep learning is a whole study in of itself, this notebook will not cover deep learning topics even though deep learning is a subset of machine learning. Learn more about deep learning in this notebook: [Intro to Deep Learning](Intro_to_Deep_Learning.ipynb)**
+
 ## **SECTION I - ML History & Learning Categories**
 
 ---
-
-This interactive notebook aims to provide an introductory understanding of machine learning for those who have knowledge in statistics, linear algebra, and calculus. **NOTE: As deep learning is a whole study in of itself, this notebook will not cover deep learning topics even though deep learning is a subset of machine learning. Learn more about deep learning in this notebook: [Intro to Deep Learning](Intro_to_Deep_Learning.ipynb)**
 
 <h2>§1.1 - Machine Learning History</h2>
 In 1959, Arthur Samuel, a computer scientist and pioneer of artificial intelligence, coined the term "Machine Learning" as 
