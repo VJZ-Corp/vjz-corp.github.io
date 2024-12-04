@@ -4,7 +4,7 @@ layout: default
 filename: irregular-polygons-area.md
 ---
 
-# Computing the Area of Irregular Polygons
+# <ins>Computing the Area of Irregular Polygons</ins>
 A polygon is defined as a two-dimensional figure made up of line segments connected to form a closed chain. There are two types of polygons: regular and irregular polygons. In introductory geometry, you were probably taught about regular polygons. The image below shows some examples of regular polygons.
 
 ![image](https://github.com/VJZ-Corp/vjz-corp.github.io/assets/73851560/85f50e29-8d4a-47b4-9228-40a1c6c66a7b)
