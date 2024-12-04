@@ -6,8 +6,8 @@ filename: Intro_to_Machine_Learning.md
 
 # Introduction to Machine Learning
 
-***This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience.***
-
+This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience.
+{ : .warn }
 ## **SECTION I - ML History & Learning Categories**
 
 ---
