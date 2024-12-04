@@ -4,9 +4,11 @@ layout: default
 filename: Intro_to_Machine_Learning.md
 ---
 
+# Introduction to Machine Learning
+
 ***This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience.***
 
-# **SECTION I - ML History & Learning Categories**
+## **SECTION I - ML History & Learning Categories**
 
 ---
 
@@ -49,7 +51,7 @@ Unsupervised learning is exactly what it sounds: training a model without provid
 <h3>§1.2.3 - Reinforcement Learning</h3>
 Reinforcement learning refers to goal-oriented algorithms, which learn how to attain a complex objective (goal) or maximize along a particular dimension over many steps. This method allows machines and software agents to automatically determine the ideal behavior within a specific context in order to maximize its performance. Simple reward feedback is required for the agent to learn which action is best; this is known as the reinforcement signal.
 
-# **Section II - Types of Regression**
+## **Section II - Types of Regression**
 
 ---
 
@@ -145,7 +147,7 @@ print("The student will receive a score of {}".format(sigmoid(Number_of_Hours))
 
 Plotting out the sigmoid above and the linear function $z = 10x$, one can see the two to be very similar in nature. But how is the linear function calculated to be $z = 20 - 0.03x$? The real challenge is to find the right coefficients or **weights ($w₀, w₁, 20, 0.3,$ etc.),** which will be discussed in the next section.
 
-# **Section III - Minimalizing Errors**
+## **Section III - Minimalizing Errors**
 
 ---
 
@@ -380,7 +382,7 @@ for iterations in range(1, 1000):
 
 For the graph above, the orange "X" represents the machine's prediction while the blue dots represent the raw data. It does require more iterations to fit to the data correctly, but has a lower overall cost.
 
-# **Section IV - Overfitting & Underfitting**
+## **Section IV - Overfitting & Underfitting**
 
 ---
 
@@ -419,7 +421,7 @@ The L2 penalty aims to minimize the squared magnitude of the weights. L2 penalty
 
 L2 regularization shrinks all the coefficients by the same proporations but does not eliminate any. L1 regularization can shrink some coefficients down to 0, which effectively removes it. This is called feature selection.
 
-# **Section V - Types of Classification Algorithms**
+## **Section V - Types of Classification Algorithms**
 
 ---
 
