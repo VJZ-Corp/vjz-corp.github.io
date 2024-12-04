@@ -20,7 +20,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 - [How to Debug Memory in Visual Studio 2019](/resources/tutorials/vs2019-debug)
 
 ## AI
-- Coming soon!
+- [Introduction to Machine Learning](/resources/tutorials/Intro_to_Machine_Learning.md)
 
 ## Math
 - [Integrating the Bell Curve](/resources/tutorials/bell-curve-integration)
