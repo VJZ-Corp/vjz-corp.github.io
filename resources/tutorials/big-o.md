@@ -4,7 +4,7 @@ layout: default
 filename: big-o.md
 ---
 
-# Time Complexity
+# <ins>Time Complexity</ins>
 
 Time Complexity is often underrated when it comes to programming. Newbies often think that if their code “works," they should be all set. However, slow code can often degrade performance, waste money, and consume resources inefficiently. Understanding how time complexity works is crucial to the algorithm design process.
 
