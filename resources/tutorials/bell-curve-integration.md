@@ -4,7 +4,7 @@ layout: default
 filename: bell-curve-integration.md
 ---
 
-# Integrating the Bell Curve
+# <ins>Integrating the Bell Curve</ins>
 
 The bell curve — or more formally: the normal (Gaussian) distribution — is one of the most important models in statistics. Given a mean and standard deviation, the bell curve can tell you all sorts of useful information about the probabilities and distribution of data. This article, however, is not statistically oriented but instead will demonstrate the techniques to find the integral of the bell curve, which assumes a undergraduate-level understanding of calculus.
 
