@@ -1,5 +1,4 @@
-> [!IMPORTANT]
-> This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this page is no longer interactive. The outputs of each code snippet are displayed for your convenience.
+![image](https://github.com/user-attachments/assets/088603bf-321f-4a9c-8d16-fdf360d437f5)
 
 # **SECTION I - ML History & Learning Categories**
 
