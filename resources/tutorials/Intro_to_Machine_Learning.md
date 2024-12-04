@@ -4,7 +4,7 @@ layout: default
 filename: Intro_to_Machine_Learning.md
 ---
 
-{% include alert.html content="This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience." %}
+***This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience.***
 
 # **SECTION I - ML History & Learning Categories**
 
