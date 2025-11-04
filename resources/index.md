@@ -36,4 +36,4 @@ If you like to learn by watching videos, this section is for you. Below are play
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/videoseries?si=qrQftid7rXhhhonz&amp;list=PLS9wf5aMSL7qQ9SBCOQHjpuNNC2BvJENe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="5640" height="360" src="https://www.youtube.com/embed/videoseries?si=JIZRktAYKCY7iajq&amp;list=PLS9wf5aMSL7rY1bazhffT_TJ4NhJj9Vq7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/videoseries?si=JIZRktAYKCY7iajq&amp;list=PLS9wf5aMSL7rY1bazhffT_TJ4NhJj9Vq7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
