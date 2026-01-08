@@ -24,7 +24,7 @@ int main()
 }
 ```
 
-This will be our example code to debug. A quick review of what this code does. First, it will include the iostream library:
+This will be our example code to debug. A quick review of what this code does. First, it will include the `iostream` library:
 
 ```cpp
 #include <iostream>
@@ -56,11 +56,11 @@ We are now very close to viewing our program’s memory. After you have selected
 
 ![image](https://user-images.githubusercontent.com/73851560/185766003-43831bc8-e06b-4f14-a19c-94c65f600492.png)
 
-[1] is the physical memory view of your computer, the reason why it has so many question marks (?) is because that portion of your computer’s memory cannot be accessed by Visual Studio. If you want to view your program’s memory, copy the value at [2] and paste it into the memory address bar (right above [1]).
+[1] is the virtual memory view of your computer, the reason why it has so many question marks (?) is because that portion of your computer’s memory cannot be accessed by Visual Studio. If you want to view your program’s memory, copy the value at [2] and paste it into the memory address bar (right above [1]).
 
 ![image](https://user-images.githubusercontent.com/73851560/185766009-2cb6f100-3a18-4ccc-b892-314c9da7587a.png)
 
-[3] shows the physical location of variable num once you input the address of num (stored in pointer at [4]). This demonstrates the use of pointers and allows us to see what is going on behind the scenes. You can see at [3], the memory address and the “Locals” tab have the same value, and is also stored in num at line 5, which is 4. That is wonderful! We now can read memory but how about writing to memory? Can we modify the memory? Of course! Right click on the byte of data (the 2 hex digits) and you can change it to whatever you want, I am going to change mine to `0x23`.
+[3] shows the actual location of variable num once you input the address of num (stored in pointer at [4]). This demonstrates the use of pointers and allows us to see what is going on behind the scenes. You can see at [3], the memory address and the “Locals” tab have the same value, and is also stored in num at line 5, which is 4. That is wonderful! We now can read memory but how about writing to memory? Can we modify the memory? Of course! Right click on the byte of data (the 2 hex digits) and you can change it to whatever you want, I am going to change mine to `0x23`.
 
 ![image](https://user-images.githubusercontent.com/73851560/185766018-e87efb2f-ab1a-42a1-903c-e96aa6ae78f9.png)
 
