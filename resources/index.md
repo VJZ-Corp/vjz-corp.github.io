@@ -15,10 +15,11 @@ This webpage is our favorite, as we think it is the most important. While our we
 ***
 
 You will find curated tutorials and lessons in science, technology, engineering, and mathematics here. Many lessons/tutorials listed below require prerequisite knowledge and are not aimed at the general reader.
+
 ## Computing
 - [Time Complexity](/resources/tutorials/computing/big-o)
-- [How to Debug Memory in Visual Studio 2019](/resources/tutorials/computing/vs2019-debug)
 - [Introduction to Machine Learning](/resources/tutorials/computing/Intro_to_Machine_Learning)
+- [How to Debug Memory in Visual Studio 2019](/resources/tutorials/computing/vs2019-debug)
 
 ## Math
 - [Integrating the Bell Curve](/resources/tutorials/math/bell-curve-integration)
