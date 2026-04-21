@@ -16,15 +16,13 @@ This webpage is our favorite, as we think it is the most important. While our we
 
 You will find curated tutorials and lessons in science, technology, engineering, and mathematics here. Many lessons/tutorials listed below require prerequisite knowledge and are not aimed at the general reader.
 ## Computing
-- [Time Complexity](/resources/tutorials/big-o)
-- [How to Debug Memory in Visual Studio 2019](/resources/tutorials/vs2019-debug)
-
-## AI
-- [Introduction to Machine Learning](/resources/tutorials/Intro_to_Machine_Learning)
+- [Time Complexity](/resources/tutorials/computing/big-o)
+- [How to Debug Memory in Visual Studio 2019](/resources/tutorials/computing/vs2019-debug)
+- [Introduction to Machine Learning](/resources/tutorials/computing/Intro_to_Machine_Learning)
 
 ## Math
-- [Integrating the Bell Curve](/resources/tutorials/bell-curve-integration)
-- [Computing the Area of Irregular Polygons](/resources/tutorials/irregular-polygons-area)
+- [Integrating the Bell Curve](/resources/tutorials/math/bell-curve-integration)
+- [Computing the Area of Irregular Polygons](/resources/tutorials/math/irregular-polygons-area)
 
 # Videos
 
