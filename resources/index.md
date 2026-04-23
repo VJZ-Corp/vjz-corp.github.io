@@ -18,6 +18,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 
 ## Computing
 - [Time Complexity](/resources/tutorials/computing/big-o)
+- [Secure Hash Algorithm 2, 256-bit](/resources/tutorials/computing/sha-256)
 - [Introduction to Machine Learning](/resources/tutorials/computing/Intro_to_Machine_Learning)
 - [How to Debug Memory in Visual Studio 2019](/resources/tutorials/computing/vs2019-debug)
 
