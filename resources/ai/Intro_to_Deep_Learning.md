@@ -775,7 +775,7 @@ Word2vec is a framework aimed at learning word embeddings by estimating the like
 The skip-gram word2vec model is a supervised learning task that learns word embeddings by assessing the likelihood of any given target word $t$ happening with a context word $c$. By noting $\theta_t$ a parameter associated with $t$, the probability $P(t \mid c)$ is given by:
 
 $$
-\displaystyle P(t|c) = \frac{e^{\theta_t^Te_c}}{\sum_{j=1}^{|V|}e^{\theta_j^Te_c}}
+\displaystyle P(t \mid c) = \frac{e^{\theta_t^Te_c}}{\sum_{j=1}^{|V|}e^{\theta_j^Te_c}}
 $$
 
 where $\mid V \mid$ is the size of vocabulary list. The GloVe model, short for global vectors for word representation, is a word embedding technique that uses a co-occurence matrix $X$ where each $X_{i,j}$ denotes the number of times that a target $i$ occurred with a context $j$. Its cost function $J$ is as follows:
