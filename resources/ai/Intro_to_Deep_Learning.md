@@ -349,40 +349,40 @@ where $\mathcal{C}(x, y)$ is the filtered image, $f(x, y)$ is the original image
   <tr>
     <td>Box Blur</td>
     <td>
-      $\frac{1}{9}$
+      $\frac{1}{9}
       \begin{bmatrix}
       1 & 1 & 1 \\
       1 & 1 & 1 \\
       1 & 1 & 1
-      \end{bmatrix}
+      \end{bmatrix}$
     </td>
   </tr>
 
   <tr>
     <td>Gaussian Blur</td>
     <td>
-      $\frac{1}{256}$
+      $\frac{1}{256}
       \begin{bmatrix}
       1 & 4 & 6 & 4 & 1 \\
       4 & 16 & 24 & 16 & 4 \\
       6 & 24 & 36 & 24 & 6 \\
       4 & 16 & 24 & 16 & 4 \\
       1 & 4 & 6 & 4 & 1
-      \end{bmatrix}
+      \end{bmatrix}$
     </td>
   </tr>
 
   <tr>
     <td>Unsharp Masking</td>
     <td>
-      $-\frac{1}{256}$
+      $-\frac{1}{256}
       \begin{bmatrix}
       1 & 4 & 6 & 4 & 1 \\
       4 & 16 & 24 & 16 & 4 \\
       6 & 24 & -476 & 24 & 6 \\
       4 & 16 & 24 & 16 & 4 \\
       1 & 4 & 6 & 4 & 1
-      \end{bmatrix}
+      \end{bmatrix}$
     </td>
   </tr>
 
@@ -778,7 +778,7 @@ $$
 \displaystyle P(t|c) = \frac{e^{\theta_t^Te_c}}{\sum_{j=1}^{|V|}e^{\theta_j^Te_c}}
 $$
 
-where $||V||$ is the size of vocabulary list. The GloVe model, short for global vectors for word representation, is a word embedding technique that uses a co-occurence matrix $X$ where each $X_{i,j}$ denotes the number of times that a target $i$ occurred with a context $j$. Its cost function $J$ is as follows:
+where $\mid V \mid$ is the size of vocabulary list. The GloVe model, short for global vectors for word representation, is a word embedding technique that uses a co-occurence matrix $X$ where each $X_{i,j}$ denotes the number of times that a target $i$ occurred with a context $j$. Its cost function $J$ is as follows:
 
 $$
 J(\theta) = \frac{1}{2} \sum_{i,j=1}^{|V|} f(X_{i,j})(\theta_i^Te_j + b_i + b'_j - \ln(X_{i,j}))^2
