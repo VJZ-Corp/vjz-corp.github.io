@@ -1,8 +1,16 @@
+---
+title: Intro to DL
+layout: default
+filename: Intro_to_Deep_Learning.md
+---
+
+*This was originally an interactive Jupyter notebook. However, since GitHub Pages does not allow arbitrary code execution, this tutorial is no longer interactive. The outputs of each code snippet are displayed for your convenience.*
+
 # **SECTION I - Deep Learning Basics**
 
 ---
 
-This notebook serves as a continuation of [Intro to Machine Learning](Intro_to_Machine_Learning.ipynb). As stated in the aforementioned notebook, deep learning is a subset of machine learning. However, contrasted to traditional machine learning, deep learning tries to mimic the biological aspect of a human brain, resulting in more innovative algorithms and techniques.
+This notebook serves as a continuation of [Intro to Machine Learning](Intro_to_Machine_Learning). As stated in the aforementioned notebook, deep learning is a subset of machine learning. However, contrasted to traditional machine learning, deep learning tries to mimic the biological aspect of a human brain, resulting in more innovative algorithms and techniques.
 
 <h2>§1.1 - Biological Influence</h2>
 Deep learning employs many of the algorithms introduced in traditional machine learning. The difference is that deep learning is influenced by a biological model called a neural network. A neural network (NN) tries to mimic an animal's brain. Reasoning behind this:
