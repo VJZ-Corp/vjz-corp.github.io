@@ -20,7 +20,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 - [Time Complexity](/resources/tutorials/computing/big-o)
 - [How to Debug Memory in Visual Studio 2019](/resources/tutorials/computing/vs2019-debug)
 
-## Artifical Intelligence
+## Artificial Intelligence
 - [Introduction to Machine Learning](/resources/tutorials/computing/Intro_to_Machine_Learning)
 
 ## Cryptography
