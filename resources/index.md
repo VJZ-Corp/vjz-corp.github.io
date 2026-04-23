@@ -16,15 +16,17 @@ This webpage is our favorite, as we think it is the most important. While our we
 
 You will find curated tutorials and lessons in science, technology, engineering, and mathematics here. Many lessons/tutorials listed below require prerequisite knowledge and are not aimed at the general reader.
 
-## Computing
-- [Time Complexity](/resources/tutorials/computing/big-o)
-- [How to Debug Memory in Visual Studio 2019](/resources/tutorials/computing/vs2019-debug)
+## Computer Science
+- [Time Complexity](/resources/tutorials/cs/big-o)
+
+## Software Engineering
+- [How to Debug Memory in Visual Studio 2019](/resources/tutorials/swe/vs2019-debug)
 
 ## Artificial Intelligence
-- [Introduction to Machine Learning](/resources/tutorials/computing/Intro_to_Machine_Learning)
+- [Introduction to Machine Learning](/resources/tutorials/ai/Intro_to_Machine_Learning)
 
 ## Cryptography
-- [Secure Hash Algorithm 2, 256-bit](/resources/tutorials/computing/sha-256)
+- [Secure Hash Algorithm 2, 256-bit](/resources/tutorials/crypto/sha-256)
 
 ## Math
 - [Integrating the Bell Curve](/resources/tutorials/math/bell-curve-integration)
