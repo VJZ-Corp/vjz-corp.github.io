@@ -349,7 +349,7 @@ where $\mathcal{C}(x, y)$ is the filtered image, $f(x, y)$ is the original image
   <tr>
     <td>Box Blur</td>
     <td>
-      $\frac{1}{9}
+      $\displaystyle \frac{1}{9}
       \begin{bmatrix}
       1 & 1 & 1 \\
       1 & 1 & 1 \\
@@ -361,7 +361,7 @@ where $\mathcal{C}(x, y)$ is the filtered image, $f(x, y)$ is the original image
   <tr>
     <td>Gaussian Blur</td>
     <td>
-      $\frac{1}{256}
+      $\displaystyle \frac{1}{256}
       \begin{bmatrix}
       1 & 4 & 6 & 4 & 1 \\
       4 & 16 & 24 & 16 & 4 \\
@@ -375,7 +375,7 @@ where $\mathcal{C}(x, y)$ is the filtered image, $f(x, y)$ is the original image
   <tr>
     <td>Unsharp Masking</td>
     <td>
-      $-\frac{1}{256}
+      $\displaystyle -\frac{1}{256}
       \begin{bmatrix}
       1 & 4 & 6 & 4 & 1 \\
       4 & 16 & 24 & 16 & 4 \\
