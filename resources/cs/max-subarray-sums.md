@@ -1,7 +1,7 @@
 ---
 title: Optimizing the Computation of Maximum Subarray Sums
 layout: default
-filename: subarray-sums
+filename: max-subarray-sums.md
 ---
 
 # Optimizing the Computation of Maximum Subarray Sums
