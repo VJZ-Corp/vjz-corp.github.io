@@ -29,7 +29,6 @@ def naive_brute_force(arr):
             currentSum = 0
             for k in range(i, j + 1):
                 currentSum += arr[k]
-
             if currentSum > maxSum:
                 maxSum = currentSum
     return maxSum
@@ -66,3 +65,42 @@ def MaxCrossingSum(arr, low, mid, high):
 ```
 
 This approach has a recurrence relation of $T(n) = 2T(\frac{n}{2}) + O(n)$. This simplifies to an overall time complexity of $O(n\log n)$.
+
+## Tabulated Dynamic Programming
+Notably, this problem also found itself having a dynamic programming approach due to its recursive nature.
+
+```py
+def tabulated_DP(arr):
+    n = len(arr)
+    dp = [0] * n
+    dp[0] = arr[0]
+    maxSum = float('-inf')
+    for i in range(1, n):
+        dp[i] = max(arr[i], dp[i - 1] + arr[i])
+        maxSum = max(maxSum, dp[i])
+    return maxSum
+```
+
+In the algorithm, define $dp[i]$ as the maximum subarray sum ending at index $i$. Then the recurrence relation becomes
+
+$$
+    dp[i] = \max(dp[i - 1] + arr[i], arr[i]),
+$$
+
+with a base case of $dp[0] = arr[0]$. This approach achieves the lower bound $\Omega(n)$ with a time complexity of $\Theta(n)$. However, its space complexity is still suboptimal at $O(n)$.
+
+## Kadane's Algorithm
+Kadane’s algorithm represents the optimal form of the iterative dynamic programming solution discussed previously, achieved by collapsing the dimension along the major of the algorithm's progression.
+
+```py
+def kadanes(arr):
+    n = len(arr)
+    currentSum = arr[0]
+    maxSum = arr[0]
+    for i in range(1, n):
+        currentSum = max(arr[i], currentSum + arr[i])
+        maxSum = max(maxSum, currentSum)
+    return maxSum
+```
+
+From the previous dynamic programming approach, the recurrence relation is $dp[i] = \max(dp[i - 1] + arr[i], arr[i])$. The current state only depends on the immediate previous state of $dp$. Therefore, the new recurrence relation can be expressed as $currentSum = \max(currentSum + arr[i], arr[i])$. Instead of using $O(n)$ space, Kadane's algorithm only uses $O(1)$ space, which is optimal.
