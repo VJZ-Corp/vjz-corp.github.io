@@ -42,31 +42,24 @@ The divide-and-conquer approach recursively partitions the array into two halves
 def MaxSubarray(arr, low, high):
     if low == high:
         return arr[low]
-
     mid = (low + high) // 2
-
     leftSum = MaxSubarray(arr, low, mid)
     rightSum = MaxSubarray(arr, mid + 1, high)
     crossSum = MaxCrossingSum(arr, low, mid, high)
-
     return max(leftSum, rightSum, crossSum)
 
 
 def MaxCrossingSum(arr, low, mid, high):
     leftSum = float('-inf')
     sum = 0
-
-    for i in range(mid, low - 1, -1):   # i = mid down to low
+    for i in range(mid, low - 1, -1):
         sum += arr[i]
         leftSum = max(leftSum, sum)
-
     rightSum = float('-inf')
     sum = 0
-
-    for j in range(mid + 1, high + 1):  # j = mid+1 to high
+    for j in range(mid + 1, high + 1):
         sum += arr[j]
         rightSum = max(rightSum, sum)
-
     return leftSum + rightSum
 ```
 
