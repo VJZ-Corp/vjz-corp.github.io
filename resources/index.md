@@ -18,6 +18,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 
 ## Computer Science
 - [Time Complexity](cs/big-o)
+- [Optimizing the Computation of Maximum Subarray Sums](cs/max-subarray-sums)
 
 ## Software Engineering
 - [How to Debug Memory in Visual Studio 2019](swe/vs2019-debug)
