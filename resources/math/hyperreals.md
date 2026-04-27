@@ -63,7 +63,25 @@ $$
 
 **Theorem.** The structure $({}^{\ast}\mathbb{R}, +, \cdot, <, \mathbf{0}, \mathbf{1})$ forms an ordered field.
 
-*Proof.* We will aim to show just one property as the other properties all follow similar proofs. Let us attempt to prove that every $[\sigma] \neq \mathbf{0}$ has a multiplicative inverse. First, the sequence $\mathbf{0}$ will be defined as a sequence of all $0$'s. It is obvious that it satisfies the additive identity by the definitions of $+$ and $\cdot$. Now, we know that $$A = \{ i \in I : \sigma(i) = 0 \} \notin \mathcal{U}$$ by the fact that $[\sigma] \neq \mathbf{0}$. Using the fact that $\mathcal{U}$ is an *ultrafilter*, we can conclude that the complement $$A^{c} = \{ i \in I : \sigma(i) \neq 0 \}$$ is in $\mathcal{U}$. Now we choose an $I$-sequence $\tau$ such that $\tau(i) = \frac{1}{\sigma(i)}$ whenever $i \in A^{c}$ (that is, the index hits a nonzero element in the $\sigma$-sequence). Notice that $$A^{c} \subseteq \{ i \in I : \sigma(i) \cdot \tau(i) = 1 \} \in \mathcal{U}$$ by the properties of a filter. This implies that $[\sigma] \cdot [\tau] = 1$ as desired. $\Box$
+*Proof.* We will aim to show just one property as the other properties all follow similar proofs. Let us attempt to prove that every $[\sigma] \neq \mathbf{0}$ has a multiplicative inverse. First, the sequence $\mathbf{0}$ will be defined as a sequence of all $0$'s. It is obvious that it satisfies the additive identity by the definitions of $+$ and $\cdot$. Now, we know that 
+
+$$
+A = \{ i \in I : \sigma(i) = 0 \} \notin \mathcal{U}
+$$ 
+
+by the fact that $[\sigma] \neq \mathbf{0}$. Using the fact that $\mathcal{U}$ is an *ultrafilter*, we can conclude that the complement 
+
+$$
+A^{c} = \{ i \in I : \sigma(i) \neq 0 \}
+$$ 
+
+is in $\mathcal{U}$. Now we choose an $I$-sequence $\tau$ such that $\tau(i) = \frac{1}{\sigma(i)}$ whenever $i \in A^{c}$ (that is, the index hits a nonzero element in the $\sigma$-sequence). Notice that 
+
+$$
+A^{c} \subseteq \{ i \in I : \sigma(i) \cdot \tau(i) = 1 \} \in \mathcal{U}
+$$ 
+
+by the properties of a filter. This implies that $[\sigma] \cdot [\tau] = 1$ as desired. $\Box$
 
 The full proof of the above theorem will not be provided as it is simply just more trivial manipulations of dense notation. Additionally, the full proof of the facts that ${}^{\ast}\mathbb{R}$ satisfies the (first order) axioms of $\mathbb{R}$ and that $\mathbb{R}^{I} / \mathcal{U}$ satisfies our intuitive notions of ${}^{\ast}\mathbb{R}$ will not be provided for similar reasons.
 
