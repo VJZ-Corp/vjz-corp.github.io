@@ -1,10 +1,10 @@
 # Formal Construction of the Hyperreals
 
-We are inclined to study the hyperreal structure ${}^{*}\mathbb{R}$ as it serves as a nonstandard model of $\mathbb{R}$ that has particular importance in analysis and combinatorics.
+We are inclined to study the hyperreal structure ${}^{\ast}\mathbb{R}$ as it serves as a nonstandard model of $\mathbb{R}$ that has particular importance in analysis and combinatorics.
 
 ## Brief Intuition and Motivation
 
-Just as $\mathbb{R}^{2}$ and $\mathbb{R}^{3}$ both form vector spaces over $\mathbb{R}$ yet are not the same, the hyperreals ${}^{*}\mathbb{R}$ can be seen as another model for $\mathbb{R}$ that is not the same as our classical $\mathbb{R}$. In particular, we hope it satisfies all first order axioms for $\mathbb{R}$. Whether it can hold claim to being "the" $\mathbb{R}$ is a question for the philosophers. Informally, ${}^{*}\mathbb{R}$ has infinitesimal and infinite elements. It is important to note that ${}^{*}\mathbb{R}$ has a fundamentally different structure from $\mathbb{R}$. It is not just a mere different construction (i.e., it is not the difference between Dedekind cuts and Cauchy sequences). 
+Just as $\mathbb{R}^{2}$ and $\mathbb{R}^{3}$ both form vector spaces over $\mathbb{R}$ yet are not the same, the hyperreals ${}^{\ast}\mathbb{R}$ can be seen as another model for $\mathbb{R}$ that is not the same as our classical $\mathbb{R}$. In particular, we hope it satisfies all first order axioms for $\mathbb{R}$. Whether it can hold claim to being "the" $\mathbb{R}$ is a question for the philosophers. Informally, ${}^{\ast}\mathbb{R}$ has infinitesimal and infinite elements. It is important to note that ${}^{\ast}\mathbb{R}$ has a fundamentally different structure from $\mathbb{R}$. It is not just a mere different construction (i.e., it is not the difference between Dedekind cuts and Cauchy sequences). 
 
 Our specific formal construction will be concerned with sequences $(a_{0}, a_{1}, a_{2}, \dots)$ where addition, multiplication, etc. are essientally defined component-wise. We would want to associate $r \in \mathbb{R}$ with $(r, r, r, \dots)$ and infinitesimal elements with those that approach zero (inverse for infinite elements). 
 
@@ -49,21 +49,21 @@ $$
 
 For brevity, we will define
 $$
-{}^{*}\mathbb{R} = \mathbb{R}^{I} / \mathcal{U}.
+{}^{\ast}\mathbb{R} = \mathbb{R}^{I} / \mathcal{U}.
 $$
 
 ## Short Account of Properties
 
-**Theorem.** The structure $({}^{*}\mathbb{R}, +, \cdot, <, \mathbf{0}, \mathbf{1})$ forms an ordered field.
+**Theorem.** The structure $({}^{\ast}\mathbb{R}, +, \cdot, <, \mathbf{0}, \mathbf{1})$ forms an ordered field.
 
 *Proof.* We will aim to show just one property as the other properties all follow similar proofs. Let us attempt to prove that every $[\sigma] \neq \mathbf{0}$ has a multiplicative inverse. First, the sequence $\mathbf{0}$ will be defined as a sequence of all $0$'s. It is obvious that it satisfies the additive identity by the definitions of $+$ and $\cdot$. Now, we know that the set $A = \{i \in I : \sigma(i) = 0\} \notin \mathcal{U}$ by the fact that $[\sigma] \neq \mathbf{0}$. Using the fact that $\mathcal{U}$ is an *ultrafilter*, we can conclude that the complement $A^{c} = \{i \in I : \sigma(i) \neq 0\}$ is in $\mathcal{U}$. Now we choose an $I$-sequence $\tau$ such that $\tau(i) = \frac{1}{\sigma(i)}$ whenever $i \in A^{c}$ (that is, the index hits a nonzero element in the $\sigma$-sequence). Notice that $A^{c} \subseteq \{i \in I : \sigma(i) \cdot \tau(i) = 1\} \in \mathcal{U}$ by the properties of a filter. This implies that $[\sigma] \cdot [\tau] = 1$ as desired. $\Box$
 
-The full proof of the above theorem will not be provided as it is simply just more trivial manipulations of dense notation. Additionally, the full proof of the facts that ${}^{*}\mathbb{R}$ satisfies the (first order) axioms of $\mathbb{R}$ and that $\mathbb{R}^{I} / \mathcal{U}$ satisfies our intuitive notions of ${}^{*}\mathbb{R}$ will not be provided for similar reasons.
+The full proof of the above theorem will not be provided as it is simply just more trivial manipulations of dense notation. Additionally, the full proof of the facts that ${}^{\ast}\mathbb{R}$ satisfies the (first order) axioms of $\mathbb{R}$ and that $\mathbb{R}^{I} / \mathcal{U}$ satisfies our intuitive notions of ${}^{\ast}\mathbb{R}$ will not be provided for similar reasons.
 
-Note that the *transfer principle* allows us to conclude that first order statements true about $\mathbb{R}$ are also true about ${}^{*}\mathbb{R}$, which is a testament to ${}*{*}\mathbb{R}$ potential usefulness.
+Note that the *transfer principle* allows us to conclude that first order statements true about $\mathbb{R}$ are also true about ${}^{\ast}\mathbb{R}$, which is a testament to ${}*{\ast}\mathbb{R}$ potential usefulness.
 
 ## Discussion
 
-The ultrapower construction on $\mathbb{R}$ works more generally for different sets. It is a particularly useful tool in model theory for constructing nonstandard models. In particular, the ultrafilter $\mathcal{U}$ gives us "fine-motor" control over the nonstandard models. As for $\mathbb{R}$, it may be of question of whether two different ultrafilters would produce different ${}^{*}\mathbb{R}$. This turns out to be dependent on the Continuum Hypothesis.
+The ultrapower construction on $\mathbb{R}$ works more generally for different sets. It is a particularly useful tool in model theory for constructing nonstandard models. In particular, the ultrafilter $\mathcal{U}$ gives us "fine-motor" control over the nonstandard models. As for $\mathbb{R}$, it may be of question of whether two different ultrafilters would produce different ${}^{\ast}\mathbb{R}$. This turns out to be dependent on the Continuum Hypothesis.
 
 [^1]: Definition and some additional information adopted from Nasso et al.
