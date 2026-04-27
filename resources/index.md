@@ -34,6 +34,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 ## Math
 - [Integrating the Bell Curve](math/bell-curve-integration)
 - [Computing the Area of Irregular Polygons](math/irregular-polygons-area)
+- [Formal Construction of the Hyperreals](math/hyperreals)
 
 # Videos
 
