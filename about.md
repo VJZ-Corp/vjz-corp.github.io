@@ -26,7 +26,7 @@ We realized that, with an influx of new players on Roblox and events relating to
 Following the release, our group membership skyrocketed. Many players had a newfound interest after playing our game, which we were delighted to hear. As time progressed, we continued to maintain our Roblox community. Still, we wanted to cater to developers who also needed our support.
 
 - **February 7, 2021** - Toolboxal was officially released as an open-source project on GitHub.
-- **April 23, 2023** - *memdbgvis* was officially released as an open-source debugger for the JVM.
+- **April 22, 2023** - *memdbgvis* was officially released as an open-source debugger for the JVM.
 
 We have adapted the open-source model in many of our projects throughout these years. As a result, we can enable full transparency in our code and allow the community to input and help us develop our tools, such as Toolboxal. This way, we can work together to help each other, thus continuously improving everybody's lives through digital technology.
 
