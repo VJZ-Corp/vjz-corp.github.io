@@ -8,7 +8,7 @@ filename: binom-coeff-linear-gen.md
 Binomial coefficients are the positive integers that occur as coefficients in the binomial theorem. More formally, given the binomial expansion
 
 $$
-{\displaystyle (x + y)^n = \sum_{k=0}^n {n \choose k} x^{n-k}y^k = \sum_{k=0}^n {n \choose k} x^ky^{n-k}},
+\displaystyle (x + y)^n = \sum_{k=0}^n {n \choose k} x^{n-k}y^k = \sum_{k=0}^n {n \choose k} x^ky^{n-k},
 $$
 
 the binomial coefficients for such expansion are
@@ -40,13 +40,16 @@ $$
 ## Recursive Formulation
 We can find a recurrence relation for binomial coefficients by looking at the $k-1$ term:
 
+$$
 \begin{align*}
     {n \choose k - 1} &= \frac{n!}{(k-1)!(n-(k-1))!} \\
     &=\frac{n!}{(k-1)!(n-k+1)!}
 \end{align*}
+$$
 
 Observe how we can multiply the following term to get the original $k$th term back:
 
+$$
 \begin{align*}
     {n \choose k - 1} \frac{n-k+1}{k} &= \frac{n!}{(k-1)!(n-k+1)!} \frac{n-k+1}{k} \\
     &=\frac{n!}{k(k-1)!} \frac{n-k+1}{(n-k+1)!} \\
@@ -55,6 +58,7 @@ Observe how we can multiply the following term to get the original $k$th term ba
      &=\frac{n!}{k!(n-k)!} \\
       &={n \choose k}
 \end{align*}
+$$
 
 Let $f(k-1)$ be the special term we multiplied above. Therefore, $f(k-1)$ can be modified into the following:
 
@@ -70,6 +74,7 @@ $$
 
 If the statement $\displaystyle {n \choose k-1}f(k-1) = {n \choose k}$ is true, then the statement $\displaystyle {n \choose k}f(k) = {n \choose k+1}$ also holds true:
 
+$$
 \begin{align*}
     {n \choose k} \frac{n-k}{k + 1} &= \frac{n!}{k!(n-k)!} \frac{n-k}{k + 1} \\
     &= \frac{n!}{k!(k+1)} \frac{\cancel{n-k}}{(n-k-1)!\cancel{(n-k)}} \\
@@ -77,12 +82,13 @@ If the statement $\displaystyle {n \choose k-1}f(k-1) = {n \choose k}$ is true, 
     &= \frac{n!}{(k+1)!(n-(k+1))!} \\
     &= {n \choose k+1}
 \end{align*}
+$$
 
 In general, if we multiply the $k$th term by $f(k)$, we will always get the $k+1$ term. Now that we have the formula for finding the $k+1$ term, we can add a base case to complete the recursive algorithm:
 
-\[ 
+$$
    \begin{cases} 
       \displaystyle {n \choose 0} = 1 \\
       \displaystyle {n \choose k+1} = {n \choose k}\frac{n-k}{k + 1}
    \end{cases}
-\]
+$$
