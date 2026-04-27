@@ -25,7 +25,8 @@ The idea behind filters is that they capture "large" sets.
 
 Consider a set of indicies $I$ (that is, a set enumerating indexes such as $\{0,1,2,\dots\}$) and fix an ultrafilter $\mathcal{U}$ on $I$. 
 
-**Definition.**[^1] The *ultrapower* of $\mathbb{R}$ modulo the ultrafilter $\mathcal{U}$ is the quotient set of family of real $I$-sequences $\mathbb{R}^{I}$ modulo the equivalence relationship $\equiv_{\mathcal{U}}$ as follows:
+**Definition ([^1]).** The *ultrapower* of $\mathbb{R}$ modulo the ultrafilter $\mathcal{U}$ is the quotient set of family of real $I$-sequences $\mathbb{R}^{I}$ modulo the equivalence relationship $\equiv_{\mathcal{U}}$ as follows:
+
 $$
 \sigma \equiv_{\mathcal{U}} \tau \iff \{i \in I : \sigma(i) = \tau(i)\} \in \mathcal{U}.
 $$
@@ -35,19 +36,25 @@ We will notate this quotient set as $\mathbb{R}^{I} / \mathcal{U}$. The $I$-sequ
 For a sequence $\sigma$, we notate all equivalent sequences to $\sigma$ by $\equiv_{\mathcal{U}}$ as $[\sigma]$. The intuitive notion of this is that the equivalent sequences show "great similarity". Indeed, the ultrafilter $\mathcal{U}$ is an ultrafilter of sets of indicies (e.g., $\{0,1,2,\dots\}$), and equivalence is determined if the indicies that match form a set in the ultrafilter. Because filters are meant to capture "large" sets, we intuitively expect extremely similar sequences to be about equal. 
 
 Now, we can further define addition and multiplication with 
+
 $$
 [\sigma] + [\tau] = [\sigma + \tau]
 $$
+
 and
+
 $$
 [\sigma] \cdot [\tau] = [\sigma \cdot \tau],
 $$
+
 where $\sigma + \tau$ and $\sigma \cdot \tau$ are defined by the pointwise sum and multiplication operators from the ring acting on the function space $I \rightarrow \mathbb{R}$ (this is the same as the intuitive notion of the component wise sums on the sequences). We can also write the total ordering $<$ on $\mathbb{R}^{I} / \mathcal{U}$ with 
+
 $$
 [\sigma] < [\tau] \iff \{i \in I : \sigma(i) < \tau(i)\} \in \mathcal{U}.
 $$
 
 For brevity, we will define
+
 $$
 {}^{\ast}\mathbb{R} = \mathbb{R}^{I} / \mathcal{U}.
 $$
