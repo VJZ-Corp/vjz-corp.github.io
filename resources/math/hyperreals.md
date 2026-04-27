@@ -67,7 +67,7 @@ $$
 
 The full proof of the above theorem will not be provided as it is simply just more trivial manipulations of dense notation. Additionally, the full proof of the facts that ${}^{\ast}\mathbb{R}$ satisfies the (first order) axioms of $\mathbb{R}$ and that $\mathbb{R}^{I} / \mathcal{U}$ satisfies our intuitive notions of ${}^{\ast}\mathbb{R}$ will not be provided for similar reasons.
 
-Note that the *transfer principle* allows us to conclude that first order statements true about $\mathbb{R}$ are also true about ${}^{\ast}\mathbb{R}$, which is a testament to ${}*{\ast}\mathbb{R}$ potential usefulness.
+Note that the *transfer principle* allows us to conclude that first order statements true about $\mathbb{R}$ are also true about ${}^{\ast}\mathbb{R}$, which is a testament to ${}^{\ast}\mathbb{R}$'s potential usefulness.
 
 ## Discussion
 
