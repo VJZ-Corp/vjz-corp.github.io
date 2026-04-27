@@ -135,3 +135,5 @@ def binom_coeff(n):
         phi.append(phi[k] * (n - k) // (k + 1))
     return phi
 ```
+
+Only one loop is used throughout the entire algorithm; every other operation such as array index lookup and multiplication can be assumed to be $O(1)$. On most popular programming languages, the code for this algorithm is very concise as well, averaging around 10 lines at most. Through recursive memoization, we can now expand the binomial $(x + y)^n$ in $O(n)$ time.
