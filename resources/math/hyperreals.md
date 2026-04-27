@@ -23,7 +23,7 @@ The idea behind filters is that they capture "large" sets.
 
 ## Hyperreal Construction
 
-Consider a set of indicies $I$ (that is, a set enumerating indexes such as $\left\{ 0,1,2,\dots \right\}$) and fix an ultrafilter $\mathcal{U}$ on $I$. 
+Consider a set of indicies $I$ (that is, a set enumerating indexes such as $\{ 0,1,2,\dots \}$) and fix an ultrafilter $\mathcal{U}$ on $I$. 
 
 **Definition ([^1]).** The *ultrapower* of $\mathbb{R}$ modulo the ultrafilter $\mathcal{U}$ is the quotient set of family of real $I$-sequences $\mathbb{R}^{I}$ modulo the equivalence relationship $\equiv_{\mathcal{U}}$ as follows:
 
@@ -31,9 +31,9 @@ $$
 \sigma \equiv_{\mathcal{U}} \tau \iff \{i \in I : \sigma(i) = \tau(i)\} \in \mathcal{U}.
 $$
 
-We will notate this quotient set as $\mathbb{R}^{I} / \mathcal{U}$. The $I$-sequences can be interpreted as functions $\sigma : I \rightarrow \mathbb{R}$ where $\sigma(i)$ picks out the $i$th element. 
+We will notate this quotient set as $\mathbb{R}^{I} / \mathcal{U}$. The $I$-sequences can be interpreted as functions $\sigma : I arrow \mathbb{R}$ where $\sigma(i)$ picks out the $i$th element. 
 
-For a sequence $\sigma$, we notate all equivalent sequences to $\sigma$ by $\equiv_{\mathcal{U}}$ as $[\sigma]$. The intuitive notion of this is that the equivalent sequences show "great similarity". Indeed, the ultrafilter $\mathcal{U}$ is an ultrafilter of sets of indicies (e.g., $\left\{ 0,1,2,\dots \right\}$), and equivalence is determined if the indicies that match form a set in the ultrafilter. Because filters are meant to capture "large" sets, we intuitively expect extremely similar sequences to be about equal. 
+For a sequence $\sigma$, we notate all equivalent sequences to $\sigma$ by $\equiv_{\mathcal{U}}$ as $[\sigma]$. The intuitive notion of this is that the equivalent sequences show "great similarity". Indeed, the ultrafilter $\mathcal{U}$ is an ultrafilter of sets of indicies (e.g., $\{ 0,1,2,\dots \}$), and equivalence is determined if the indicies that match form a set in the ultrafilter. Because filters are meant to capture "large" sets, we intuitively expect extremely similar sequences to be about equal. 
 
 Now, we can further define addition and multiplication with 
 
@@ -47,7 +47,7 @@ $$
 [\sigma] \cdot [\tau] = [\sigma \cdot \tau],
 $$
 
-where $\sigma + \tau$ and $\sigma \cdot \tau$ are defined by the pointwise sum and multiplication operators from the ring acting on the function space $I \rightarrow \mathbb{R}$ (this is the same as the intuitive notion of the component wise sums on the sequences). We can also write the total ordering $<$ on $\mathbb{R}^{I} / \mathcal{U}$ with 
+where $\sigma + \tau$ and $\sigma \cdot \tau$ are defined by the pointwise sum and multiplication operators from the ring acting on the function space $I arrow \mathbb{R}$ (this is the same as the intuitive notion of the component wise sums on the sequences). We can also write the total ordering $<$ on $\mathbb{R}^{I} / \mathcal{U}$ with 
 
 $$
 [\sigma] < [\tau] \iff \{i \in I : \sigma(i) < \tau(i)\} \in \mathcal{U}.
@@ -63,7 +63,7 @@ $$
 
 **Theorem.** The structure $({}^{\ast}\mathbb{R}, +, \cdot, <, \mathbf{0}, \mathbf{1})$ forms an ordered field.
 
-*Proof.* We will aim to show just one property as the other properties all follow similar proofs. Let us attempt to prove that every $[\sigma] \neq \mathbf{0}$ has a multiplicative inverse. First, the sequence $\mathbf{0}$ will be defined as a sequence of all $0$'s. It is obvious that it satisfies the additive identity by the definitions of $+$ and $\cdot$. Now, we know that the set $A = \left\{ i \in I : \sigma(i) = 0 \right\} \notin \mathcal{U}$ by the fact that $[\sigma] \neq \mathbf{0}$. Using the fact that $\mathcal{U}$ is an *ultrafilter*, we can conclude that the complement $A^{c} = \left\{ i \in I : \sigma(i) \neq 0 \right\}$ is in $\mathcal{U}$. Now we choose an $I$-sequence $\tau$ such that $\tau(i) = \frac{1}{\sigma(i)}$ whenever $i \in A^{c}$ (that is, the index hits a nonzero element in the $\sigma$-sequence). Notice that $A^{c} \subseteq \left\{ i \in I : \sigma(i) \cdot \tau(i) = 1 \right\} \in \mathcal{U}$ by the properties of a filter. This implies that $[\sigma] \cdot [\tau] = 1$ as desired. $\Box$
+*Proof.* We will aim to show just one property as the other properties all follow similar proofs. Let us attempt to prove that every $[\sigma] \neq \mathbf{0}$ has a multiplicative inverse. First, the sequence $\mathbf{0}$ will be defined as a sequence of all $0$'s. It is obvious that it satisfies the additive identity by the definitions of $+$ and $\cdot$. Now, we know that $$A = \{ i \in I : \sigma(i) = 0 \} \notin \mathcal{U}$$ by the fact that $[\sigma] \neq \mathbf{0}$. Using the fact that $\mathcal{U}$ is an *ultrafilter*, we can conclude that the complement $$A^{c} = \{ i \in I : \sigma(i) \neq 0 \}$$ is in $\mathcal{U}$. Now we choose an $I$-sequence $\tau$ such that $\tau(i) = \frac{1}{\sigma(i)}$ whenever $i \in A^{c}$ (that is, the index hits a nonzero element in the $\sigma$-sequence). Notice that $$A^{c} \subseteq \{ i \in I : \sigma(i) \cdot \tau(i) = 1 \} \in \mathcal{U}$$ by the properties of a filter. This implies that $[\sigma] \cdot [\tau] = 1$ as desired. $\Box$
 
 The full proof of the above theorem will not be provided as it is simply just more trivial manipulations of dense notation. Additionally, the full proof of the facts that ${}^{\ast}\mathbb{R}$ satisfies the (first order) axioms of $\mathbb{R}$ and that $\mathbb{R}^{I} / \mathcal{U}$ satisfies our intuitive notions of ${}^{\ast}\mathbb{R}$ will not be provided for similar reasons.
 
