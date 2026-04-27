@@ -20,7 +20,7 @@ $$
 These coefficients also correspond to the $n$th row of Pascal's Triangle, more formally defined as 
 
 $$
-\{{n \choose k}\}_{k=0}^n = {n \choose 0}, {n \choose 1}, ..., {n \choose k-1}, {n \choose k}.
+{n \choose k}_{k=0}^n = {n \choose 0}, {n \choose 1}, ..., {n \choose k-1}, {n \choose k}.
 $$
 
 For example, the third row of Pascal's Triangle has values of 
