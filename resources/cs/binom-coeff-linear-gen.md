@@ -53,7 +53,7 @@ $$
 \begin{align*}
     {n \choose k - 1} \frac{n-k+1}{k} &= \frac{n!}{(k-1)!(n-k+1)!} \frac{n-k+1}{k} \\
     &=\frac{n!}{k(k-1)!} \frac{n-k+1}{(n-k+1)!} \\
-    &=\frac{n!}{k(k-1)!} \frac{\cancel{n-k+1}}{\cancel{(n-k+1)}(n-k)!} \\
+    &=\frac{n!}{k(k-1)!} \frac{{n-k+1}}{{(n-k+1)}(n-k)!} \\
     &=\frac{n!}{k(k-1)!(n-k)!} \\
      &=\frac{n!}{k!(n-k)!} \\
       &={n \choose k}
@@ -77,7 +77,7 @@ If the statement $\displaystyle {n \choose k-1}f(k-1) = {n \choose k}$ is true, 
 $$
 \begin{align*}
     {n \choose k} \frac{n-k}{k + 1} &= \frac{n!}{k!(n-k)!} \frac{n-k}{k + 1} \\
-    &= \frac{n!}{k!(k+1)} \frac{\cancel{n-k}}{(n-k-1)!\cancel{(n-k)}} \\
+    &= \frac{n!}{k!(k+1)} \frac{{n-k}}{(n-k-1)!{(n-k)}} \\
     &= \frac{n!}{k!(k+1)(n-(k+1))!} \\
     &= \frac{n!}{(k+1)!(n-(k+1))!} \\
     &= {n \choose k+1}
@@ -109,7 +109,7 @@ $$
 {n \choose k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)(n-2)\dots(n-(k-1))}{k!}.
 $$
 
-We can say that $\displaystyle n(n-1)(n-2)\dots(n-(k-1)) = \prod_{i=1}^k (n-i+1)$ runs in $O(k)$ time. Coupled with the denominator $k!$, which takes $O(k)$ time to run, this brings the total time to $O(2k)$. The ultimate goal is to generate $n+1$ binomial coefficients for a binomial $(x+y)^n$ with each coefficient calculation taking $O(2k)$ time to run. As $k$ goes from $0$ to $n$ consecutively, we observe that the average value of $\displaystyle k = \frac{n}{2}.$ In other words, the sequence $\big\{k\big\}_{k=0}^n$ becomes $\displaystyle \bigg\{\frac{n}{2}\bigg\}_{k=0}^n = \bigg\{\frac{n}{2}, \dots, \frac{n}{2}\bigg\}$ for the sake of calculating time complexity. Therefore, the final time complexity is $\displaystyle O(2k(n+1)) = O(n^2 + n) \propto O(n^2)$ or quadratic time. We can reduce the total time complexity down to $O(n)$ through memoization. The premise of recursive memoization is that we do not have to calculate the factorial function each time as we can cache the previous term in a data structure thus reducing the time complexity down to $O(n)$. Applying memoization, the recursive sequence now becomes:
+We can say that $\displaystyle n(n-1)(n-2)\dots(n-(k-1)) = \prod_{i=1}^k (n-i+1)$ runs in $O(k)$ time. Coupled with the denominator $k!$, which takes $O(k)$ time to run, this brings the total time to $O(2k)$. The ultimate goal is to generate $n+1$ binomial coefficients for a binomial $(x+y)^n$ with each coefficient calculation taking $O(2k)$ time to run. As $k$ goes from $0$ to $n$ consecutively, we observe that the average value of $\displaystyle k = \frac{n}{2}.$ In other words, the sequence $k_{k=0}^n$ becomes $\displaystyle \frac{n}{2}_{k=0}^n = \frac{n}{2}, \dots, \frac{n}{2}$ for the sake of calculating time complexity. Therefore, the final time complexity is $\displaystyle O(2k(n+1)) = O(n^2 + n) \propto O(n^2)$ or quadratic time. We can reduce the total time complexity down to $O(n)$ through memoization. The premise of recursive memoization is that we do not have to calculate the factorial function each time as we can cache the previous term in a data structure thus reducing the time complexity down to $O(n)$. Applying memoization, the recursive sequence now becomes:
 
 $$
    \begin{cases} 
@@ -119,3 +119,19 @@ $$
 $$
 
 Now, we can go through the steps to find binomial coefficients in $O(n)$ time:
+
+1. Assuming indices start at 0, define an array $\Phi$ of size $n+1$.
+2. Set $\Phi_0 = 1$.
+3. Define loop starting from $k=0$ and ending at $k=n - 1$.
+4. Set $\displaystyle \Phi_{k+1} = \Phi_k\frac{n-k}{k+1}$.
+5. When the loop is finished, the array $\Phi$ contains all the binomial coefficients for the $n$th degree expansion.
+
+The above algorithm is listed below written using Python:
+
+```py
+def binom_coeff(n):
+    phi = [1]    # 𝚽[0] = 1
+    for k in range(n):
+        phi.append(phi[k] * (n - k) // (k + 1))
+    return phi
+```
