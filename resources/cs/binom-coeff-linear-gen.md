@@ -20,13 +20,13 @@ $$
 These coefficients also correspond to the $n$th row of Pascal's Triangle, more formally defined as 
 
 $$
-\bigg\{{n \choose k}\bigg\}_{k=0}^n = \bigg\{{n \choose 0}, {n \choose 1}, ..., {n \choose k-1}, {n \choose k}\bigg\}.
+\{{n \choose k}\}_{k=0}^n = {n \choose 0}, {n \choose 1}, ..., {n \choose k-1}, {n \choose k}.
 $$
 
 For example, the third row of Pascal's Triangle has values of 
 
 $$
-\bigg\{{3 \choose k}\bigg\}_{k=0}^3 = \bigg\{{3 \choose 0}, {3 \choose 1}, {3 \choose 2}, {3 \choose 3}\bigg\} = \{1, 3, 3, 1\}.
+{3 \choose k}_{k=0}^3 = {3 \choose 0}, {3 \choose 1}, {3 \choose 2}, {3 \choose 3} = \{1, 3, 3, 1\}.
 $$
 
 Consequently, the third-degree binomial expansion is
@@ -92,3 +92,30 @@ $$
       \displaystyle {n \choose k+1} = {n \choose k}\frac{n-k}{k + 1}
    \end{cases}
 $$
+
+## Linear Time Optimization
+Here is a standard $O(n)$ implementation of the factorial function:
+```py
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+```
+
+It can be used to calculate $\displaystyle {n \choose k}$. However, this approach is very inefficient.  We can see why by rewriting the formula of $\displaystyle {n \choose k}$ to better understand its time complexity:
+
+$$
+{n \choose k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)(n-2)\dots(n-(k-1))}{k!}.
+$$
+
+We can say that $\displaystyle n(n-1)(n-2)\dots(n-(k-1)) = \prod_{i=1}^k (n-i+1)$ runs in $O(k)$ time. Coupled with the denominator $k!$, which takes $O(k)$ time to run, this brings the total time to $O(2k)$. The ultimate goal is to generate $n+1$ binomial coefficients for a binomial $(x+y)^n$ with each coefficient calculation taking $O(2k)$ time to run. As $k$ goes from $0$ to $n$ consecutively, we observe that the average value of $\displaystyle k = \frac{n}{2}.$ In other words, the sequence $\big\{k\big\}_{k=0}^n$ becomes $\displaystyle \bigg\{\frac{n}{2}\bigg\}_{k=0}^n = \bigg\{\frac{n}{2}, \dots, \frac{n}{2}\bigg\}$ for the sake of calculating time complexity. Therefore, the final time complexity is $\displaystyle O(2k(n+1)) = O(n^2 + n) \propto O(n^2)$ or quadratic time. We can reduce the total time complexity down to $O(n)$ through memoization. The premise of recursive memoization is that we do not have to calculate the factorial function each time as we can cache the previous term in a data structure thus reducing the time complexity down to $O(n)$. Applying memoization, the recursive sequence now becomes:
+
+$$
+   \begin{cases} 
+      \Phi_0 = 1 \\
+      \displaystyle \Phi_{k+1} = \Phi_k\frac{n-k}{k + 1}
+   \end{cases}
+$$
+
+Now, we can go through the steps to find binomial coefficients in $O(n)$ time:
