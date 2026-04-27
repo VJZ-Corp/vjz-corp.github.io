@@ -53,7 +53,7 @@ $$
 \begin{align*}
     {n \choose k - 1} \frac{n-k+1}{k} &= \frac{n!}{(k-1)!(n-k+1)!} \frac{n-k+1}{k} \\
     &=\frac{n!}{k(k-1)!} \frac{n-k+1}{(n-k+1)!} \\
-    &=\frac{n!}{k(k-1)!} \frac{{n-k+1}}{{(n-k+1)}(n-k)!} \\
+    &=\frac{n!}{k(k-1)!} \frac{n-k+1}{(n-k+1)(n-k)!} \\
     &=\frac{n!}{k(k-1)!(n-k)!} \\
      &=\frac{n!}{k!(n-k)!} \\
       &={n \choose k}
@@ -77,7 +77,7 @@ If the statement $\displaystyle {n \choose k-1}f(k-1) = {n \choose k}$ is true, 
 $$
 \begin{align*}
     {n \choose k} \frac{n-k}{k + 1} &= \frac{n!}{k!(n-k)!} \frac{n-k}{k + 1} \\
-    &= \frac{n!}{k!(k+1)} \frac{{n-k}}{(n-k-1)!{(n-k)}} \\
+    &= \frac{n!}{k!(k+1)} \frac{n-k}{(n-k-1)!(n-k)} \\
     &= \frac{n!}{k!(k+1)(n-(k+1))!} \\
     &= \frac{n!}{(k+1)!(n-(k+1))!} \\
     &= {n \choose k+1}
