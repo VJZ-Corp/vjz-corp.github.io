@@ -38,7 +38,7 @@ Memory Debug Visualizer (*memdbgvis*) is a powerful read-only Java debugger that
 - The Runtime Memory Metrics display provides runtime metrics of your program, enabling you to diagnose the performance of the JVM.
 - The Local Variables tab displays variables in the current method, capturing the stack frame's state for the programmer's reference. Additionally, the reference this is highlighted in blue to indicate whether the stack frame is for an instance or static method.
 - The Static Fields tab shows debuggee's relevant static fields. This tab helps the programmer understand the current state of the class-level variables.
-- The Heap Inspector is an advanced, cutting-edge tool designed to provide a more comprehensive view of an object's contents by extracting data from the heap directly. This tool is extremely useful if a hashcode is generated instead of a .toString() visualization as mentioned above.
+- The Heap Inspector is an advanced, cutting-edge tool designed to provide a more comprehensive view of an object's contents by extracting data from the heap directly. This tool is extremely useful if a hashcode is generated instead of a `.toString()` visualization as mentioned above.
 
 Get *memdbgvis* for free here: [https://github.com/VJZ-Corp/memdbgvis](https://github.com/VJZ-Corp/memdbgvis).
 
