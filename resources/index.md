@@ -18,6 +18,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 
 ## Computer Science
 - [Time Complexity](cs/big-o)
+- [Recursive Generation of Binomial Coefficients in Linear Time](cs/binom-coeff-linear-gen.md)
 - [Optimizing the Computation of Maximum Subarray Sums](cs/max-subarray-sums)
 
 ## Software Engineering
