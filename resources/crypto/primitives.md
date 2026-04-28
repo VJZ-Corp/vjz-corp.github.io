@@ -62,4 +62,16 @@ $$
 E(m, k, IV_1) \neq E(m, k, IV_2).
 $$
 
-Namely, even if $m$ and $k$ are the exact same, the ciphertext generated would differ due to separate IVs. This ensures a randomized encoding of a message is generated each time encryption is applied.
+Namely, even if $m$ and $k$ are the exact same, the ciphertext generated would differ due to separate IVs. This ensures a randomized encoding of a message is fresh, so identical inputs never produce predictable or repeatable outputs.
+
+## Hashing
+A hash function takes an input of any size (generalized as a bit stream) and returns an output of a fixed size such that changing any bit of the input would also change the output. The output of a hash function is called the **digest**.
+
+$$
+H : \{0, 1\}^* \rightarrow \{0, 1\}^n,
+$$
+
+where $n$ is the digest length.
+
+A crytographically-secure hash function is not feasibly invertible. That is, given the output of the hash function and the code of the function itself, finding an input that would generate that output requires work equivalent to brute forcing until the desired output is found.
+
