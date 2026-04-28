@@ -131,7 +131,7 @@ There are different certificate formats, such as X.509 and PKCS, but at a high l
 ### Certificate Authority
 Since certificates require the issuer to sign, this raises a circular problem. How can anyone trust that the issuer is who they say they are? The solution is for more high-profile authorities to issue certificates to the lower-level issuers. This forms a hierarchical structure of CAs ending at the root CA:
 
-<img width="1144" height="623" alt="image" src="https://github.com/user-attachments/assets/d9414ce7-9952-4bba-a375-09ad823a4304" />
+<img width="900" height="490" alt="image" src="https://github.com/user-attachments/assets/d9414ce7-9952-4bba-a375-09ad823a4304" />
 
 The important question now becomes: if root CAs are not certified, how can they be trusted? The answer is a combination of politics, laws, and human governance. At a certain point, your system (OS or browser) hardcodes a curated set of root public keys, and verification starts from there. This might be an unsatisfying answer not rooted in cryptography, but it is what we really use today. Here is an example of 8 out of 134 trust anchors trusted by Google Chrome:
 
