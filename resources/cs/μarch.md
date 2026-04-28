@@ -70,12 +70,25 @@ cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7
 
 Even though the forwarding unit and hazard detector handle most dependency situations, sometimes the processor still has to stall. A notable example is a **load-use hazard**:
 
-cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 `add r1, r4, r5` | F | D | E | M | W
 `sw r2, 2(r1)`   |   | F | D | E | M | W
 `lw r3, 8(r6)`   |   |   | F | D | E | M | W
-`add r5, r1, r4` |   |   |   | F | D | D* | E | M | W
+`add r5, r1, r4` |   |   |   | F | D | D** | E | M | W
 `sub r1, r8, r2` |   |   |   |   |   | F | D | E | M | W
 
-*The decode stage stalls because the previous instruction (`lw`) cannot forward to execution without completing the memory stage first.
+**The decode stage stalls because the previous instruction (`lw`) cannot forward to execution without completing the memory stage first.
+
+## Superscalar Processor
+A natural way to further speed up execution is to widen the pipeline. Rather than fetching one instruction at a time, we can fetch two or more instructions. This makes the processor superscalar. For example, consider a 2-wide superscalar processor running these instructions:
+
+cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+`loop:  add r3, r2, r6` | F | D | E | M | W
+`lw r1, 10(r5)`         | F | D | E | M | W
+`sub r4, r4, r1`        |   | F | D | D | E | M | W
+`and r6, r4, r2`        |   | F | D | D | D | E | M | W
+`or r4, r6, r3`         |   |   | F | F | D | D | E | M | W
+`addi r5, r5, #1`       |   |   | F | F | F | D | E | M | W
+`bne r5, r8, loop`      |   |   |   |   | F | F | D | E | M | W
