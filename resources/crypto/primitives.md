@@ -14,7 +14,7 @@ Knowing which concept to use to protect your information is crucial when applyin
 There are other goals, but the main ones fall into the three categories shown above. The primitives presented here address all of them, along with some nuances and consequences. These primitives make up the vast majority of modern safe digital communication.
 
 ## Ciphers
-Ciphers are just algorithms that obfuscate and transform data into a format that is designed to be hard to extract meaningful data from. There are countless examples of ciphers used in history, such as the well-known Caeser cipher. Ciphers can be built many ways (a lot are not as secure as they seem), but this guide will only focus on key-based algorithms.
+Ciphers are just algorithms that obfuscate and transform data into a format that is designed to be hard to extract meaningful information from. There are countless examples of ciphers used in history, such as the well-known Caeser cipher. Ciphers can be built many ways (a lot are not as secure as they seem), but this guide will only focus on key-based algorithms.
 
 ### Symmetric Encryption
 
