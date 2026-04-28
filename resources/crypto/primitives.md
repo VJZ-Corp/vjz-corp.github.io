@@ -99,11 +99,11 @@ So far, methods that attain secrecy have been covered: ciphers allow messages to
 
 1. Alice sends $m$ to Bob, but Bob wants Alice to prove that $m$ was sent by her and not somebody pretending to be her.
 2. Alice generates $c_{signed} = E(m, k^{(A)}_{pri})$ using her private key.
-3. Since $k^{(A)}_{pub}$ and $k^{(A)}_{pri}$ are mathematically tied as a keypair, Bob can get $m = D(c_{signed}, k^{(A)}_{pub})$.
+3. Since Alice's public and private keys are mathematically tied as a keypair, Bob can get the original $m = D(c_{signed}, k^{(A)}_{pub})$.
 
 This whole process is just utilizing asymmetric encryption in reverse. Alice encrypts (or signs) the message using her private key, then Bob can use her public key to undo the encryption. In order for this to work, he needs to trust $k^{(A}}_{pub}$ actually belongs to Alice (more on this in the next section).
 
-*Side note: it is inefficient to sign the entire message. Often times, only the digest $H(m)$ is signed, making the process $E(H(m), k_{pri})$.*
+*Side note: it is inefficient to sign the entire message. In real use cases, only the digest $H(m)$ is signed, making the process $E(H(m), k_{pri})$.*
 
 ## Message Authentication Codes
 A version of digital signatures exists for symmetric encryption. Since $k$ is shared between both parties, the function works as follows:
