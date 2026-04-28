@@ -75,10 +75,10 @@ cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 `add r1, r4, r5` | F | D | E | M | W
 `sw r2, 2(r1)`   |   | F | D | E | M | W
 `lw r3, 8(r6)`   |   |   | F | D | E | M | W
-`add r5, r1, r4` |   |   |   | F | D | D** | E | M | W
+`add r5, r1, r3` |   |   |   | F | D | D** | E | M | W
 `sub r1, r8, r2` |   |   |   |   |   | F | D | E | M | W
 
-**The decode stage stalls because the previous instruction (`lw`) cannot forward to execution without completing the memory stage first.
+**The decode stage stalls because the previous instruction (`lw`) cannot forward to the next instruction's (`add`) execute stage since `add` needs the result of `lw` which is only produced *after* the memory stage.
 
 ## Superscalar Processor
 A natural way to further speed up execution is to widen the pipeline. Rather than fetching one instruction at a time, we can fetch two or more instructions. This makes the processor superscalar. For example, consider a 2-wide superscalar processor running these instructions:
