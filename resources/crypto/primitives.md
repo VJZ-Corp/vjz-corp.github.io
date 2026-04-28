@@ -73,5 +73,23 @@ $$
 
 where $n$ is the digest length.
 
-A crytographically-secure hash function is not feasibly invertible. That is, given the output of the hash function and the code of the function itself, finding an input that would generate that output requires work equivalent to brute forcing until the desired output is found.
+A crytographically-secure hash function is not feasibly invertible. That is, given the output of the hash function and the code of the function itself, finding an input that would generate that output requires work equivalent to brute forcing until the desired output is found. Some popular hash functions are MD5 (proven not secure), SHA-1, SHA-2, SHA-3, BLAKE2, and BLAKE3. You can learn more about [SHA-256](sha-256), a variant of SHA-2 where the digest length $n = 256$ bits.
 
+### Salting
+Among other applications, hashing is used to store passwords in databases safely. Due to the one-way nature, an adversary that has compromised the database will only be able to see the digest and not original password. However, if a particular $H(p) = h$ is found, the adversary can store them in rainbow tables like the one shown below:
+
+Plaintext | Digest
+--- | ---
+$p_1$ | $h_1$
+$p_2$ | $h_2$
+... | ...
+
+This means any $p$ that has an assoicated $h$ would be forever unsafe to use as a password. Just like IVs, salts can prevent this by introducing some randomness to make rainbow tables essentially useless:
+
+$$
+H(s_1p) \neq H(s_2p),
+$$
+
+where $s_1p, s_2p$ stands for the salt $s_1$ and $s_2$ concatenated with the plaintext $p$ respectively.
+
+## Digital Signatures
