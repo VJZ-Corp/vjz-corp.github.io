@@ -23,6 +23,9 @@ There are countless examples of ciphers used in history, such as the well-known 
 Ciphers can be built many ways (a lot are not as secure as they seem), but this guide will only introduce key-based algorithms.
 
 ### Symmetric Encryption
+
+<img width="796" height="435" alt="image" src="https://github.com/user-attachments/assets/da92ab6c-0c52-44ed-8b7d-3e53236e9026" />
+
 Symmetric-key encryption involves a pair of functions $E, D$ and a secret key $k$. 
 The functions take in a plaintext message $m$ and produce a ciphertext $c$:
 
