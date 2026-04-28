@@ -9,7 +9,7 @@ Knowing which concept to use to protect your information is crucial when applyin
 
 - *Secrecy*: An adversary with access to a piece of data should not be able to extract any meaningful information out of it.
 - *Authenticity*: An adversary should not be able to forge a message or spoof the identity of the original author.
-- *Verification*: How can one party trust the other when interacting for the first time?
+- *Trustworthyness*: How can one party trust the other when exchanging information?
 
 There are other goals, but the main ones fall into the three categories shown above. The primitives presented here address all of them, along with some nuances and consequences. These primitives make up the vast majority of modern safe digital communication.
 
@@ -47,7 +47,7 @@ These types of algorithms belong to a broader field of public-key cryptography. 
 
 Some famous asymmetric encryption algorithms include the Diffie–Hellman key exchange protocol, DSS (Digital Signature Standard), ElGamal, Elliptic-curve cryptography, and RSA. The details of each algorithm could be explored in a distinct lesson.
 
-## Initialization Vectors
+### Initialization Vectors
 Currently, our encryption algorithm $E(m, k)$ always produces the same $c$. This may not seem problematic at first, but consider the following scenario:
 
 1. Alice sends numerous messages with the same key $k$ to Bob.
@@ -90,6 +90,30 @@ $$
 H(s_1p) \neq H(s_2p),
 $$
 
-where $s_1p, s_2p$ stands for the salt $s_1$ and $s_2$ concatenated with the plaintext $p$ respectively.
+where $s_1p$ and $s_2p$ stand for the salt $s_1$ and $s_2$ concatenated with the plaintext $p$ respectively.
 
 ## Digital Signatures
+So far, methods that attain secrecy have been covered: ciphers allow messages to be secret when passed around and digests make inferring plaintext nearly impossible. This section will address how to ensure authenticity when communicating. Even though the adversary may not be able to read messages, they can still pretend to be someone they are not, and digital signatures prevent this. We can reuse the concept of asymmetric encryption to sign messages:
+
+<img width="800" height="782" alt="image" src="https://github.com/user-attachments/assets/e02939a6-1fa1-406e-92aa-b2c389dd14ca" />
+
+1. Alice sends $m$ to Bob, but Bob wants Alice to prove that $m$ was sent by her and not somebody pretending to be her.
+2. Alice generates $c_{signed} = E(m, k^{(A)}_{pri})$ using her private key.
+3. Since $k^{(A)}_{pub}$ and $k^{(A)}_{pri}$ are mathematically tied as a keypair, Bob can get $m = D(c_{signed}, k^{(A)}_{pub})$.
+
+This whole process is just utilizing asymmetric encryption in reverse. Alice encrypts (or signs) the message using her private key, then Bob can use her public key to undo the encryption. In order for this to work, he needs to trust $k^{(A}}_{pub}$ actually belongs to Alice (more on this in the next section).
+
+*Side note: it is inefficient to sign the entire message. Often times, only the digest $H(m)$ is signed, making the process $E(H(m), k_{pri})$.*
+
+## Message Authentication Codes
+A version of digital signatures exists for symmetric encryption. Since $k$ is shared between both parties, the function works as follows:
+
+$$
+t = \text{MAC}(m, k)
+$$
+
+produces a tag $t$ that is sent along with $m$. This ensures that $m$ was sent by somebody who had the secret key $k$. The symmetric cipher itself only ensures that the message contents is secret, but it doesn’t ensure that it is not maliciously corrupted. Combining asymmetric encryption and a message authentication code is called **authenticated encryption**.
+
+## Certificates
+
+## Common Pitfalls
