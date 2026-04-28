@@ -80,11 +80,11 @@ Among other applications, hashing is used to store passwords in databases safely
 
 Plaintext | Digest
 --- | ---
+$p_0$ | $h_0$
 $p_1$ | $h_1$
-$p_2$ | $h_2$
 ... | ...
 
-This means any $p$ that has an assoicated $h$ would be forever unsafe to use as a password. Just like IVs, salts can prevent this by introducing some randomness to make rainbow tables essentially useless:
+This means any $p$ that has an associated $h$ would be forever unsafe to use as a password. Just like IVs, salts can prevent this by introducing some randomness to make rainbow tables essentially useless:
 
 $$
 H(s_1p) \neq H(s_2p),
