@@ -42,7 +42,7 @@ The only upside of single-cycle processors are their simple designs as seen from
 ## Pipelined Processor
 The biggest shortcoming of the single-cycle processor was the lack of utilization. An instruction would only occupy one component at a time, leaving the other components sitting around and doing nothing. Pipelined processors instead group the components by stages. A classic version has 5 stages: (F)etch, (D)ecode, (E)xecute, (M)emory, and (W)riteback. As seen in the diagram below, pipelined processors are way more complicated in design:
 
-<img width="825" height="568" alt="image" src="https://github.com/user-attachments/assets/b426b3c3-643a-4cb9-9e30-ec46d4d60ea7" />
+<img width="825" height="464" alt="image" src="https://github.com/user-attachments/assets/b426b3c3-643a-4cb9-9e30-ec46d4d60ea7" />
 
 With pipelined processors, the clock cycle time reduces to 350 ps, an almost 3x speedup. To see why this is the case, consider the following simple workload:
 
