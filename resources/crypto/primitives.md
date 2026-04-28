@@ -107,7 +107,7 @@ This whole process is just utilizing asymmetric encryption in reverse. Alice enc
 
 *Side note: it is inefficient to sign the entire message. In real use cases, only the digest $H(m)$ is signed, making the process $E(H(m), k_{pri})$. Besides signatures, $H(m)$ also serves as the checksum, which is a more general way of detecting message corruption.*
 
-## Message Authentication Codes
+### Message Authentication Codes
 A version of digital signatures exists for symmetric encryption. Since $k$ is shared between both parties, the function works as follows:
 
 $$
