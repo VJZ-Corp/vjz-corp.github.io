@@ -27,13 +27,25 @@ These are very basic processors that nobody uses nowadays outside of teaching ex
 
 Subsystem | Delay
 --- | ---
-Instruction Memory | 400 ns
-Register File | 100 ns
-ALU | 100 ns
-Data Memory | 800 ns
+Instruction memory access | 100 ps
+Register file read | 200 ps
+ALU | 150 ps
+Data memory access | 350 ps
+Register file write | 175 ps
 
-Single-cycle processors determine the clock period by the slowest instruction. So even though a instruction like `addu \$1, \$1, $2` never uses data memory, it still takes 800 picoseconds to complete.
+Single-cycle processors determine the clock cycle time by the sum of all delays. So even though a instruction like `addu r1, r1, r2` never uses data memory, it still takes 975 picoseconds to complete.
 
 <img width="900" height="655" alt="image" src="https://github.com/user-attachments/assets/fcc3b2ba-c627-4519-9fbd-82b12f523c44" />
 
 The only upside of single-cycle processors are their simple designs as seen from the above diagram. That is why they are primarily used in classrooms. Their inefficiency would not make them perform well on any real workloads.
+
+## Pipelined Processor
+The biggest shortcoming of the single-cycle processor was the lack of utilization. An instruction would only occupy one component at a time, leaving the other components sitting around and doing nothing. Pipelined processors instead group the components by stages. A classic version has 5 stages: fetch, decode, execute, memory, and writeback. As seen in the diagram below, pipelined processors are way more complicated in design:
+
+<img width="900" height="619" alt="image" src="https://github.com/user-attachments/assets/b426b3c3-643a-4cb9-9e30-ec46d4d60ea7" />
+
+The main cause of this mess is hazards and forwarding, which we will cover more in the next section. With pipelined processors, the clock cycle time reduces to 350 ps, an almost 3x speedup. To see why this is the case, consider the following simple workload:
+
+```
+...
+```
