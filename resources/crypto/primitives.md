@@ -117,7 +117,7 @@ $$
 produces a tag $t$ that is sent along with $m$. This ensures that $m$ was sent by somebody who had the secret key $k$. The symmetric cipher itself only ensures that the message contents is secret, but it doesn’t ensure that it is not maliciously corrupted. Combining asymmetric encryption and a message authentication code is called **authenticated encryption**.
 
 ## Certificates
-Recall from above, Bob needed to trust $k^{(A)}_{pub}$ is the actual public key that Alice owns. A simple method to accomplish this is for Alice to directly tell Bob her public key. However, this becomes quickly infeasible over the internet. You would have to physically reach out to every website you visit, which would be a nightmare! Instead, modern web has adopted public-key infrastructure, and a common tool for verifying public keys are **certificates**. Below displays an example ceritificate for this site:
+Recall from above, Bob needed to trust $k^{(A)}_{pub}$ is the actual public key that Alice owns. A simple method to accomplish this is for Alice to directly tell Bob her public key. However, this becomes quickly infeasible over the internet. You would have to physically reach out to every website you visit, which would be a nightmare! Instead, modern web has adopted public-key infrastructure, and a common tool for verifying public keys are **certificates**. Below displays an example certificate for this site:
 
 <img width="672" height="835" alt="image" src="https://github.com/user-attachments/assets/f3cd865e-5c37-491f-93dc-796fbd3c4349" />
 
