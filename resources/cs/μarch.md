@@ -44,7 +44,7 @@ The biggest shortcoming of the single-cycle processor was the lack of utilizatio
 
 <img width="825" height="464" alt="image" src="https://github.com/user-attachments/assets/b426b3c3-643a-4cb9-9e30-ec46d4d60ea7" />
 
-With pipelined processors, the clock cycle time reduces to 350 ps, an almost 3x speedup. To see why this is the case, consider the following simple workload:
+If we apply the above delays to our pipelined processor, the clock cycle time reduces to 350 ps, an almost 3x speedup. To see why this is the case, consider the following simple workload:
 
 ```
 add r4, r2, r1
