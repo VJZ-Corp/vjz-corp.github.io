@@ -32,7 +32,7 @@ Register File | 100 ns
 ALU | 100 ns
 Data Memory | 800 ns
 
-Single-cycle processors determine the clock period by the slowest instruction. So even though a instruction like `addu $1, $1, $2` never uses data memory, it still takes 800 picoseconds to complete.
+Single-cycle processors determine the clock period by the slowest instruction. So even though a instruction like `addu \$1, \$1, $2` never uses data memory, it still takes 800 picoseconds to complete.
 
 <img width="900" height="655" alt="image" src="https://github.com/user-attachments/assets/fcc3b2ba-c627-4519-9fbd-82b12f523c44" />
 
