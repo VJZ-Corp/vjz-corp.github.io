@@ -29,6 +29,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 - [Introduction to Deep Learning](ai/Intro_to_Deep_Learning)
 
 ## Cryptography
+- [Cryptographic Primitives](crypto/primitives)
 - [Secure Hash Algorithm 2, 256-bit](crypto/sha-256)
 
 ## Math
