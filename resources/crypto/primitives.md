@@ -103,7 +103,7 @@ So far, methods that attain secrecy have been covered: ciphers allow messages to
 
 This whole process is just utilizing asymmetric encryption in reverse. Alice encrypts (or signs) the message using her private key, then Bob can use her public key to undo the encryption. In order for this to work, he needs to trust $k^{(A}}_{pub}$ actually belongs to Alice (more on this in the next section).
 
-*Side note: it is inefficient to sign the entire message. In real use cases, only the digest $H(m)$ is signed, making the process $E(H(m), k_{pri})$.*
+*Side note: it is inefficient to sign the entire message. In real use cases, only the digest $H(m)$ is signed, making the process $E(H(m), k_{pri})$. Besides signatures, $H(m)$ also serves as the checksum, which is a more general way of detecting message corruption.*
 
 ## Message Authentication Codes
 A version of digital signatures exists for symmetric encryption. Since $k$ is shared between both parties, the function works as follows:
