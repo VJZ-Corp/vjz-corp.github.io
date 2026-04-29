@@ -85,13 +85,13 @@ A natural way to further speed up execution is to widen the pipeline. Rather tha
 
 cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-`add r3, r2, r6` | F | D | E | M | W
-`lw r1, 10(r5)`  | F | D | E | M | W
-`sub r4, r4, r1` |   | F | D | D | E | M | W
-`and r6, r4, r2` |   | F | D | D | D | E | M | W
-`or r4, r6, r3`  |   |   | F | F | D | D | E | M | W
-`addi r5, r5, #1`|   |   | F | F | F | D | E | M | W
-`slt r9, r7, r6` |   |   |   |   | F | F | D | E | M | W
+`add   r3, r2, r6` | F | D | E | M | W
+`lw    r1, 10(r5)`  | F | D | E | M | W
+`sub   r4, r4, r1` |   | F | D | D | E | M | W
+`and   r6, r4, r2` |   | F | D | D | D | E | M | W
+`or    r4, r6, r3`  |   |   | F | F | D | D | E | M | W
+`addi  r5, r5, #1`|   |   | F | F | F | D | E | M | W
+`slt   r9, r7, r6` |   |   |   |   | F | F | D | E | M | W
 
 Even though more instructions can be fetched at a time, dependencies are still the biggest bottleneck. In the above example, more than 70% of instructions stalled due to dependent instructions. Wouldn't it make more sense to execute independent instructions that do not depend on each other first instead of stalling? That is exactly what processor designers sought to answer, which is the main topic of the next section.
 
@@ -106,3 +106,18 @@ cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 `add  r5, r4, r6`  |   |   |   |   | F | D | D | E | M | W
 `lw   r7, 8(r10)`  |   |   |   |   |   | F | F | D | E | M | W
 `add  r8, r7, r9`  |   |   |   |   |   |   |   | F | D | E | M | W
+
+We can change the ordering of these instructions and remove all stalls:
+
+cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+`lw   r1, 0(r10)`  | F | D | E | M | W
+`lw   r4, 4(r10)`  |   | F | D | E | M | W
+`lw   r7, 8(r10)`  |   |   | F | D | E | M | W
+`add  r2, r1, r3`  |   |   |   | F | D | E | M | W
+`add  r5, r4, r6`  |   |   |   |   | F | D | E | M | W
+`add  r8, r7, r9`  |   |   |   |   |   | F | D | E | M | W
+
+The programmer could reorder instructions themselves to realize this speedup but that is extremely tedious and difficult. Instead, most modern processors do this automatically within their microarchitecture. This gave rise to the name "out-of-order," describing how CPUs would internally schedule instructions in an order that was different than written. We will see several ways the hardware enables this to happen.
+
+### Register Renaming
