@@ -76,19 +76,33 @@ cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 `sw r2, 2(r1)`   |   | F | D | E | M | W
 `lw r3, 8(r6)`   |   |   | F | D | E | M | W
 `add r5, r1, r3` |   |   |   | F | D | D** | E | M | W
-`sub r1, r8, r2` |   |   |   |   |   | F | D | E | M | W
+`sub r1, r8, r2` |   |   |   |   | F | F | D | E | M | W
 
 **The decode stage stalls because the previous instruction (`lw`) cannot forward to the next instruction's (`add`) execute stage since `add` needs the result of `lw` which is only produced *after* the memory stage.
 
 ## Superscalar Processor
 A natural way to further speed up execution is to widen the pipeline. Rather than fetching one instruction at a time, we can fetch two or more instructions. This makes the processor superscalar. For example, consider a 2-wide superscalar processor running these instructions:
 
-cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
-`loop:  add r3, r2, r6` | F | D | E | M | W
-`lw r1, 10(r5)`         | F | D | E | M | W
-`sub r4, r4, r1`        |   | F | D | D | E | M | W
-`and r6, r4, r2`        |   | F | D | D | D | E | M | W
-`or r4, r6, r3`         |   |   | F | F | D | D | E | M | W
-`addi r5, r5, #1`       |   |   | F | F | F | D | E | M | W
-`bne r5, r8, loop`      |   |   |   |   | F | F | D | E | M | W
+cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+`add r3, r2, r6` | F | D | E | M | W
+`lw r1, 10(r5)`  | F | D | E | M | W
+`sub r4, r4, r1` |   | F | D | D | E | M | W
+`and r6, r4, r2` |   | F | D | D | D | E | M | W
+`or r4, r6, r3`  |   |   | F | F | D | D | E | M | W
+`addi r5, r5, #1`|   |   | F | F | F | D | E | M | W
+`slt r9, r7, r6` |   |   |   |   | F | F | D | E | M | W
+
+Even though more instructions can be fetched at a time, dependencies are still the biggest bottleneck. In the above example, more than 70% of instructions stalled due to dependent instructions. Wouldn't it make more sense to execute independent instructions that do not depend on each other first instead of stalling? That is exactly what processor designers sought to answer, which is the main topic of the next section.
+
+## Out-of-Order Processor
+Up until now, our optimizations all boil down to one goal: keeping all components of the CPU busy. With pipelining, we managed to continuously feed instructions to the processor rather than waiting for the previous one to fully complete. Nevertheless, dependent instructions lead to hazards, which partially negated the benefit of pipelining. Consider the following program plagued with load-use hazards and its pipeline diagram:
+
+cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+`lw   r1, 0(r10)`  | F | D | E | M | W
+`add  r2, r1, r3`  |   | F | D | D | E | M | W
+`lw   r4, 4(r10)`  |   |   | F | F | D | E | M | W
+`add  r5, r4, r6`  |   |   |   |   | F | D | D | E | M | W
+`lw   r7, 8(r10)`  |   |   |   |   |   | F | F | D | E | M | W
+`add  r8, r7, r9`  |   |   |   |   |   |   |   | F | D | E | M | W
