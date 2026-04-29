@@ -25,13 +25,11 @@ Modern Intel and AMD processors are extremely complex to understand. There are m
 ## Single-Cycle Processor
 These are very basic processors that nobody uses nowadays outside of teaching examples. Each instruction gets executed in one cycle, which may seem great, but cycle times are horrendously long. Consider the following delays:
 
-Subsystem | Delay
---- | ---
-Instruction memory access | 100 ps
-Register file read | 200 ps
-ALU | 150 ps
-Data memory access | 350 ps
-Register file write | 175 ps
+- Instruction memory access: 100 ps
+- Data memory access: 350 ps
+- Register file read: 200 ps
+- Register file write: 175 ps
+- ALU execution: 150 ps
 
 Single-cycle processors determine the clock cycle time by the sum of all delays. So even though a instruction like `addu r1, r1, r2` never uses data memory, it still takes 975 picoseconds to complete.
 
@@ -47,36 +45,36 @@ The biggest shortcoming of the single-cycle processor was the lack of utilizatio
 If we apply the above delays to our pipelined processor, the clock cycle time reduces to 350 ps, an almost 3x speedup. To see why this is the case, consider the following simple workload:
 
 ```
-add r4, r2, r1
-sw r2, 2(r5)
-slt r3, r5, r4
+add  r4, r2, r1
+sw   r2, 2(r5)
+slt  r3, r5, r4
 ```
 
 In the single-cycle processor, the following diagram illustrates why it takes 15 cycles:
 
 cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-`add r4, r2, r1` | F | D | E | M | W |
-`sw r2, 2(r5)`   |   |   |   |   |   | F | D | E | M | W
-`slt r3, r5, r4` |   |   |   |   |   |   |   |   |   |   | F | D | E | M | W
+`add  r4, r2, r1` | F | D | E | M | W |
+`sw   r2, 2(r5)`   |   |   |   |   |   | F | D | E | M | W
+`slt  r3, r5, r4` |   |   |   |   |   |   |   |   |   |   | F | D | E | M | W
 
 Whereas a pipelined processor would only take 7 cycles:
 
 cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7
 --- | --- | --- | --- | --- | --- | --- | ---
-`add r4, r2, r1` | F | D | E | M | W |
-`sw r2, 2(r5)`   |   | F | D | E | M | W
-`slt r3, r5, r4` |   |   | F | D | E | M | W
+`add  r4, r2, r1` | F | D | E | M | W |
+`sw   r2, 2(r5)`   |   | F | D | E | M | W
+`slt  r3, r5, r4` |   |   | F | D | E | M | W
 
 Even though the forwarding unit and hazard detector handle most dependency situations, sometimes the processor still has to stall. A notable example is a **load-use hazard**:
 
 cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
-`add r1, r4, r5` | F | D | E | M | W
-`sw r2, 2(r1)`   |   | F | D | E | M | W
-`lw r3, 8(r6)`   |   |   | F | D | E | M | W
-`add r5, r1, r3` |   |   |   | F | D | D** | E | M | W
-`sub r1, r8, r2` |   |   |   |   | F | F | D | E | M | W
+`add  r1, r4, r5` | F | D | E | M | W
+`sw   r2, 2(r1)`   |   | F | D | E | M | W
+`lw   r3, 8(r6)`   |   |   | F | D | E | M | W
+`add  r5, r1, r3` |   |   |   | F | D | D** | E | M | W
+`sub  r1, r8, r2` |   |   |   |   | F | F | D | E | M | W
 
 **The decode stage stalls because the previous instruction (`lw`) cannot forward to the next instruction's (`add`) execute stage since `add` needs the result of `lw` which is only produced *after* the memory stage.
 
@@ -99,7 +97,7 @@ Even though more instructions can be fetched at a time, dependencies are still t
 Up until now, our optimizations all boil down to one goal: keeping all components of the CPU busy. With pipelining, we managed to continuously feed instructions to the processor rather than waiting for the previous one to fully complete. Nevertheless, dependent instructions lead to hazards, which partially negated the benefit of pipelining. Consider the following program plagued with load-use hazards and its pipeline diagram:
 
 cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 `lw   r1, 0(r10)`  | F | D | E | M | W
 `add  r2, r1, r3`  |   | F | D | D | E | M | W
 `lw   r4, 4(r10)`  |   |   | F | F | D | E | M | W
@@ -118,6 +116,24 @@ cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 `add  r5, r4, r6`  |   |   |   |   | F | D | E | M | W
 `add  r8, r7, r9`  |   |   |   |   |   | F | D | E | M | W
 
-The programmer could reorder instructions themselves to realize this speedup but that is extremely tedious and difficult. Instead, most modern processors do this automatically within their microarchitecture. This gave rise to the name "out-of-order," describing how CPUs would internally schedule instructions in an order that was different than written. We will see several ways the hardware enables this to happen.
+The programmer could reorder instructions themselves to realize this speedup, but that is extremely tedious and difficult. Instead, most modern processors automatically do this for you. This is the origin of the name "out-of-order," describing how CPUs would internally schedule instructions in an order that was different than written. We will see several ways the hardware enables this to happen.
 
 ### Register Renaming
+The first major problem to tackle is the limited amount of registers available. Consider the following program:
+
+```
+add  r1, r2, r3
+mul  r4, r1, r5
+add  r1, r6, r7
+sub  r8, r1, r9
+```
+
+What dependencies exist?
+1. `mul` needs `r1` from the first `add`
+2. `sub` needs `r1` from the *second* `add`
+
+This creates two types of hazards:
+- (W)rite (A)fter (W)rite - when two writes go to the same register
+- (W)rite (A)fter (R)ead - when later write might overwrite before earlier read
+
+But notice: `r1` gets completely recomputed in the second `add` instruction. This is where register renaming would be useful.
