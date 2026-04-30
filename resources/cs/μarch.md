@@ -5,11 +5,11 @@ filename: μarch.md
 ---
 
 # Modern CPU Microarchitecture
-Take a look at this unassuming picture of AMD's Ryzen 9 9950X:
+Take a look at this unassuming picture of AMD's Ryzen 7 9700X:
 
-<img width="825" height="465" alt="image" src="https://github.com/user-attachments/assets/a302b2d5-8a26-4db4-9a19-bb1eb85b4fa5" />
+<img width="534" height="532" alt="image" src="https://github.com/user-attachments/assets/71f0c2bf-d68b-4b86-9ac9-98e279934524" />
 
-Billions of CPUs like the Ryzen 9 9950X (albeit not as powerful) sit in motherboards and PCBs all around the world. Ryzen 9 9950X belongs to the AMD Zen 5 microarchitecture. Here is what happens if you take the cover off:
+Billions of CPUs like the Ryzen 7 9700X (albeit not as powerful) sit in motherboards and PCBs all around the world. The 9700X belongs to the AMD Zen 5 microarchitecture. Here is what happens if you take the cover off:
 
 <img width="825" height="825" alt="image" src="https://github.com/user-attachments/assets/c83b3a32-78ce-4053-bae7-63bfe715dba5" />
 
@@ -76,7 +76,7 @@ cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 `add  r5, r1, r3` |   |   |   | F | D | D** | E | M | W
 `sub  r1, r8, r2` |   |   |   |   | F | F | D | E | M | W
 
-**The decode stage stalls because the previous instruction (`lw`) cannot forward to the next instruction's (`add`) execute stage since `add` needs the result of `lw` which is only produced *after* the memory stage.
+**The decode stage stalls because the previous instruction (`lw`) cannot forward to the next instruction's (`add`) execute stage since `add` needs the result of `lw` which is only produced after the memory stage.
 
 ## Superscalar Processor
 A natural way to further speed up execution is to widen the pipeline. Rather than fetching one instruction at a time, we can fetch two or more instructions. This makes the processor superscalar. For example, consider a 2-wide superscalar processor running these instructions:
@@ -133,7 +133,51 @@ What dependencies exist?
 2. `sub` needs `r1` from the *second* `add`
 
 This creates two types of hazards:
-- (W)rite (A)fter (W)rite - when two writes go to the same register
-- (W)rite (A)fter (R)ead - when later write might overwrite before earlier read
+- (W)rite (A)fter (W)rite - when two writes go to the same register.
+- (W)rite (A)fter (R)ead - when later write might overwrite before earlier read.
 
-But notice: `r1` gets completely recomputed in the second `add` instruction. This is where register renaming would be useful.
+But notice: `r1` gets completely recomputed in the second `add` instruction. The first version of `r1` is different from the second version of `r1`. This is where register renaming would be useful. Since different microarchitectures have different amounts of registers, program compatibility quickly breaks if we do not maintain two types of registers:
+
+- *Architectural register* - these registers are specified by the ISA. These represent abstract registers guaranteed to the programmer. For example, MIPS has `r1` through `r31` and x86 has `rax, rbx, rcx, rdx, rdi, ...`
+- *Physical register* - these represent the real registers inside the processor. There are often hundreds of them. Zen 5 CPUs have 240 physical registers for integer instructions.
+
+The processor keeps track of which architectural register maps to which physical register using the register alias table. The processor also has a free list of registers that it can use. Going back to our earlier example, let us assume this is the alias table at the start of the program:
+
+arch reg | phys reg
+--- | ---
+`r1` | `t11`
+`r2` | `t12`
+`r3` | `t13`
+`r4` | `t14`
+`r5` | `t15`
+`r6` | `t16`
+`r7` | `t17`
+`r8` | `t18`
+`r9` | `t19`
+
+The free list at this point starts at `t20` and goes onwards. We can rename the program:
+
+```
+add  t20, t12, t13
+mul  t21, t20, t15
+add  t22, t16, t17  # can run early since t22 and t20 are independent of each other
+sub  t23, t11, t19
+```
+
+The renaming process is straightforward and successfully removes the hazards that we were talking about. Each time a new result is produced, we grab a free register and update the register alias table. The following changes are made:
+
+arch reg | phys reg
+--- | ---
+`r1` | ~~`t11`~~, ~~`t20`~~, `t22`
+`r2` | `t12`
+`r3` | `t13`
+`r4` | ~~`t14`~~, `t21`
+`r5` | `t15`
+`r6` | `t16`
+`r7` | `t17`
+`r8` | ~~`t18`~~, `t23`
+`r9` | `t19`
+
+You might think that this is wasteful since we keep using up free registers. At a certain point, physical registers are freed to be used again. We will discuss about that below (see section on commit stage). In OoO processors, register renaming is itself a stage, commonly just called "rename." Besides doing renaming, it also has a few other responsibilities...
+
+### Zeroing Idioms
