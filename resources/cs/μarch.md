@@ -250,5 +250,5 @@ The writeback stage takes the result from functional units and writes it into th
 This is the last stage to process the instruction. Even though the instructions were actually executed out-of-order, the commit stage needs to retire them *in order*. Otherwise, the program's flow from an external view would appear wrong, and debugging it would be a nightmare. The whole point of microarchitecture is to make optimizations without breaking the ISA's guarantees. The commit stage selects the oldest ROB entry and retires it using the following steps:
 1. Write the result from the ROB's destination physical register to the destination architectural register.
 2. If the instruction stores data to memory, actually write the result to the cache here. This is a common pattern where AGUs compute the effective store address, but not actually store it until the instruction is ready to commit. The reason lies in the fact that cache updates are sequential, meaning writing to them out-of-order would be a memory consistency violation.
-3. Recycle the physical register into the free list after writing to the architectual register.
+3. Recycle the physical register into the free list after writing to the architectural register.
 4. Retire the ROB entry and clear it.
