@@ -252,3 +252,50 @@ This is the last stage to process the instruction. Even though the instructions 
 2. If the instruction stores data to memory, actually write the result to the cache here. This is a common pattern where AGUs compute the effective store address, but not actually store it until the instruction is ready to commit. The reason lies in the fact that cache updates are sequential, meaning writing to them out-of-order would be a memory consistency violation.
 3. Recycle the physical register into the free list after writing to the architectural register.
 4. Retire the ROB entry and clear it.
+
+## Full OoO Example
+Here is a full example of how an OoO core might execute this program for two iterations:
+
+```
+  add   r7, r0, r0
+loop:
+  add   r11, r7, r1
+  add   r12, r7, r5
+  beq   r7, r6, end
+  lw    r10, 0(r11)
+  lw    r11, 1(r11)
+  sub   r11, r10, r11
+  sw    r11, 0(R12)
+  addi  r7, r7, #2
+  beq   r0, r0, loop
+end:
+```
+
+Program after register renaming:
+
+```
+  add   t2, t1, t1
+loop:
+  add   t4, t2, t3
+  add   t6, t2, t5
+  beq   t2, t7, end
+  lw    t8, 0(t4)
+  lw    t9, 1(t4)
+  sub   t10, t8, t9
+  sw    t10, 0(t6)
+  addi  t11, t2, #2
+  beq   t1, t1, loop
+loop:
+  add   t12, t11, t3
+  add   t13, t11, t5
+  beq   t11, t7, end
+  lw    t14, 0(t12)
+  lw    t15, 1(t12)
+  sub   t16, t14, t15
+  sw    t16, 0(t13)
+  addi  t17, t11, #2
+  beq   t1, t1, loop
+```
+
+Pipeline diagram of processor back end:
+
