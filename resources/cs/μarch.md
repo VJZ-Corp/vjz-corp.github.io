@@ -297,5 +297,39 @@ loop:
   beq   t1, t1, loop
 ```
 
-Pipeline diagram of processor back end:
+Register alias table after renaming:
 
+arch reg | phys reg
+--- | ---
+`r0` | `t1`
+`r1` | `t3`
+`r5` | `t5`
+`r6` | `t7`
+`r7` | ~~`t2`~~, ~~`t11`~~, `t17`
+`r10` | ~~`t8`~~, `t14`
+`r11` | ~~`t4`~~, ~~`t9`~~, ~~`t10`~~, ~~`t12`~~, ~~`t15`~~, `t16`
+`r12` | ~~`t6`~~, `t13`
+
+Pipeline diagram of back end execution engine (assuming 2-wide superscalar processor):
+
+cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+`add   t2, t1, t1`   | D | E | W | C
+`beq   t1, t1, loop` | D | E | W |  |  |  |  |  |  | C
+`add   t4, t2, t3`   |   | D | E | W | C
+`add   t6, t2, t5`   |   | D | E | W | C
+`beq   t2, t7, end`  |   |   | D | E | W | C
+`lw    t8, 0(t4)`    |   |   | D | E | W | C
+`lw    t9, 1(t4)`    |   |   |   | D | E | W | C
+`addi  t11, t2, #2`  |   |   |   | D | E | W |  |  | C
+`sub   t10, t8, t9`  |   |   |   |   | D | E | W | C
+`add   t12, t11, t3` |   |   |   |   | D | E | W |  |  | C
+`sw    t10, 0(t6)`   |   |   |   |   |   | D | E | W | C
+`add   t13, t11, t5` |   |   |   |   |   | D | E | W | | | C
+`beq   t11, t7, end` |   |   |   |   |   |   | D | E | W | | C
+`lw    t14, 0(t12)`  |   |   |   |   |   |   | D | E | W | | | C
+`lw    t15, 1(t12)`  |   |   |   |   |   |   |   | D | E | W | | C
+`addi  t17, t11, #2` |   |   |   |   |   |   |   | D | E | W | | | | C
+`sub   t16, t14, t15`|   |   |   |   |   |   |   |   | D | E | W | | C
+`beq   t1, t1, loop` |   |   |   |   |   |   |   |   | D | E | W | | | C
+`sw    t16, 0(t13)`  |   |   |   |   |   |   |   |   |   | D | E | W | C
