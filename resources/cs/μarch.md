@@ -347,12 +347,12 @@ The reason why this is usually the rule is because of loops. If the branch instr
 ## 1-Bit History Predictor
 The premise of this one is simple: repeat the last prediction. This gives our predictor some history. The rationale behind history-based predictors is that conditionals usually aren't decided in isolation. Usually, they need prior state to decide whether or not a branch should be taken. A 1-bit predictor just remembers the last outcome:
 
-<img width="1102" height="595" alt="image" src="https://github.com/user-attachments/assets/3b3d556d-be58-4671-a50b-dc3191a8cb81" />
+<img width="825" height="445" alt="image" src="https://github.com/user-attachments/assets/3b3d556d-be58-4671-a50b-dc3191a8cb81" />
 
 These predictors aren't very good either since two branches could have the same hashed PC. Nothing in the table tells us about this. Adding tags would make the table much larger and slower (almost becomes a cache).
 
-## Markov Predictors
-These predictors utilize Markov chains to model branches as a stochastic process. Usually a table is kept track:
+## Markov Predictor
+These predictors utilize Markov chains to model branches as a stochastic process. Usually a table keeps track of the pattern seen, the next bit and frequencies:
 
 pattern | next bit | frequency count
 --- | --- | ---
@@ -360,3 +360,38 @@ pattern | next bit | frequency count
 01 | 0/1 | 2/1
 10 | 0/1 | 0/3
 11 | 0/1 | 1/0
+
+## Bimodal Saturating Counter
+Now we move on to 2-bit predictors. This predictor uses a state machine to keep track of predictions:
+
+<img width="825" height="708" alt="image" src="https://github.com/user-attachments/assets/3504e660-7bce-4d27-aa91-2b0f5a9e737d" />
+
+The predictor initializes to weakly not taken. Each time it observes a branch taken, it transitions closer to strongly taken, reinforcing its decision. The opposite is also true for not taken. This helps the branch predictor "learn" patterns given what it has seen before.
+
+## Local Predictor
+It seems like the storing history is the right way to go about predicting branches. The local predictor is a two-level indexing scheme where the program counter is used to index into a pattern history table. The PHT contains some patterns of taken/not taken seen around the PC (hence local). The pattern history table maps to a branch history table where the bimodal counter states from above are used. Here is an example showing the second iteration of a pattern:
+
+<img width="825" height="411" alt="image" src="https://github.com/user-attachments/assets/e17dfd66-0a0a-437a-9401-9f0ff03e4f74" />
+
+These local predictors could keep going, but structures are finite. There is not a set limit on the number of potential branches and patterns. This could cause some conflicts:
+
+- *Constructive aliasing* - two branches strengthen each others' biases.
+- *Destructive aliasing* - two branches weaken each others' biases.
+- *Neutral aliasing* - two branches do not have a particular effect on each other.
+
+## Correlating Predictor
+We can level up the local predictor by combining it with global history. In fact, *gshare* is a branch predictor that combines a global history register and the PC. Correlating predictors roughly look like this:
+
+<img width="747" height="425" alt="image" src="https://github.com/user-attachments/assets/8344c400-f80c-4b6d-b797-8708efeb7bd7" />
+
+Here is how they work:
+
+1. Access the global history register.
+  - The PC contains the instruction address of the branch.
+  - The GHR contains the pattern history of the last few branches that we have executed.
+2. Use the pattern in the GHR to index into the BHT.
+  - Make prediction using the BHT entry.
+  - BHT entry contains the branch bias (strongly/weakly taken/not taken).
+3. When the actual outcome becomes available...
+  - `GHR <<= 1` - this will effectively remove the oldest history entry.
+  - Replace the LSB of the GHR with the actual branch outcome.
