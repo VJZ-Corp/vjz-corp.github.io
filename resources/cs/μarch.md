@@ -333,3 +333,30 @@ cycle # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
 `sub   t16, t14, t15`|   |   |   |   |   |   |   |   | D | E | W | | C
 `beq   t1, t1, loop` |   |   |   |   |   |   |   |   | D | E | W | | | C
 `sw    t16, 0(t13)`  |   |   |   |   |   |   |   |   |   | D | E | W | C
+
+# Branch Prediction
+So far, we have been talking about improving performance through instruction execution. At a certain point, even OoO processors hit a limit in speedup. That is why modern CPUs do something dramatic: they try to predict the future using a technique called speculative execution. One common category that CPUs speculate on is control flow. These are ubiquitous in modern programming: every conditional, loop, and function uses control flow. The general term in microarchitecture is branching, as in code execution paths can branch at certain instructions. Branch instructions cannot be executed out-of-order in the traditional sense because the CPU cannot know the outcome of where to redirect the program counter *until* the instruction runs. Therefore, the CPU has to guess if the branch is either taken or not taken. If that guess is wrong, it will be very detrimental as the CPU has to rollback the wrong branch. However, branch predictors are specialized units that try to minimize guessing wrong as much as possible.
+
+## Static Predictor
+This type of predictor operates on a static rule:
+
+> If branch jumps *forward* (target > PC), do not take; else backwards taken.
+
+The reason why this is usually the rule is because of loops. If the branch instruction jumps to earlier code (backwards), chances are it is a loop. Accordingly, we should take the branch since most likely the loop (backwards) repeats more than the exit condition (forward). Nevertheless, this basic rule yields fairly mediocre results, which is why it is not seen in modern microarchitectures.
+
+## 1-Bit History Predictor
+The premise of this one is simple: repeat the last prediction. This gives our predictor some history. The rationale behind history-based predictors is that conditionals usually aren't decided in isolation. Usually, they need prior state to decide whether or not a branch should be taken. A 1-bit predictor just remembers the last outcome:
+
+<img width="1102" height="595" alt="image" src="https://github.com/user-attachments/assets/3b3d556d-be58-4671-a50b-dc3191a8cb81" />
+
+These predictors aren't very good either since two branches could have the same hashed PC. Nothing in the table tells us about this. Adding tags would make the table much larger and slower (almost becomes a cache).
+
+## Markov Predictors
+These predictors utilize Markov chains to model branches as a stochastic process. Usually a table is kept track:
+
+pattern | next bit | frequency count
+--- | --- | ---
+00 | 0/1 | 0/0
+01 | 0/1 | 2/1
+10 | 0/1 | 0/3
+11 | 0/1 | 1/0
