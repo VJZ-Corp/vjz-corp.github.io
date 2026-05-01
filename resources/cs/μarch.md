@@ -393,5 +393,55 @@ Here is how they work:
   - Make prediction using the BHT entry.
   - BHT entry contains the branch bias (strongly/weakly taken/not taken).
 3. When the actual outcome becomes available...
-  - `GHR <<= 1` - this will effectively remove the oldest history entry.
+  - `GHR <<= 1`: this will effectively remove the oldest history entry.
   - Replace the LSB of the GHR with the actual branch outcome.
+
+## Tagged Geometric History Length Predictor
+The predictors that we have talked about so far are fundamental, but not what is used today. TAGE is a modern predictor that uses multiple PHTs indexed by GHRs of different lengths. It intelligently allocates PHT entries to different branches based on their history requirements.
+
+<img width="825" height="569" alt="image" src="https://github.com/user-attachments/assets/e21d2523-6eff-4fa2-9774-a722c93b8faa" />
+
+Advantages of TAGE:
+- It will choose the best history length to predict each branch.
+- Consequently, it also enables long branch history lengths.
+
+Disadvantages of TAGE:
+- It is complex to implement in hardware.
+- We need to choose a good hash function and table sizes to maximize accuracy and minimize latency.
+
+## Perceptron Predictors
+This very modern and advanced prediction technique uses neural networks to predict whether or not a branch will be taken. Unlike traditional predictors that rely on history patterns, the perceptron predictor learns and adapts based on past outcomes and the GHR, similar to how perceptrons update in machine learning.
+
+<img width="527" height="150" alt="image" src="https://github.com/user-attachments/assets/c4d85cb9-09ee-4af0-bbf2-ff84183a756d" />
+
+Each branch is associated with a perceptron carrying a set of weights. Each weight corresponds to a bit in the GHR. This approach represents how much the bit is correlated with the direction of the branch.
+
+## Branch Target Buffer
+We talked a lot about how to predict the outcome of a branch, but the other part of this is predicting where that branch would take us. The branch target buffer is a cache that stores predicted addresses given our current PC:
+
+<img width="825" height="198" alt="image" src="https://github.com/user-attachments/assets/9e6c544d-6099-45f9-aba1-b1ad6c9445b4" />
+
+The branch target buffer uses a similar tag-index-offset scheme seen in caches. Instead of passing the memory address, we break the PC down into its appropriate tag, index, and offset instead.
+
+## Return Address Stack
+A similar variant of branch target buffers exists for function calls. Return address stacks are structures used to predict where return instructions would go. Here is a simple 4-entry RAS:
+
+<img width="825" height="408" alt="image" src="https://github.com/user-attachments/assets/be574b83-324a-40cd-a3d4-0cf82f620a74" />
+
+On a `call` instruction, we increment the index and save return address in that slot. On a `ret` instruction, we read prediction from the index and decrement it. *Note: this is a different structure than the regular call stack, which also has return addresses. That stack lives in RAM while this is baked inside the CPU internals.*
+
+## Modern Speculation
+Real branch predictors like the ones found inside Zen 5 are often proprietary. After all, speculation is one of the main elements that drive competition in the processor market. Designing a fast CPU requires it to guess many times and close to correctly each time. Regardless, here is what a modern CPU fetch stage might look like:
+
+<img width="816" height="576" alt="image" src="https://github.com/user-attachments/assets/184d6900-4e8c-4cb8-9f2a-d9859882d8b6" />
+
+Besides predicting branches, modern processors also have a ton of more advanced ways to speculate:
+- *Instruction length prediction* - guesses how big the next instruction is so the CPU can read it efficiently.
+- *Loop stream detection* - spots loops and reuses already-fetched instructions instead of fetching them again.
+- *Load/Store address prediction* - predicts where memory reads/writes will go before the calculation finishes.
+- *Memory disambiguation* - guesses whether a memory read depends on earlier writes so it can run safely in parallel.
+- *Value prediction* - guesses the result of an instruction before it actually runs.
+- *Cache hit/miss prediction* - predicts whether needed data is already in cache or must be fetched from memory.
+- *Way prediction* - predicts which part of the cache likely holds the data to speed up lookup.
+- *Unit criticality prediction* - identifies which operations matter most for performance so they get priority.
+- *Phase prediction* - detects “modes” of program behavior and adjusts CPU strategy accordingly.
