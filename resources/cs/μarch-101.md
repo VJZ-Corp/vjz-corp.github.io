@@ -524,7 +524,7 @@ There are different levels of caches depending on microarchitecture. Introducing
 
 <img width="825" height="403" alt="image" src="https://github.com/user-attachments/assets/c8178779-ca56-43c6-a3b0-5ac647ef648a" />
 
-1. The *level 1 (L1)* cache is split into an instruction cache and a data cache. The fetch stage reads from L1i$ and the memory stage accesses L1d$. Modern CPUs hold virtual addresses in their registers and rely on the translation lookaside buffer to cache physical addresses. Paged memory deserves its own article but for the purposes of this one, L1 caches are usually virtually indexed and physically tagged (VIPT), meaning the index bits come from the virtual address, but the tag is derived from the physical address (requires TLB).
+1. The *level 1 (L1)* cache is split into an instruction cache and a data cache. The fetch stage reads from L1i and the memory stage accesses L1d. Modern CPUs hold virtual addresses in their registers and rely on the translation lookaside buffer to cache physical addresses. Paged memory deserves its own article but for the purposes of this one, L1 caches are usually virtually indexed and physically tagged (VIPT), meaning the index bits come from the virtual address, but the tag is derived from the physical address (requires TLB).
 2. The *level 2 (L2)* cache is unified in most designs. It is a per-core cache that helps support the L1 cache and is physically indexed and physically tagged (PIPT), meaning it completely operates on physical addresses.
 3. The *level 3 (L3)* cache is usually the last-level cache. It is shared between cores and serves as a general cache for the entire chip.
 4. *Victim caches* are fully associative caches that sit in between two levels of cache (usually between L1 and L2). When a miss occurs, evicted blocks are placed in this cache to give it a "second chance." This is best for useful blocks that are evicted not because they have gone cold, but because the main cache is out of space.
@@ -550,10 +550,16 @@ After going through how superscalar OoO cores speculate and several types of cac
 
 <img width="825" height="556" alt="image" src="https://github.com/user-attachments/assets/2a245d44-9685-4a97-afc8-6a679b9ef3af" />
 
-## Front End
-We covered many topics related to the front end design of Zen 5, but some notable advanced topics *not* covered in this tutorial:
-- Indirect Target Array
-- BTB Levels
-- ITLB
-- x86 Decoding (ISA-specific)
-- μOp Cache
+We covered many topics related to the microarchitectural design of Zen 5, but some notable advanced topics *not* covered in this tutorial:
+- *Indirect Target Array* - predictor structure that caches likely targets of indirect branches (function pointers, virtual calls, etc.) to avoid misprediction penalties.
+- *BTB Levels* - multiple tiers of branch target buffers that store recent branch destinations at different capacities/latencies to improve prediction coverage and speed.
+- *ITLB* - caches address translations for instruction fetches to avoid page table walks.
+- *Decoder Internals* - ISA-specific Hardware logic that translates ISA instructions into internal micro-operations (μops), often handling variable-length decoding and instruction fusion.
+- *μOp Cache* - cache of already-decoded micro-operations that lets the CPU bypass the decode stage and fetch μops directly for faster front-end throughput.
+- *Taken Branch Buffer* – a small structure that quickly supplies targets for recently taken branches to keep the fetch pipeline from stalling.
+- *Forwarding Network* – internal bypass paths that route execution results directly between pipeline stages to avoid waiting for register write-back.
+- *Load/Store Queues* – buffers that track in-flight memory operations, enforce ordering rules, and enable memory disambiguation and speculation.
+- *FP/Vector Operations* – execution units and pipelines that handle floating-point and SIMD instructions for parallel numerical computation.
+- *DTLB* – caches address translations for data pages.
+- *Miss Address Buffer* – a structure (often the (M)iss (S)tatus (H)olding (R)egister) that tracks outstanding cache misses and coordinates data fills when memory responses return.
+- *Infinity Fabric* – high-speed interconnect used in AMD systems to link CPU cores, caches, memory controllers, and other components.
