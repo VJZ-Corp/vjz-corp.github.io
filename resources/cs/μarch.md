@@ -472,7 +472,7 @@ set | entry
 ... | ...
 $2^i-1$ | [valid bit] / [tag bits] / [block of $2^f$ bytes]
 
-The total effective size of this cache is $2^{i+f}$ bytes.
+effective data capacity $= 2^{i+f}$ bytes
 
 ### Set-Associative Cache
 Set-associative caches introduce $w$ ways, which serve as columns to our table:
@@ -480,14 +480,20 @@ Set-associative caches introduce $w$ ways, which serve as columns to our table:
 set | way 0 | way 1 | ... | way $w-1$
 --- | --- | --- | --- | ---
 0 | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
-1 | [valid bit]/[tag bits]/[block of $2^f$ bytes] | [valid bit]/[tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
+1 | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit]/[tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
 ... | ... | ... | ... | ...
 $2^i-1$ | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
 
-The total effective size of this cache is $2^{i+f} \times w$ bytes.
-
+effective data capacity $= w \times 2^{i+f}$ bytes
 
 ### Fully Associative Cache
+This type of cache only has one set:
+
+set | way 0 | way 1 | ... | way $w-1$
+--- | --- | --- | --- | ---
+0 | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
+
+effective data capacity $= w \times 2^f$ bytes
 
 ## Eviction Policies
 
