@@ -445,3 +445,40 @@ Besides predicting branches, modern processors also have a ton of more advanced 
 - *Way prediction* - predicts which part of the cache likely holds the data to speed up lookup.
 - *Unit criticality prediction* - identifies which operations matter most for performance so they get priority.
 - *Phase prediction* - detects “modes” of program behavior and adjusts CPU strategy accordingly.
+
+# Caching
+One major bottleneck of modern computer architecture is relatively slow speed of random-access memory. Now that we have our blazingly fast OoO core doing speculation, taking hundreds of cycles to access DRAM just is not going to cut it anymore. Therefore, we need to start caching data so the CPU does not stall waiting for more to come. If you think about it, RAM itself acts as a cache for data on the disk, which is *even slower*. The concept of caching is nothing new, and performance gains have been shown in many applications. That is why CPUs dedicate so much space to the cache. At a certain point, when the functional units cannot be meaningfully optimized further, the rest of the space goes to the cache. There are a few goals that make CPU caches different from other types of caches:
+
+- *Spatial locality* - we want to cache data near each other in RAM. If a program accesses data at a certain address, there is a high likelihood that neighboring data will get accessed as well.
+- *Temporal locality* - we want data that was recently accessed to stay in the cache longer. Loops are some of the ways the same piece of data gets accessed by the CPU many times.
+
+## Placement Policies
+If we want to maximize temporal and spatial locality, we can split the memory address into a particular format consisting of three parts: `address = [tag | index | offset]`
+
+- *Tag* - this number represents the rest of the address, after you have taken away the index and offset.
+- *Index* - this number represents the set the block occupies.
+- *Offset* - this number determines the position of the byte in a block.
+
+To best model how each type of cache behaves, concrete examples will be shown instead of theoretical properties.
+
+### Direct-Mapped Cache
+Direct-mapped caches are the simplest type of CPU caches. If $i$ bits contribute to the index, and $o$ bits contribute to the offset, then the cache is:
+
+set | valid | tag | entry
+--- | --- | --- | ---
+0 | 1 | 10110110101 | block of $2^o$ B
+1 | 1 | 11011001011 | block of $2^o$ B
+2 | 1 | 00110101100 | block of $2^o$ B
+... | 0 | tag bits | block of $2^o$ B
+$2^i$ | 1 | 10011101010 | block of $2^o$ B
+### Set-Associative Cache
+
+### Fully Associative Cache
+
+## Eviction Policies
+
+## Write Policies
+
+## Cache Hierarchy
+
+### Cache Coherence
