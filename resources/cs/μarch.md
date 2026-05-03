@@ -453,7 +453,7 @@ One major bottleneck of modern computer architecture is relatively slow speed of
 - *Temporal locality* - we want data that was recently accessed to stay in the cache longer. Loops are some of the ways the same piece of data gets accessed by the CPU many times.
 
 ## Placement Policies
-If we want to maximize temporal and spatial locality, we can split the memory address into a particular format consisting of three parts: `address = [tag | index | offset]`
+If we want to maximize temporal and spatial locality, we can split the memory address into a particular format consisting of three parts: address = [tag | index | offset]
 
 - *Tag* - this number represents the rest of the address, after you have taken away the index and offset.
 - *Index* - this number represents the set the block occupies.
@@ -466,21 +466,26 @@ Direct-mapped caches are the simplest type of CPU caches. If $i$ bits contribute
 
 set | entry
 --- | ---
-0 | [valid bit]/[tag bits][block of $2^f$ B]
-1 | [valid bit]/[tag bits][block of $2^f$ B]
-2 | [valid bit]/[tag bits][block of $2^f$ B]
+0 | [valid bit] / [tag bits] / [block of $2^f$ bytes]
+1 | [valid bit] / [tag bits] / [block of $2^f$ bytes]
+2 | [valid bit] / [tag bits] / [block of $2^f$ bytes]
 ... | ...
-$2^i-1$ | [valid bit]/[tag bits][block of $2^f$ B]
+$2^i-1$ | [valid bit] / [tag bits] / [block of $2^f$ bytes]
+
+The total effective size of this cache is $2^{i+f}$ bytes.
 
 ### Set-Associative Cache
 Set-associative caches introduce $w$ ways, which serve as columns to our table:
 
 set | way 0 | way 1 | ... | way $w-1$
 --- | --- | --- | --- | ---
-0 | [valid bit]/[tag bits][block of $2^f$ B] | [valid bit]/[tag bits][block of $2^f$ B] | ... | [valid bit]/[tag bits][block of $2^f$ B]
-1 | [valid bit]/[tag bits][block of $2^f$ B] | [valid bit]/[tag bits][block of $2^f$ B] | ... | [valid bit]/[tag bits][block of $2^f$ B]
+0 | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
+1 | [valid bit]/[tag bits]/[block of $2^f$ bytes] | [valid bit]/[tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
 ... | ... | ... | ... | ...
-$2^i-1$ | [valid bit]/[tag bits][block of $2^f$ B] | [valid bit]/[tag bits][block of $2^f$ B] | ... | [valid bit]/[tag bits][block of $2^f$ B]
+$2^i-1$ | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | ... | [valid bit] / [tag bits] / [block of $2^f$ bytes]
+
+The total effective size of this cache is $2^{i+f} \times w$ bytes.
+
 
 ### Fully Associative Cache
 
