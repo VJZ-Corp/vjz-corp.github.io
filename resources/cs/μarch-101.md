@@ -1,10 +1,10 @@
 ---
-title: Modern CPU Microarchitecture
+title: Modern CPU Microarchitecture 101
 layout: default
-filename: μarch.md
+filename: μarch-101.md
 ---
 
-# Modern CPU Microarchitecture
+# Modern CPU Microarchitecture 101
 Take a look at this unassuming picture of AMD's Ryzen 7 9700X:
 
 <img width="534" height="532" alt="image" src="https://github.com/user-attachments/assets/71f0c2bf-d68b-4b86-9ac9-98e279934524" />
@@ -524,10 +524,10 @@ There are different levels of caches depending on microarchitecture. Introducing
 
 <img width="825" height="403" alt="image" src="https://github.com/user-attachments/assets/c8178779-ca56-43c6-a3b0-5ac647ef648a" />
 
-1. The level 1 (L1) cache is split into an instruction cache and a data cache. The fetch stage reads from L1i$ and the memory stage accesses L1d$. Modern CPUs hold virtual addresses in their registers and rely on the translation lookaside buffer to cache physical addresses. Paged memory deserves its own article but for the purposes of this one, L1 caches are usually virtually indexed and physically tagged (VIPT), meaning the index bits come from the virtual address, but the tag is derived from the physical address (requires TLB).
-2. The level 2 (L2) cache is unified in most designs. It is a per-core cache that helps support the L1 cache and is physically indexed and physically tagged (PIPT), meaning it completely operates on physical addresses.
-3. The level 3 (L3) cache is usually the last-level cache. It is shared between cores and serves as a general cache for the entire chip.
-4. Victim caches are fully associative caches that sit in between two levels of cache (usually between L1 and L2). When a miss occurs, evicted blocks are placed in this cache to give it a "second chance." This is best for useful blocks that are evicted not because they have gone cold, but because the main cache is out of space.
+1. The *level 1 (L1)* cache is split into an instruction cache and a data cache. The fetch stage reads from L1i$ and the memory stage accesses L1d$. Modern CPUs hold virtual addresses in their registers and rely on the translation lookaside buffer to cache physical addresses. Paged memory deserves its own article but for the purposes of this one, L1 caches are usually virtually indexed and physically tagged (VIPT), meaning the index bits come from the virtual address, but the tag is derived from the physical address (requires TLB).
+2. The *level 2 (L2)* cache is unified in most designs. It is a per-core cache that helps support the L1 cache and is physically indexed and physically tagged (PIPT), meaning it completely operates on physical addresses.
+3. The *level 3 (L3)* cache is usually the last-level cache. It is shared between cores and serves as a general cache for the entire chip.
+4. *Victim caches* are fully associative caches that sit in between two levels of cache (usually between L1 and L2). When a miss occurs, evicted blocks are placed in this cache to give it a "second chance." This is best for useful blocks that are evicted not because they have gone cold, but because the main cache is out of space.
 
 ### Cache Coherence
 The L3 cache has a unique problem: if multiple cores can access the same memory location, how can we ensure correctness? There are two techniques that tackle this:
@@ -544,3 +544,16 @@ Here is the metadata that each block contains:
 The cache controller can transition between metadata states using this state machine:
 
 <img width="825" height="477" alt="image" src="https://github.com/user-attachments/assets/fd16bd91-52b4-4b2d-85ee-88a14f9b4ec6" />
+
+# Zen 5 Specs
+After going through how superscalar OoO cores speculate and several types of caches and their purpose, you finally have enough knowledge to understand **most** of this diagram:
+
+<img width="825" height="556" alt="image" src="https://github.com/user-attachments/assets/2a245d44-9685-4a97-afc8-6a679b9ef3af" />
+
+## Front End
+We covered many topics related to the front end design of Zen 5, but some notable advanced topics *not* covered in this tutorial:
+- Indirect Target Array
+- BTB Levels
+- ITLB
+- x86 Decoding (ISA-specific)
+- μOp Cache
