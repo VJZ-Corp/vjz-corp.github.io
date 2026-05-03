@@ -462,16 +462,25 @@ If we want to maximize temporal and spatial locality, we can split the memory ad
 To best model how each type of cache behaves, concrete examples will be shown instead of theoretical properties.
 
 ### Direct-Mapped Cache
-Direct-mapped caches are the simplest type of CPU caches. If $i$ bits contribute to the index, and $o$ bits contribute to the offset, then the cache is:
+Direct-mapped caches are the simplest type of CPU caches. If $i$ bits contribute to the index, and $f$ bits contribute to the offset, then the cache is:
 
-set | valid | tag | entry
---- | --- | --- | ---
-0 | 1 | 10110110101 | block of $2^o$ B
-1 | 1 | 11011001011 | block of $2^o$ B
-2 | 1 | 00110101100 | block of $2^o$ B
-... | 0 | tag bits | block of $2^o$ B
-$2^i$ | 1 | 10011101010 | block of $2^o$ B
+set | entry
+--- | ---
+0 | [valid bit]/[tag bits][block of $2^f$ B]
+1 | [valid bit]/[tag bits][block of $2^f$ B]
+2 | [valid bit]/[tag bits][block of $2^f$ B]
+... | ...
+$2^i-1$ | [valid bit]/[tag bits][block of $2^f$ B]
+
 ### Set-Associative Cache
+Set-associative caches introduce $w$ ways, which serve as columns to our table:
+
+set | way 0 | way 1 | ... | way $w-1$
+--- | --- | --- | --- | ---
+0 | [valid bit]/[tag bits][block of $2^f$ B] | [valid bit]/[tag bits][block of $2^f$ B] | ... | [valid bit]/[tag bits][block of $2^f$ B]
+1 | [valid bit]/[tag bits][block of $2^f$ B] | [valid bit]/[tag bits][block of $2^f$ B] | ... | [valid bit]/[tag bits][block of $2^f$ B]
+... | ... | ... | ... | ...
+$2^i-1$ | [valid bit]/[tag bits][block of $2^f$ B] | [valid bit]/[tag bits][block of $2^f$ B] | ... | [valid bit]/[tag bits][block of $2^f$ B]
 
 ### Fully Associative Cache
 
