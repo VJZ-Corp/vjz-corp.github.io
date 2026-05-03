@@ -20,7 +20,7 @@ You will find curated tutorials and lessons in science, technology, engineering,
 - [Time Complexity](cs/big-o)
 - [Recursive Generation of Binomial Coefficients in Linear Time](cs/binom-coeff-linear-gen.md)
 - [Optimizing the Computation of Maximum Subarray Sums](cs/max-subarray-sums)
-- [Modern CPU Microarchitecture](cs/μarch)
+- [Modern CPU Microarchitecture 101](cs/μarch-101)
 
 ## Software Engineering
 - [How to Debug Memory in Visual Studio 2019](swe/vs2019-debug)
