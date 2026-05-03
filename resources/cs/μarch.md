@@ -496,6 +496,17 @@ set | way 0 | way 1 | ... | way $w-1$
 effective data capacity $= w \times 2^f$ bytes
 
 ## Eviction Policies
+There are several methods to decide which way gets evicted when a set is full and all ways are occupied:
+
+- *Random* - this policy picks a random way in the range $[0, w)$ and evicts the block. This is actually used in ARM Cortex-R series processors.
+- *FIFO* - with this algorithm, the cache behaves like a FIFO queue; it evicts blocks in the order in which they were added, regardless of how often or how many times they were accessed before.
+- *LRU* - this approach evicts the least recently used block. Any time a way in a particular set is accessed, it switches the LRU to the way that was not accessed for the longest time. It accomplishes this using extra metadata:
+
+set | way 0 | way 1 | LRU
+--- | --- | --- | ---
+0 | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | 0 (way 1 was just accessed)
+... | ... | ... | ...
+$2^i - 1$ | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | 1 (way 0 was recently accessed)
 
 ## Write Policies
 
