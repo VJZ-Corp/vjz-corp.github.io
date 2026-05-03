@@ -498,7 +498,7 @@ effective data capacity $= w \times 2^f$ bytes
 ## Eviction Policies
 There are several methods to decide which way gets evicted when a set is full and all ways are occupied:
 
-- *Random* - this policy picks a random way in the range $[0, w)$ and evicts the block. This is actually used in ARM Cortex-R series processors.
+- *Random* - this policy picks a random way in the range $[0, w)$ and evicts the block. This was actually used in ARM Cortex-R series processors.
 - *FIFO* - with this algorithm, the cache behaves like a FIFO queue; it evicts blocks in the order in which they were added, regardless of how often or how many times they were accessed before.
 - *LRU* - this approach evicts the least recently used block. Any time a way in a particular set is accessed, it switches the LRU to the way that was not accessed for the longest time. It accomplishes this using extra metadata:
 
@@ -509,7 +509,38 @@ set | way 0 | way 1 | LRU
 $2^i - 1$ | [valid bit] / [tag bits] / [block of $2^f$ bytes] | [valid bit] / [tag bits] / [block of $2^f$ bytes] | 1 (way 0 was recently accessed)
 
 ## Write Policies
+How to keep RAM and cache mirrored?
+- *Write-through* - all writes reflect in both cache and RAM.
+- *Write-back* - writes only go to cache and not RAM immediately. Modified cache blocks are written back to RAM when the block is replaced. A dirty bit tracks if the block is modified relative to RAM.
+
+Make room in cache when a write results in a miss?
+- *Write-allocate* - on a miss, bring written block into cache.
+- *Write-around* - on a miss, bypass the cache completely and the write goes directly to RAM without loading the block into the cache.
+
+You can mix these policies by choosing one from the first grouping and another from the second. Most modern caches are write-back and write-allocate.
 
 ## Cache Hierarchy
+There are different levels of caches depending on microarchitecture. Introducing several levels of caches mean there exists inclusivity policies. Inclusive caches mean that larger caches (closer to RAM) must include all blocks present in the smaller caches (closer to execution). Exclusive caches mean that blocks in one level must not be present in another. Non-inclusive caches mean that inclusivity is not guaranteed but not necessarily exclusive. Each level serves a different purpose:
+
+<img width="825" height="403" alt="image" src="https://github.com/user-attachments/assets/c8178779-ca56-43c6-a3b0-5ac647ef648a" />
+
+1. The level 1 (L1) cache is split into an instruction cache and a data cache. The fetch stage reads from L1i$ and the memory stage accesses L1d$. Modern CPUs hold virtual addresses in their registers and rely on the translation lookaside buffer to cache physical addresses. Paged memory deserves its own article but for the purposes of this one, L1 caches are usually virtually indexed and physically tagged (VIPT), meaning the index bits come from the virtual address, but the tag is derived from the physical address (requires TLB).
+2. The level 2 (L2) cache is unified in most designs. It is a per-core cache that helps support the L1 cache and is physically indexed and physically tagged (PIPT), meaning it completely operates on physical addresses.
+3. The level 3 (L3) cache is usually the last-level cache. It is shared between cores and serves as a general cache for the entire chip.
+4. Victim caches are fully associative caches that sit in between two levels of cache (usually between L1 and L2). When a miss occurs, evicted blocks are placed in this cache to give it a "second chance." This is best for useful blocks that are evicted not because they have gone cold, but because the main cache is out of space.
 
 ### Cache Coherence
+The L3 cache has a unique problem: if multiple cores can access the same memory location, how can we ensure correctness? There are two techniques that tackle this:
+
+- *Directory-based* - Have a logically-central directory that keeps track of where the copies of each cache block reside. Caches consult this directory to ensure coherence. On read, set the cache's bit and arrange the supply of data. On write, invalidate all caches that have the block and reset their bits.
+- *Bus snooping* - Each cache broadcasts its read/write operations on a common bus. Then, all caches snoop all other caches' read/write requests and keep the cache coherent. Each cache block has "coherence metadata" associated with it.
+
+Here is the metadata that each block contains:
+- *Modified* - cache block is the only cached copy and is dirty.
+- *Shared* - cache block is one of potentially several cached copies and is clean.
+- *Exclusive* - cache block is the ONLY cached copy and is clean.
+- *Invalid* - cache block is not present in this cache.
+
+The cache controller can transition between metadata states using this state machine:
+
+<img width="825" height="477" alt="image" src="https://github.com/user-attachments/assets/fd16bd91-52b4-4b2d-85ee-88a14f9b4ec6" />
