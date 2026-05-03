@@ -546,7 +546,7 @@ The cache controller can transition between metadata states using this state mac
 <img width="825" height="477" alt="image" src="https://github.com/user-attachments/assets/fd16bd91-52b4-4b2d-85ee-88a14f9b4ec6" />
 
 # Zen 5 Specs
-After going through how superscalar OoO cores speculate and several types of caches and their purpose, you finally have enough knowledge to understand **most** of this diagram:
+After going through how superscalar OoO cores speculate and several types of caches and their purpose, you hopefully have the knowledge to understand the majority of this diagram:
 
 <img width="825" height="556" alt="image" src="https://github.com/user-attachments/assets/2a245d44-9685-4a97-afc8-6a679b9ef3af" />
 
@@ -563,3 +563,5 @@ We covered many topics related to the microarchitectural design of Zen 5, but so
 - *DTLB* – caches address translations for data pages.
 - *Miss Address Buffer* – a structure (often the (M)iss (S)tatus (H)olding (R)egister) that tracks outstanding cache misses and coordinates data fills when memory responses return.
 - *Infinity Fabric* – high-speed interconnect used in AMD systems to link CPU cores, caches, memory controllers, and other components.
+
+Computer microarchitecture is a broad and evolving area, and this overview only covers a small subset of the concepts involved. In practice, real designs vary widely and are tightly linked to performance, power efficiency, and cost, with decisions at this level shaping everything from product competitiveness to broader shifts in the computing market.
