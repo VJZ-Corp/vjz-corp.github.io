@@ -53,6 +53,6 @@ The Github platform has empowered us to connect and collaborate with the most sk
 # Discord
 [![](/assets/images/discord.png)](https://discord.gg/avgawKw)
 
-<iframe src="https://discord.com/widget?id=705597937387962388&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+<iframe src="https://discord.com/widget?id=705597937387962388&theme=dark" width="500" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
 Besides our involvement professionally in all the organizations listed above, we want to let you know that there is a thriving culture at VJZ Corporation. Using Discord, we can connect with our customers, clients, players, and audience better. Our Discord server is a place for you to hang out and chat with us. You can receive our latest updates and news and even suggest ideas and projects for us because we value zero-pressure, honest customer feedback the most. So engage with us to foster a prosperous community here at VJZ Corporation. You can join our Discord server by clicking the Discord logo banner.
