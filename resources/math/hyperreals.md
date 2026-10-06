@@ -31,7 +31,7 @@ $$
 \sigma \equiv_{\mathcal{U}} \tau \iff \{i \in I : \sigma(i) = \tau(i)\} \in \mathcal{U}.
 $$
 
-We will notate this quotient set as $\mathbb{R}^{I} / \mathcal{U}$. The $I$-sequences can be interpreted as functions $\sigma : I arrow \mathbb{R}$ where $\sigma(i)$ picks out the $i$th element. 
+We will notate this quotient set as $\mathbb{R}^{I} / \mathcal{U}$. The $I$-sequences can be interpreted as functions $\sigma : I \to \mathbb{R}$ where $\sigma(i)$ picks out the $i$th element. 
 
 For a sequence $\sigma$, we notate all equivalent sequences to $\sigma$ by $\equiv_{\mathcal{U}}$ as $[\sigma]$. The intuitive notion of this is that the equivalent sequences show "great similarity". Indeed, the ultrafilter $\mathcal{U}$ is an ultrafilter of sets of indicies (e.g., $\{ 0,1,2,\dots \}$), and equivalence is determined if the indicies that match form a set in the ultrafilter. Because filters are meant to capture "large" sets, we intuitively expect extremely similar sequences to be about equal. 
 
